@@ -1,0 +1,64 @@
+\documentclass[12pt]{ociamthesis}  % default square logo 
+%\documentclass[12pt,beltcrest]{ociamthesis} % use old belt crest logo
+%\documentclass[12pt,shieldcrest]{ociamthesis} % use older shield crest logo
+
+%load any additional packages
+\usepackage{amssymb}
+
+%input macros (i.e. write your own macros file called mymacros.tex 
+%and uncomment the next line)
+%\include{mymacros}
+
+\title{Codimension-Two\\[1ex]     %your thesis title,
+        Free Boundary Problems}   %note \\[1ex] is a line break in the title
+
+\author{Yuhao Han}             %your name
+\college{Reuben College}  %your college
+
+%\renewcommand{\submittedtext}{change the default text here if needed}
+\degree{Master in Mathematics and Foundation of Computer Science}     %the degree
+\degreedate{Trinity 2026}         
+
+\input{preamble}
+
+\begin{document}
+
+%this baselineskip gives sufficient line spacing 
+\baselineskip=18pt plus1pt
+
+%set the number of sectioning levels that get number and appear in the contents
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\maketitle                  
+
+\include{acknowledgements}  
+\include{abstract}          
+
+\begin{romanpages}          
+\tableofcontents            
+\listoffigures              
+\end{romanpages}            
+
+%now include the files of latex for each of the chapters etc
+\include{introduction}
+\include{tensors}
+\include{treewidth}
+\include{zxw}
+\include{zxw-algorithms}
+
+%now enable appendix numbering format and include any appendices
+\appendix
+\include{appendix1}
+\include{appendix2}
+
+%next line adds the Bibliography to the contents page
+\addcontentsline{toc}{chapter}{Bibliography}
+%uncomment next line to change bibliography name to references
+%\renewcommand{\bibname}{References}
+\bibliography{references}        %use a bibtex bibliography file refs.bib
+\bibliographystyle{plain}  %use the plain bibliography style
+
+\end{document}
+
+

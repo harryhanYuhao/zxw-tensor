@@ -1,0 +1,32 @@
+% A rank-three tensor $T_{ijk}$ regarded as a stack of $n$ matrix slices.
+% Drawn back-to-front so the $i = 0$ slice is frontmost.
+\begin{tikzpicture}[>=Stealth, line join=round, line cap=round]
+    \def\s{2.4}     % matrix edge length
+    \def\dx{0.55}   % per-slice depth offset (x)
+    \def\dy{0.55}   % per-slice depth offset (y)
+
+    % --- stack of n matrix slices, drawn back-to-front (i = 0 is frontmost) ---
+    \foreach \k in {3,2,1,0} {
+        \pgfmathsetmacro{\X}{\dx*\k}
+        \pgfmathsetmacro{\Y}{\dy*\k}
+        \pgfmathtruncatemacro{\idx}{\k}
+        \begin{scope}[shift={({\X},{\Y})}]
+            \fill[blue!8!white] (0,0) rectangle (\s,\s);
+            \draw[thick] (0,0) rectangle (\s,\s);
+            \node[font=\footnotesize, anchor=south east] at (0.04,\s) {$i=\idx$};
+        \end{scope}
+    }
+
+    % internal grid on the front slice (i = 0)
+    \foreach \i in {1,2,3} {
+        \draw[black!30] (\i*0.6,0) -- (\i*0.6,\s);
+        \draw[black!30] (0,\i*0.6) -- (\s,\i*0.6);
+    }
+    \node[font=\scriptsize] at (0.3,0.3) {$T_{000}$};
+    \node[font=\scriptsize] at (0.9,0.3) {$T_{001}$};
+    \node[font=\scriptsize] at (0.3,0.9) {$T_{010}$};
+
+    % depth arrow indicating the n layers along the index i
+    \draw[<->, thick] (-0.35 + 3.5,-0.35) -- ({3*\dx+3.5},{3*\dy+0.2});
+    \node[font=\footnotesize, rotate=45] at ({3*\dx+3},{1.5*\dy-0.15}) {$n$ slices};
+\end{tikzpicture}

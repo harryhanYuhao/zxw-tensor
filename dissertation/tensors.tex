@@ -1,0 +1,39 @@
+\chapter{Tensors} \label{ch:tensors}
+
+\section{Tensors, Contraction, and Tensor Network}
+
+We present the following straightforward definition of tensors, which is a rephrasal of Penrose's original definition \cite{penrose1971applications}.
+
+\begin{definition}
+Let $[n]$ denote the set $\{0, 1, \cdots, n-1\}$. 
+A tensor of rank $k \in \N$ is a function $T : [n]^k \rightarrow \C$.
+\end{definition}
+
+By covention, we shall write $T(i_1, i_2, \cdots, i_k)$ as $T_{i_1 i_2 \cdots i_k}$, where each $i$, which is called an index, shall be an integer from 0 to $n-1$ inclusively. 
+Of course, $T$ can be a function that maps $[n]^k$ to $\R$ or any other ring. We ordain it to be $\C$ in this dissertation.
+
+Tensor is, plainly and unonstensibly, an arrangement of $n^k$ complex numbers with some orderings by the indices.
+For example, a rank-one tensor is a vector of $n$ entries, rank-two tensor is an $n$ times $n$ matrix, and a rank-three tensor is an arrangement of $n$ matrices.
+
+The following equation denotes a vector and a matrix, while figure \ref{fig:rank3-stack} depicts the rank-three tensor geometrically as a stack of $n$ such matrix slices.
+\begin{equation*}
+	T_i =
+	\begin{pmatrix}
+		T_0 \\ T_1 \\ \vdots \\ T_{n-1}
+	\end{pmatrix},
+	\qquad
+	T_{ij} =
+	\begin{pmatrix}
+		T_{00} & T_{01} & \cdots & T_{0,n-1} \\
+		T_{10} & T_{11} & \cdots & T_{1,n-1} \\
+		\vdots & \vdots & \ddots & \vdots \\
+		T_{n-1,0} & T_{n-1,1} & \cdots & T_{n-1,n-1}
+	\end{pmatrix}.
+\end{equation*}
+
+\begin{figure}[ht]
+\centering
+\input{figures/rank3-stack.tikz}
+\caption{A rank-three tensor $T_{ijk}$ regarded as a stack of $n$ matrices.}
+\label{fig:rank3-stack}
+\end{figure}

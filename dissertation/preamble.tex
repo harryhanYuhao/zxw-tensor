@@ -1,0 +1,84 @@
+\usepackage{hyperref,theoremref}
+\hypersetup{
+	colorlinks, 
+	linkcolor={red!40!black}, 
+	citecolor={blue!50!black},
+	urlcolor={blue!80!black},
+	linktocpage % Link table of content to the page instead of the title
+}
+
+\usepackage{blindtext}
+\usepackage{titlesec}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{multicol}
+\usepackage{hyperref}
+\usepackage{import}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning}
+
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+\theoremstyle{definition}
+\newtheorem{axiom}[theorem]{Axioma}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Observation}
+\newtheorem{hypothesis}[theorem]{Conjecture}
+\newtheorem{example}[theorem]{Exampli Gratia}
+
+% Proof Environments
+\newcommand{\thm}[2]{\begin{theorem}[#1]{}#2\end{theorem}}
+
+%TODO mayby proof environment shall have more margin
+% \renewenvironment{proof}{{\bfseries\emph{Demonstratio.}}}{\qed}
+\renewcommand\qedsymbol{Q.E.D.}
+
+
+%\DeclareMathOperator{\ker}{Ker}
+
+
+\newcommand{\A}{\mathcal{A}}
+\newcommand{\B}{\mathcal{B}}
+
+\newcommand{\D}{\bm{\Delta}}
+\renewcommand{\S}{\textbf{Set}}
+\newcommand{\CS}{\mathcal{S}}
+\newcommand{\sS}{\textbf{sSet}}
+\newcommand{\op}{^{\text{op}}}
+\newcommand{\N}{\mathbb{N}}
+\renewcommand{\L}{\Lambda}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\F}{\text{Fun}}
+\newcommand{\RM}{\textbf{R-Mod}}
+\newcommand{\MR}{\textbf{Mod-R}}
+\newcommand{\Mk}{\textbf{Mod-k}}
+
+% face and degenerate maps
+\renewcommand{\d}{\partial}
+\newcommand{\s}{\sigma}
+
+\newcommand{\Ch}{\textit{\textbf{Ch}}}
+
+\newcommand{\T}{\text{Tor}}
+\newcommand{\E}{\text{Ext}}
+\newcommand{\id}{\text{id}}
+
+\newcommand{\im}{\text{Im}}
+
+\let\H\relax
+\DeclareMathOperator{\H}{\text{Hom}}
+
+\newcommand{\define}[1]{\textit{\textbf{#1}}}
