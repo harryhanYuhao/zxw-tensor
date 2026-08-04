@@ -5,17 +5,22 @@
 We present the following straightforward definition of tensors, which is a rephrasal of Penrose's original definition \cite{penrose1971applications}.
 
 \begin{definition}
-Let $[n]$ denote the set $\{0, 1, \cdots, n-1\}$. 
-A tensor of rank $k \in \N$ is a function $T : [n]^k \rightarrow \C$.
+Given $n\in \N$, let $[n]$ denote the set $\{0, 1, \cdots, n-1\}$. 
+A tensor of rank $k \in \N$ is a function $T : [n_0] \times [n_1] \times \cdots [n_{k-1}] \rightarrow \C$.
 \end{definition}
 
-By covention, we shall write $T(i_1, i_2, \cdots, i_k)$ as $T_{i_1 i_2 \cdots i_k}$, where each $i$, which is called an index, shall be an integer from 0 to $n-1$ inclusively. 
-Of course, $T$ can be a function that maps $[n]^k$ to $\R$ or any other ring. We ordain it to be $\C$ in this dissertation.
+By covention, we shall write the value $T(i_0, i_1, \cdots, i_{k-1})$ as $T_{i_0 i_1 \cdots i_{k-1}}$, where each $i$ is called an index.
+Of course, the output of $T$ can be $\R$ or any other ring. 
+We ordain it to be $\C$ in this dissertation.
+$n_j$ is called the dimension of the $j$-th index, which will always be clear from the context.
 
-Tensor is, plainly and unonstensibly, an arrangement of $n^k$ complex numbers with some orderings by the indices.
-For example, a rank-one tensor is a vector of $n$ entries, rank-two tensor is an $n$ times $n$ matrix, and a rank-three tensor is an arrangement of $n$ matrices.
+Following the convention of Einstein summation, a tensor $T$ is denoted by a capital letter with its indices as free variables shown in the subscript.
+The class of all tensors is denoted by the caligraphy letter $\T_{ijk \cdots}$.
 
-The following equation denotes a vector and a matrix, while figure \ref{fig:rank3-stack} depicts the rank-three tensor geometrically as a stack of $n$ such matrix slices.
+Tensor is, plainly and unonstensibly, an arrangement of complex numbers with some orderings by the indices.
+For example, a rank-one tensor is a vector entries, rank-two tensor is a matrix, and a rank-three tensor is an arrangement of matrices.
+
+The following equation denotes a vector and a matrix, while figure \ref{fig:rank3-stack} depicts the rank-three tensor as a stack of $n$ such matrix slices.
 \begin{equation*}
 	T_i =
 	\begin{pmatrix}
@@ -37,3 +42,79 @@ The following equation denotes a vector and a matrix, while figure \ref{fig:rank
 \caption{A rank-three tensor $T_{ijk}$ regarded as a stack of $n$ matrices.}
 \label{fig:rank3-stack}
 \end{figure}
+
+
+
+There are at least seven natural operations for tensors.
+\begin{observation}
+	\begin{itemize} 
+		\item \textbf{Addition} $\T + \T \rightarrow \T$. Let $T_{ijk \cdots}$ and $S_{ijk \cdots}$ be two tensors of the same rank. Then their sum is defined by $(T + S)_{ijk \cdots} = T_{ijk \cdots} + S_{ijk \cdots}$.
+		\item \textbf{Scalar multiplication} Let $T_{ijk \cdots}$ be a tensor and $c \in \C$. Define $(cT)_{ijk \cdots} =c (T_{ijk \cdots}) $
+		\item \textbf{Permutation.} Let $T_{ijk\cdots}$ be a tensor of rank $m$. For any permutation $\sigma \in S_m$, the permuted tensor is defined by $(\sigma \cdot T)_{i_{\sigma(1)} i_{\sigma(2)} \cdots i_{\sigma(k)}} = T_{i_1 i_2 \cdots i_k}$.
+		\item \textbf{Flatten} $\T \rightarrow \T$. Let $T_{ijk \cdots}$ be a tensor. 
+		Any of the two indices of $T$ can be flattened into one to create a new tensor.
+		Say we would like to flatten the indices $i$ and $j$, of dimension $n_1, n_2$. Let $\alpha$ be an index of dimension $n_1n_2$, and we define the new tensor $S_{ak \cdots}$ as $S_{(n_2 i + j)k \cdots} = T_{ijk\cdots}$.
+		\item \textbf{Unflatten}, which is the operation exactly opposite of flatten.
+		\item \textbf{Outer product} $\T \otimes \T \rightarrow \T$ Let $T_{ijk \cdots}$ and $S_{lmn \cdots}$ be any two tensors.
+		Their tensor product is defined by $(T \otimes S)_{ijklmn\cdots} = T_{ijk\cdots} S_{lmn\cdots}$. Outer product is sometimes called \textbf{tensor product} or \textbf{Kronecker product}.
+		\item \textbf{Contraction.} Let $T_{ijk\cdots}$ and $S_{ijk \cdots}$ be tensor of rank $m$ and $n$. Their contraction over the index $i$ is a tensor of rank $m+n - 2$ defined by $(T \cdot S)_{jk\cdots lm\cdots} = \sum_{i=0}^{n-1} T_{ijk\cdots} S_{ilm\cdots}$.
+	\end{itemize}
+\end{observation}
+
+Addition and scalar multiplication of tensors are clear enough. 
+Permutation of indices is generalisation of matrix transpose. 
+For an example, consider ranked-two tensor $T$, and define $S_{ij} = T_{ji}$
+
+\begin{equation*}
+	T_{ij} =
+	\begin{pmatrix}
+		T_{00} & T_{01} & \cdots  \\
+		T_{10} & T_{11} & \cdots \\ 
+		\vdots & \vdots & \ddots \\
+	\end{pmatrix}, \qquad
+	S_{ij} =
+	\begin{pmatrix}
+		T_{00} & T_{10} & \cdots  \\
+		T_{01} & T_{11} & \cdots \\ 
+		\vdots & \vdots & \ddots \\
+	\end{pmatrix}
+\end{equation*}
+
+Outer product and flattenning are demonstrated by figure \ref{fig:outer-flatten}.
+
+\begin{figure}[ht]
+\centering
+\input{figures/outer-flatten.tikz}
+\caption{(a) The outer product of a vector $v_i$ and a matrix $M_{jk}$ yields the rank-three tensor $T_{ijk}$. (b) Flattening the indices $i$ and $j$ of $T_{ijk}$ into a single index $\alpha = n_2\, i + j$ yields the matrix $S_{\alpha k}$.}
+\label{fig:outer-flatten}
+\end{figure}
+
+Usually, outer product and flattenning are used together to convert tensor products of two arbitrary tensors into a single matrix, for example
+\begin{equation}
+	A \otimes \vec{v} = 
+	\begin{pmatrix}
+		a_{00} & a_{01}\\
+		a_{10} & a_{11}
+	\end{pmatrix}
+	\begin{pmatrix}
+		v_0 \\ v_1	
+	\end{pmatrix}
+	= 
+	\begin{pmatrix}
+		a_{00} v_0 & a_{01} v_0 \\
+		a_{10} v_0 & a_{11} v_0 \\
+		a_{00} v_1 & a_{01} v_1 \\
+		a_{10} v_1 & a_{11} v_1
+	\end{pmatrix}
+\end{equation}
+
+Contraction, however, is a more subtle operation and the key of this thesis, which is preserved for the next section.
+
+\begin{remark}
+It is worth noting that, in general, there is an intrinsic notion of input and output for in linear algebra. 
+For example, in vector space $V$ a vector is an element of $V$. Its dual is a function $V \rightarrow \C$, and a matrix is a function $V \rightarrow V$.
+In physics, the input and output of tensor are differentiated by the upper and lower indices. 
+For example, $\T^k_l$ denotes the class of tensor $ \underbrace{V \otimes V \otimes \cdots \otimes V}_{k} \otimes \underbrace{V^* \otimes V^* \otimes \cdots \otimes V^*}_{l} \cong \underbrace{V \otimes  \cdot \otimes V}_{k} \rightarrow \underbrace{V \otimes \cdots \otimes V}_{l}$,
+where $V$ is a vector space and $V^*$ is its dual.
+While differentiating input and ouputs seems an intuitive idea, it actually is unweldy in practice, especially considering that for finite-dimensional vector space any $\T^k_l \cong \T^{k'}_{l'}$ provided $k + l = k' + l'$.
+\end{remark}

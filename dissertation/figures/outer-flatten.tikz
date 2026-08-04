@@ -1,0 +1,99 @@
+% (a) Outer product of a vector and a matrix yields a rank-three tensor.
+% (b) Flattening two indices (i, j) of that tensor yields a matrix.
+% A concrete 2x2x2 instance is drawn so that every visible entry is labelled.
+\begin{tikzpicture}[>=Stealth, line join=round, line cap=round]
+
+    % ==========================================================
+    % Panel (a): Outer product  v_i \otimes M_{jk} = T_{ijk}
+    % ==========================================================
+    \begin{scope}
+
+        % --- vector v (length 2) ---
+        \fill[blue!8!white] (0,0) rectangle (0.9,1.8);
+        \draw[thick] (0,0) rectangle (0.9,1.8);
+        \draw[black!30] (0,0.9) -- (0.9,0.9);
+        \node[font=\scriptsize] at (0.45,1.35) {$v_0$};
+        \node[font=\scriptsize] at (0.45,0.45) {$v_1$};
+        \node[font=\scriptsize] at (0.45,-0.35) {$v_i$};
+
+        % --- otimes ---
+        \node[font=\large] at (1.5,0.9) {$\otimes$};
+
+        % --- matrix M (2x2) ---
+        \fill[blue!8!white] (2.1,0) rectangle (3.9,1.8);
+        \draw[thick] (2.1,0) rectangle (3.9,1.8);
+        \draw[black!30] (3.0,0) -- (3.0,1.8);
+        \draw[black!30] (2.1,0.9) -- (3.9,0.9);
+        \node[font=\scriptsize] at (2.55,1.35) {$M_{00}$};
+        \node[font=\scriptsize] at (3.45,1.35) {$M_{01}$};
+        \node[font=\scriptsize] at (2.55,0.45) {$M_{10}$};
+        \node[font=\scriptsize] at (3.45,0.45) {$M_{11}$};
+        \node[font=\scriptsize] at (3.0,-0.35) {$M_{jk}$};
+
+        % --- equals ---
+        \node[font=\large] at (4.35,0.9) {$=$};
+
+        % --- rank-three tensor T (2x2x2): back slice (i=1) then front slice (i=0) ---
+        \fill[blue!8!white] (5.2,0.4) rectangle (7.0,2.2);
+        \draw[thick] (5.2,0.4) rectangle (7.0,2.2);
+        \fill[blue!8!white] (4.8,0) rectangle (6.6,1.8);
+        \draw[thick] (4.8,0) rectangle (6.6,1.8);
+        \draw[black!30] (5.7,0) -- (5.7,1.8);
+        \draw[black!30] (4.8,0.9) -- (6.6,0.9);
+		\node[font=\scriptsize] at (5.25,1.35) {$v_0M_{00}$};
+		\node[font=\scriptsize] at (6.15,1.35) {$v_0M_{01}$};
+	\node[font=\scriptsize] at (5.25,0.45) {$v_0M_{10}$};
+	\node[font=\scriptsize] at (6.15,0.45) {$v_0M_{11}$};
+        \node[font=\scriptsize, anchor=south east] at (4.8,1.8) {$i\!=\!0$};
+        \node[font=\scriptsize, anchor=south east] at (5.2,2.2) {$i\!=\!1$};
+        \node[font=\scriptsize] at (5.7,-0.35) {$T_{ijk}$};
+
+        \node[font=\small\itshape] at (3.5,-0.95) {(a) Outer product};
+    \end{scope}
+
+    % ==========================================================
+    % Panel (b): Flatten  T_{ijk}  ->  S_{\alpha k},  \alpha = 2i + j
+    % ==========================================================
+    \begin{scope}[shift={(0,-4.9)}]
+
+        % --- rank-three tensor T (input, 2x2x2) ---
+        \fill[blue!8!white] (0.4,0.4) rectangle (2.2,2.2);
+        \draw[thick] (0.4,0.4) rectangle (2.2,2.2);
+        \fill[blue!8!white] (0,0) rectangle (1.8,1.8);
+        \draw[thick] (0,0) rectangle (1.8,1.8);
+        \draw[black!30] (0.9,0) -- (0.9,1.8);
+        \draw[black!30] (0,0.9) -- (1.8,0.9);
+        \node[font=\scriptsize] at (0.45,1.35) {$T_{000}$};
+        \node[font=\scriptsize] at (1.35,1.35) {$T_{001}$};
+        \node[font=\scriptsize] at (0.45,0.45) {$T_{010}$};
+        \node[font=\scriptsize] at (1.35,0.45) {$T_{011}$};
+        \node[font=\scriptsize, anchor=south east] at (0,1.8) {$i\!=\!0$};
+        \node[font=\scriptsize, anchor=south east] at (0.4,2.2) {$i\!=\!1$};
+        \node[font=\scriptsize] at (0.9,-0.35) {$T_{ijk}$};
+
+        % --- flatten arrow ---
+        \draw[->, very thick] (2.6,0.9) -- (4.5,0.9);
+        \node[font=\footnotesize] at (3.55,1.25) {flatten};
+        \node[font=\scriptsize] at (3.55,0.55) {$\alpha = 2i + j$};
+
+        % --- flattened matrix S (4 rows x 2 cols) ---
+        \fill[blue!8!white] (4.8,-0.9) rectangle (6.6,2.7);
+        \draw[thick] (4.8,-0.9) rectangle (6.6,2.7);
+        \draw[black!30] (5.7,-0.9) -- (5.7,2.7);
+        \draw[black!30] (4.8,1.8) -- (6.6,1.8);
+        \draw[black!30] (4.8,0.9) -- (6.6,0.9);
+        \draw[black!30] (4.8,0.0) -- (6.6,0.0);
+        \node[font=\scriptsize] at (5.25, 2.25) {$S_{00}$};
+        \node[font=\scriptsize] at (6.15, 2.25) {$S_{01}$};
+        \node[font=\scriptsize] at (5.25, 1.35) {$S_{10}$};
+        \node[font=\scriptsize] at (6.15, 1.35) {$S_{11}$};
+        \node[font=\scriptsize] at (5.25, 0.45) {$S_{20}$};
+        \node[font=\scriptsize] at (6.15, 0.45) {$S_{21}$};
+        \node[font=\scriptsize] at (5.25,-0.45) {$S_{30}$};
+        \node[font=\scriptsize] at (6.15,-0.45) {$S_{31}$};
+        \node[font=\scriptsize] at (5.7,-1.25) {$S_{\alpha k}$};
+
+        \node[font=\small\itshape] at (3.3,-1.8) {(b) Flatten};
+    \end{scope}
+
+\end{tikzpicture}
