@@ -1,6 +1,6 @@
 \chapter{Tensors} \label{ch:tensors}
 
-\section{Tensors, Contraction, and Tensor Network}
+\section{Tensors and Basic Operations}
 
 We present the following straightforward definition of tensors, which is a rephrasal of Penrose's original definition \cite{penrose1971applications}.
 
@@ -108,13 +108,36 @@ Usually, outer product and flattenning are used together to convert tensor produ
 	\end{pmatrix}
 \end{equation}
 
-Contraction, however, is a more subtle operation and the key of this thesis, which is preserved for the next section.
+Contraction, however, is a more subtle operation and the key of this thesis, which is preserved for later.
 
-\begin{remark}
+
+\subsection{A Note on Abstract Tensor Product}
+
+In multilinear algebra, the definition of tensor product is thus. 
+
+\begin{definition}[Tensor Product of Vector Spaces]
+	Let $V, W$ be vector spaces over a field $\F$. Their tensor product, denoted as $V \otimes W$, is the unique vector space over $\F$ that satisfies the following universal property as demonstrated in figure \ref{fig:tensor-product-universal}:
+	there exists a bilinear map $\eta: V\times W \rightarrow V \otimes W $, and for all bilinear map $f : V \times W \rightarrow U$ to any vector space $U$, there exists a unique linear map $\hat{f} : V \otimes W \rightarrow U$ such that $f = \hat{f} \circ \eta$. 
+\end{definition}
+
+\begin{figure}[ht]
+	\centering \input{./figures/tensor-product-universal.tikz}
+	\caption{Commutative triangle for tensor product.}\label{fig:tensor-product-universal}
+\end{figure}
+
+Equivalently, the tensor product of two finite-dimensional vector spaces $V$ and $W$, with basis $v_1, \cdots, v_n$ and $w_1, \cdots, w_m$ is the $n\cdot m$ dimensional vector space $V \otimes W$ with basis $v_i \otimes w_j$ that satifies the following bilinearity conditions:
+\begin{equation*}
+	\begin{aligned}
+		(v_i + v_j) \otimes w_k &= v_i \otimes w_k + v_j \otimes w_k, \\
+		v_i \otimes (w_j + w_k) &= v_i \otimes w_j + v_i \otimes w_k, \\
+		c (v_i \otimes w_j) &= (c v_i) \otimes w_j = v_i \otimes (c w_j), \quad c \in \F.
+	\end{aligned}
+\end{equation*}
+where $i, j, k$ are the appropriate indices of the basis vectors.
+
 It is worth noting that, in general, there is an intrinsic notion of input and output for in linear algebra. 
 For example, in vector space $V$ a vector is an element of $V$. Its dual is a function $V \rightarrow \C$, and a matrix is a function $V \rightarrow V$.
 In physics, the input and output of tensor are differentiated by the upper and lower indices. 
 For example, $\T^k_l$ denotes the class of tensor $ \underbrace{V \otimes V \otimes \cdots \otimes V}_{k} \otimes \underbrace{V^* \otimes V^* \otimes \cdots \otimes V^*}_{l} \cong \underbrace{V \otimes  \cdot \otimes V}_{k} \rightarrow \underbrace{V \otimes \cdots \otimes V}_{l}$,
 where $V$ is a vector space and $V^*$ is its dual.
 While differentiating input and ouputs seems an intuitive idea, it actually is unweldy in practice, especially considering that for finite-dimensional vector space any $\T^k_l \cong \T^{k'}_{l'}$ provided $k + l = k' + l'$.
-\end{remark}

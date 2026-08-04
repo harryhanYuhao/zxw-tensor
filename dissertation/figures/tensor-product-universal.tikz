@@ -1,0 +1,15 @@
+% The universal property of the tensor product of vector spaces
+% (see tensors.tex, Definition "Tensor Product of Vector Spaces"):
+% for every bilinear map f : V x W -> U there is a unique linear map
+% \hat{f} : V \otimes W -> U such that the diagram commutes.
+\begin{tikzpicture}[>=Stealth]
+  % Nodes
+	\node (A) {$V \otimes W$};
+	\node[left=of A] (D) {$V \times W$};
+	\node[below=of A] (C) {$U$};
+
+  % Arrows (legs of the right triangle)
+	\draw[->] (D) -- node[above] {$\eta$} (A);
+	\draw[->] (D) -- node[below left] {$f$} (C);
+	\draw[dashed, ->] (A) -- node[left] {$\exists ! \hat{f}$} (C);
+\end{tikzpicture}
