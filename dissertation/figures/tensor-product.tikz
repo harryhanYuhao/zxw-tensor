@@ -1,0 +1,44 @@
+% The tensor product in diagrammatic (tensor-network) notation:
+% a boxed $v \otimes w$ with two open wires (indices $i$, $j$) on the
+% left equals $v$ and $w$ drawn side by side, each with its own wire.
+% Self-contained: the colours are defined inside the picture, so this
+% file can be \input anywhere.
+\begin{tikzpicture}[>=Stealth, line join=round, line cap=round,
+    tn/.style={circle, draw=tnoutline, line width=1.2mm, inner sep=0pt,
+               minimum size=1.0cm, font=\Large},
+    wire/.style={line width=1.2mm, black},
+    idx/.style={font=\normalsize}]
+    \definecolor{tnorange}{RGB}{255,192,0}       % orange      -- v
+    \definecolor{tnlightgreen}{RGB}{146,208,80}  % light green -- w
+    \definecolor{tnblue}{RGB}{68,114,196}        % blue        -- the box
+    \definecolor{tnoutline}{RGB}{23,44,81}       % navy outline
+
+    % ---- left: boxed $v \otimes w$ ----
+    % wires first, so they emerge from behind the box
+    \draw[wire] (1.0,0.15) -- (1.0,2.2);
+    \draw[wire] (2.7,0.15) -- (2.7,2.2);
+    % the blue box
+    \draw[rounded corners=0.2cm, fill=tnblue, draw=tnoutline,
+          line width=1.2mm] (0,-0.5) rectangle (3.7,0.5);
+    \node[font=\Large, text=white] at (0.75,0) {$v$};
+    \node[font=\Large, text=white] at (2.95,0) {$w$};
+    % the tensor-product symbol: small white circle with crossing lines
+    \draw[fill=white, draw=tnoutline, line width=0.6mm] (1.85,0) circle (0.26);
+    \draw[line width=0.6mm] (1.67,-0.18) -- (2.03,0.18);
+    \draw[line width=0.6mm] (1.67,0.18) -- (2.03,-0.18);
+
+    % ---- equals ----
+    \node[font=\huge] at (4.1,0) {$=$};
+
+    % ---- right: $v$ and $w$ as separate nodes ----
+    \draw[wire] (5.6,0) -- (5.6,2.2);
+    \draw[wire] (7.9,0) -- (7.9,2.2);
+    \node[tn, fill=tnorange] at (5.6,0) {$v$};
+    \node[tn, fill=tnlightgreen] at (7.9,0) {$w$};
+
+    % ---- index labels, well clear of the box and the wire ends ----
+    \node[idx] at (1.17,1.85) {$i$};
+    \node[idx] at (2.87,1.85) {$j$};
+    \node[idx] at (5.77,1.85) {$i$};
+    \node[idx] at (8.07,1.85) {$j$};
+\end{tikzpicture}

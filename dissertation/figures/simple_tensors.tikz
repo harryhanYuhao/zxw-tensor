@@ -1,0 +1,82 @@
+\begingroup
+
+\usetikzlibrary{positioning}
+
+\definecolor{deepnavy}{HTML}{172C57}
+\definecolor{goldfill}{HTML}{FFC20E}
+\definecolor{greenfill}{HTML}{00B857}
+\definecolor{bluefill}{HTML}{4A74C2}
+
+
+\tikzset{
+  leg/.style={
+    draw=black,
+    line width=3.2pt,
+    line cap=butt
+  },
+  tensor/.style={
+    circle,
+    minimum size=2.05cm,
+    inner sep=0pt,
+    line width=3.2pt,
+    font=\fontsize{39}{39}\selectfont
+  },
+  index/.style={
+    font=\fontsize{19}{19}\selectfont
+  }
+}
+% Styles
+% Your complete existing TikZ picture
+
+\begin{tikzpicture}[
+  x=1cm,
+  y=1cm,
+  scale=0.4,
+  transform shape
+]
+
+  % V tensor
+  \draw[leg] (0.87,0) -- (2.35,0);
+  \node[index] at (1.61,0.92) {$i$};
+
+  % M tensor
+  \draw[leg] (3.28,0) -- (4.63,0);
+  \draw[leg] (6.37,0) -- (7.72,0);
+
+  \node[index] at (3.95,0.92) {$i$};
+  \node[index] at (7.05,0.92) {$j$};
+
+  % T tensor
+  \draw[leg] (8.78,0) -- (10.13,0);
+  \draw[leg] (11.87,0) -- (13.22,0);
+  \draw[leg] (11.00,-0.87) -- (11.00,-2.20);
+
+  \node[index] at (9.45,0.92) {$i$};
+  \node[index] at (12.55,0.92) {$j$};
+  \node[index] at (11.40,-1.55) {$k$};
+
+  % Tensor nodes
+  \node[
+    tensor,
+    draw=deepnavy,
+    fill=goldfill,
+    text=black
+  ] at (0,0) {V};
+
+  \node[
+    tensor,
+    draw=deepnavy,
+    fill=greenfill,
+    text=white
+  ] at (5.50,0) {M};
+
+  \node[
+    tensor,
+    draw=black,
+    fill=bluefill,
+    text=white
+  ] at (11.00,0) {T};
+
+\end{tikzpicture}
+
+\endgroup

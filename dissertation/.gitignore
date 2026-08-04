@@ -20,3 +20,5 @@
 *.dvi
 *.bbl
 *.lof
+*.loe
+*scratch*

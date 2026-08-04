@@ -1,0 +1,40 @@
+% Tensor-network notation for a vector $v_i$, a matrix $M_{ij}$ and a
+% rank-three tensor $T_{ijk}$: each tensor is a coloured node (circle)
+% whose open wires carry the index labels.
+% Faithful reproduction of the reference figure (MS Office palette,
+% navy outline, thick black wires). Self-contained: the colours are
+% defined inside the picture, so this file can be \input anywhere.
+\begin{tikzpicture}[>=Stealth, line join=round, line cap=round,
+    tn/.style={circle, draw=tnoutline, line width=0.8mm, inner sep=0pt,
+               minimum size=0.8cm, font=\large},
+    wire/.style={line width=0.8mm, black},
+    idx/.style={font=\normalsize}]
+    \definecolor{tnorange}{RGB}{255,192,0}       % orange -- vector v
+    \definecolor{tngreen}{RGB}{0,176,80}         % green  -- matrix M
+    \definecolor{tnblue}{RGB}{68,114,196}        % blue   -- rank-three tensor T
+    \definecolor{tnoutline}{RGB}{23,44,81}       % navy outline
+
+    % --- wires are drawn first so they emerge from behind the nodes ---
+    % v_i : one wire
+    \draw[wire] (0,0) -- (1.3,0);
+    % M_ij : one wire on each side
+    \draw[wire] (5.5,0) -- (4.2,0);
+    \draw[wire] (5.5,0) -- (6.8,0);
+    % T_ijk : two side wires and one wire downwards
+    \draw[wire] (11,0) -- (9.7,0);
+    \draw[wire] (11,0) -- (12.3,0);
+    \draw[wire] (11,0) -- (11,-1.4);
+
+    % --- nodes ---
+    \node[tn, fill=tnorange, text=black] at (0,0) {$v$};
+    \node[tn, fill=tngreen,  text=white] at (5.5,0) {$M$};
+    \node[tn, fill=tnblue,   text=white] at (11,0) {$T$};
+
+    % --- index labels at the free ends of the wires ---
+    \node[idx] at (1.3,0.45) {$i$};
+    \node[idx] at (4.2,0.45) {$i$};
+    \node[idx] at (6.8,0.45) {$j$};
+    \node[idx] at (9.7,0.45) {$i$};
+    \node[idx] at (12.3,0.45) {$j$};
+    \node[idx] at (11,-1.75) {$k$};
+\end{tikzpicture}

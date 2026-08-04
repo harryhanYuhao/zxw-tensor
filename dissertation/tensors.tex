@@ -4,7 +4,7 @@
 
 We present the following straightforward definition of tensors, which is a rephrasal of Penrose's original definition \cite{penrose1971applications}.
 
-\begin{definition}
+\begin{definition}\label{def:tensor}
 Given $n\in \N$, let $[n]$ denote the set $\{0, 1, \cdots, n-1\}$. 
 A tensor of rank $k \in \N$ is a function $T : [n_0] \times [n_1] \times \cdots [n_{k-1}] \rightarrow \C$.
 \end{definition}
@@ -108,8 +108,9 @@ Usually, outer product and flattenning are used together to convert tensor produ
 	\end{pmatrix}
 \end{equation}
 
-Contraction, however, is a more subtle operation and the key of this thesis, which is preserved for later.
-
+Contraction is the more complicated operation. 
+For the matrices, $M_{ij}$ and $N(jk)$, their contraction over the index $j$ is a matrix $P_{ik}$ defined by $P_{ik} = \sum_{j=0}^{n-1} M_{ij} N_{jk}$, which is exactly the matrix multiplication.
+Other contraction operations are generalisation of matrix multiplication, which we will discuss in the next section.
 
 \subsection{A Note on Abstract Tensor Product}
 
@@ -135,9 +136,101 @@ Equivalently, the tensor product of two finite-dimensional vector spaces $V$ and
 \end{equation*}
 where $i, j, k$ are the appropriate indices of the basis vectors.
 
-It is worth noting that, in general, there is an intrinsic notion of input and output for in linear algebra. 
+I hope the original definitions of tensor product justifies our nomenclature of tensor in definition \ref{def:tensor}.
+It is clear that 
+\begin{enumerate}
+	\item A rank-one tensor, $T_i$, is a vector in some vector space $V$,
+		where the dimension of the index $i$ is the dimension of $V$.
+	\item In general, a rank-$k$ tensor $T_{i_1 i_2 \cdots}$ have additions and scalar multiplications, so the set of all rank-$k$ tensor with fixed dimension for each of its index, denoted by $\T_{i_1, i_2 \cdots}$, is a vector space.
+	This vector space has a set of basis $\{e_{j_1, j_2, \cdots, j_k}, \cdots\}$ , where $e_{j_1, j_2, \cdots,}(i_1, i_2, \cdots) = 1$ if and only if $i_1 = j_1, i_2 = j_2, \cdots$, and $0$ otherwise.
+	It is clear that this basis is in one-to-one correspondence with the tensor product of vector spaces $V_0, V_1, \cdots, V_k$, where dimension of $V_i$ is the dimension of the index $i$.
+	\item Flatten is the canonical isomorphism between the vector space $V_1 \otimes V_2 \otimes \cdots \otimes V_k \rightarrow (V_1 \otimes V_2) \otimes \cdots \otimes V_k$. (And unflatten its inverser.)
+	\item Outer product $(\T_1, \T_2) \rightarrow \T_1 \otimes \T_2$ is a bilinear form, therefore this map is the canonical bilinear map guaranteed by the universal property of tensor product.
+\end{enumerate}
+
+In linear algebra, there is an intrinsic notion of input and output in linear algebra. 
 For example, in vector space $V$ a vector is an element of $V$. Its dual is a function $V \rightarrow \C$, and a matrix is a function $V \rightarrow V$.
 In physics, the input and output of tensor are differentiated by the upper and lower indices. 
-For example, $\T^k_l$ denotes the class of tensor $ \underbrace{V \otimes V \otimes \cdots \otimes V}_{k} \otimes \underbrace{V^* \otimes V^* \otimes \cdots \otimes V^*}_{l} \cong \underbrace{V \otimes  \cdot \otimes V}_{k} \rightarrow \underbrace{V \otimes \cdots \otimes V}_{l}$,
+For example, $\T^k_l$ denotes the class of tensor $ \underbrace{V \otimes V \otimes \cdots \otimes V}_{k} \otimes \underbrace{V^* \otimes V^* \otimes \cdots \otimes V^*}_{l} \cong \underbrace{V \otimes  \cdot \otimes V}_{l} \rightarrow \underbrace{V \otimes \cdots \otimes V}_{k}$,
 where $V$ is a vector space and $V^*$ is its dual.
-While differentiating input and ouputs seems an intuitive idea, it actually is unweldy in practice, especially considering that for finite-dimensional vector space any $\T^k_l \cong \T^{k'}_{l'}$ provided $k + l = k' + l'$.
+While differentiating input and ouputs seems an intuitive idea, it actually is unweldy in practice.
+As our investigation of tensor product in this thesis is of an algorithmic nature, we will not differentiate input from output.
+
+\section{Tensor Networks}
+
+Suppose we have two tensors $T_{ijk}$ and $S_{kl}$, where index $i $ and $j$ have dimension $n_1$ and $n_2$ while both of index $k$ and $l$ have dimension $n_1$.
+Suppose we would like to perform the following operation: `contracting the first index of $T$ with the second index of $S$, and contracting the last index of the resulting tensor with the first index another copy of $T$.' 
+The precise statement of specifying operations of tensor is too verbose and painful to articulate.
+
+Tensor network, a graphical representation of tensors and their operations, is used to make these statement concise and clear.
+
+Here are the rules to make a tensor network diagram:
+
+\textbf{Rule 1}. In tensor networkA rank-$k$ tensor is represented as a node with $k$ edges.
+Usually, shape, color, and labels of the nodes are use to differentiate different tensors.
+For example vector $v$, matrix $M$, and rank-three tensor $T$ are represented as in figure \ref{fig:simple_tensors}.
+
+\begin{figure}[ht]
+	\centering
+	\input{./figures/tensor-net-nodes.tikz}
+	\caption{Rank 1, 2, and 3 tensors}
+	\label{fig:simple_tensors}
+\end{figure}
+
+\textbf{Rule 2}. A diagram with two tensors placed side by side is interpreted as the outer product of the two tensors.
+
+\textbf{Rule 3}. An edge connecting two nodes represents the contraction of the two tensors over the index represented by that edge.
+\begin{figure}[ht]
+	\centering
+	\input{./figures/tensor-product.tikz}
+	\caption{Rank 1, 2, and 3 tensors}
+	\label{fig:tensor-product}
+\end{figure}
+
+Using diagrams these rules are crystal clear but we still need to demonstrate they self consistent.
+For example, we have implicitly assumed that the order of contraction does not matter, which is indeed true, if we observe that the parentheses and the order of the nested summation of the contraction can be freely rearranged, as shown in the following equation:
+
+\begin{align*}
+	\sum_{j=0}^{m-1} \sum_{i=0}^{n-1} \sum_{k=0}^{p-1} T_{ijk} S_{kl} R_{jm}
+	&=
+	\left(\sum_{i=0}^{n-1} \left(\sum_{j=0}^{m-1} \left(\sum_{k=0}^{p-1} T_{ijk}\right) S_{kl}\right) R_{jm} \cdots \right) \\
+	&=
+	\sum_{k=0}^{p-1} \left(\sum_{j=0}^{m-1} \left(\sum_{i=0}^{n-1} T_{ijk} S_{kl}\right) R_{jm} \cdots \right) \\
+	&=
+	\sum_{j=0}^{m-1} \left(\sum_{k=0}^{p-1} \left(\sum_{i=0}^{n-1} T_{ijk} S_{kl}\right) R_{jm} \cdots \right) \\
+	&= \cdots
+\end{align*}
+
+
+\section{Complexity of Contraction}
+
+Let us investigate the algorithmic complexity of tensor conctraction, which is a a problem of paramount importance as it is used in so many applications, such as quantum circuit simulation, machine learning, and almost all kinds of mathematics modelling.
+
+For simplicity, we assume all index in this section have dimension $d$.
+
+Contraction of two rank-2 tensors, $M_{ij}$ and $N_{jk}$, gives another rank-2 tensor $P_{ik}$.
+Each entry of $P$ is computed using the formula
+$$
+	P_{ik} = \sum_{j=0}^{d-1} M_{ij} N_{jk}	
+$$
+Computing a single entry thus takes $d$ multiplications and $d-1$ additions.
+There are a total of $d^2$ entries to compute, so the total number of operations is $d^2(d + d - 1) = O(d^3)$.
+
+Similarly, contraction of on bond between a rank $m$ and a rank $n$ tensor will result in a rank $m + n - 2$ tensor. 
+Each entry of ther resulting tensor is computed by summing over $d$ products of entries from the two tensors, so the total number of operations is $O(d^{m+n-1})$.
+
+We may also choose to contract multiple bonds simultaneously. 
+In general, contracting $k$ bonds between a rank $m$ and a rank $n$ tensor will result in a rank $m + n - 2k$ tensor.
+Each entry of the resulting tensor is computed by summing over $d^k$ products of entries from the two tensors, so the total number of operations is $O(d^{m+n-k})$.
+
+It is thus clear that contracting $k$ bonds simultaneously over a tensor network with $n$ external bonds will take $O(d^{n+k})$ operations.
+This is an important observation that worth to be written down.
+
+\begin{lemma}[Complexities of Tensor Contraction by Counting Edges]\label{lem:contraction-complexity}
+	Let $T$ be a tensor network with $n$ external bonds and $k$ internal bonds. 
+	Contracting all the internal bonds of $T$ will take $O(d^{n+k})$ operations.
+\end{lemma}
+
+It may surprise the reader that different order of contraction will lead to different complexities. 
+For example, contracting the following tensor fully, which will gives a scalar, can be done in two different orders. 
+
