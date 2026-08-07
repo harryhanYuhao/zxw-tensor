@@ -1,16 +1,16 @@
 % Contracting the same 2-column ladder from the top down (the "fast"
 % order): five steps, presented left to right with arrows in between.
-% In each panel the red block is the tensor accumulated so far; the
-% nodes still to be contracted are the ones drawn next to it: first the
-% two top nodes, then the left middle node, the right middle node, the
-% left bottom node and finally the right bottom node (the whole). Once
-% a node's position is covered by the red block it is no longer drawn.
-% All bonds between the remaining tensors are kept; their ends are
-% tucked inside the red blocks or the nodes so no tip sticks out.
-% The rectangle marks the two top tensors contracted in the first step;
-% in the later steps the next tensor is clear from the context. The
-% cost of each step is written at the top of the panel (d^3 is a
-% placeholder).
+% In each panel the boxed tensors are the ones contracted in that step:
+% first the two top nodes, then the left middle node, the right middle
+% node, the left bottom node and finally the right bottom node (the
+% whole). The boxed region of the previous step becomes the red block,
+% so the red block grows by one tensor per step; the box is drawn as a
+% rectangle or an L-shaped polygon so it encircles exactly the tensors
+% contracted in that step. The final step is still drawn with the
+% right bottom node boxed (no fully contracted picture). All bonds
+% between the remaining tensors are kept; their ends are tucked inside
+% the red blocks or the nodes so no tip sticks out. The cost of each
+% step is written at the top of the panel.
 % Self-contained: the colours are defined inside the picture.
 \begin{tikzpicture}[>=Stealth, line join=round, line cap=round,
     tn/.style={circle, draw=tnoutline, line width=0.8mm, inner sep=0pt,
@@ -50,8 +50,12 @@
     \draw[wire] (3.3,3.1) -- (4.7,3.1);
     \draw[wire] (3.3,2.0) -- (4.7,2.0);
     \draw[wire] (3.3,0.9) -- (4.7,0.9);
-    \fill[tnred, rounded corners=0.08cm] (2.96,3.44) -- (5.04,3.44)
-        -- (5.04,2.76) -- (3.64,2.76) -- (3.64,1.66) -- (2.96,1.66) -- cycle;
+    % red: the two top tensors contracted in step 1; box: an L-shaped
+    % polygon encircling the top two tensors + the left middle one
+    \fill[tnred, rounded corners=0.08cm] (2.96,2.76) rectangle (5.04,3.44);
+    \draw[box] (2.83,3.58) -- (5.17,3.58) -- (5.17,2.63) -- (3.77,2.63)
+        -- (3.77,1.53) -- (2.83,1.53) -- cycle;
+    \node[tn, fill=tngreen]  at (3.3,2.0) {};
     \node[tn, fill=tngreen]  at (4.7,2.0) {};
     \node[tn, fill=tnblue]   at (3.3,0.9) {};
     \node[tn, fill=tnblue]   at (4.7,0.9) {};
@@ -65,7 +69,12 @@
     \draw[wire] (6.6,3.1) -- (8.0,3.1);
     \draw[wire] (6.6,2.0) -- (8.0,2.0);
     \draw[wire] (6.6,0.9) -- (8.0,0.9);
-    \fill[tnred, rounded corners=0.08cm] (6.26,1.66) rectangle (8.34,3.44);
+    % red: the top strip + left middle (step 2's box); box: the top
+    % two rows (adds the right middle tensor)
+    \fill[tnred, rounded corners=0.08cm] (6.26,3.44) -- (8.34,3.44)
+        -- (8.34,2.76) -- (6.94,2.76) -- (6.94,1.66) -- (6.26,1.66) -- cycle;
+    \draw[box] (6.13,1.53) rectangle (8.47,3.58);
+    \node[tn, fill=tngreen]  at (8.0,2.0) {};
     \node[tn, fill=tnblue]   at (6.6,0.9) {};
     \node[tn, fill=tnblue]   at (8.0,0.9) {};
     \node[font=\footnotesize] at (7.3,3.9) {cost = $d^4$};
@@ -79,8 +88,12 @@
     \draw[wire] (9.9,3.1) -- (11.3,3.1);
     \draw[wire] (9.9,2.0) -- (11.3,2.0);
     \draw[wire] (9.9,0.9) -- (11.3,0.9);
-    \fill[tnred, rounded corners=0.08cm] (9.56,3.44) -- (11.64,3.44)
-        -- (11.64,1.66) -- (10.24,1.66) -- (10.24,0.56) -- (9.56,0.56) -- cycle;
+    % red: the top two rows (step 3's box); box: an L-shaped polygon
+    % encircling everything except the right bottom tensor
+    \fill[tnred, rounded corners=0.08cm] (9.56,1.66) rectangle (11.64,3.44);
+    \draw[box] (9.43,3.58) -- (11.77,3.58) -- (11.77,1.53) -- (10.37,1.53)
+        -- (10.37,0.43) -- (9.43,0.43) -- cycle;
+    \node[tn, fill=tnblue]   at (9.9,0.9) {};
     \node[tn, fill=tnblue]   at (11.3,0.9) {};
     \node[font=\footnotesize] at (10.6,3.9) {cost = $d^3$};
     \draw[-{Stealth}, wire] (12.05,2.0) -- (12.55,2.0);
@@ -92,6 +105,11 @@
     \draw[wire] (13.2,3.1) -- (14.6,3.1);
     \draw[wire] (13.2,2.0) -- (14.6,2.0);
     \draw[wire] (13.2,0.9) -- (14.6,0.9);
-    \fill[tnred, rounded corners=0.08cm] (12.86,0.56) rectangle (14.94,3.44);
+    % red: everything except the right bottom tensor (step 4's box);
+    % box: the whole (adds the right bottom tensor) -- the final step
+    \fill[tnred, rounded corners=0.08cm] (12.86,3.44) -- (14.94,3.44)
+        -- (14.94,1.66) -- (13.54,1.66) -- (13.54,0.56) -- (12.86,0.56) -- cycle;
+    \draw[box] (12.73,0.43) rectangle (15.07,3.58);
+    \node[tn, fill=tnblue]   at (14.6,0.9) {};
     \node[font=\footnotesize] at (13.9,3.9) {cost = $d^2$};
 \end{tikzpicture}

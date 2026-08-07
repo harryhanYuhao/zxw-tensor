@@ -183,7 +183,7 @@ For example vector $v$, matrix $M$, and rank-three tensor $T$ are represented as
 \begin{figure}[ht]
 	\centering
 	\input{./figures/tensor-product.tikz}
-	\caption{Rank 1, 2, and 3 tensors}
+	\caption{Outer Product in Tensor Network}
 	\label{fig:tensor-product}
 \end{figure}
 
@@ -234,23 +234,24 @@ This is an important observation that worth to be written down.
 \end{lemma}
 
 It may surprise the reader that different orders of contraction may have different computation costs.
-For example, contracting the following tensor fully, which will gives a scalar, can be done in two different orders. 
-
-
+For example, contracting the following tensor fully, which will gives a scalar, can be done in two different orders as shown in figure \ref{fig:contract-order-slow} and \ref{fig:contract-order-fast}.
 The first contraction order takes $O(d^5)$, while the second contraction order takes $O(d^4)$.
 
 \begin{figure}[ht]
 	\centering
 	\input{./figures/contract-order-slow.tikz}
-	\caption{Rank 1, 2, and 3 tensors}
+	\caption{Slow contraction order}
+	\label{fig:contract-order-slow}
 \end{figure}
 \begin{figure}[ht]
 	\centering
 	\input{./figures/contract-order-fast.tikz}
-	\caption{Rank 1, 2, and 3 tensors}
+	\caption{Fast contraction order}
+	\label{fig:contract-order-fast}
 \end{figure}
 
-\begin{remark}
+\subsection{Source of Difference in Complexity}
+
 As equation \eqref{eq:contraction-order} shows, differet orders of tensor contraction corresponds to different order of the nested summation, which is a result of three basic rules of arithmetic: commutativity, associativity, and distributivity.
 It may puzzle the readers that why simple arithmetic identities can lead to such a difference in computation costs.
 Let me break it down in this section.
@@ -272,7 +273,6 @@ $$
 $$
 
 The left-hand side take two matrix-vector multiplications, which is $O(n^2)$ operations, while the right-hand side takes one outer product, costing $O(n^2)$ and one matrix-scalar multiplication, consting $O(n^3)$ operations.
-\end{remark}
 
 In general, finding the optimal order of contraction for a tensor network is aan NP-Complete problem.
 

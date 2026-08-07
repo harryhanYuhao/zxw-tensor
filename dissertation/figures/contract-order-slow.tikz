@@ -39,7 +39,7 @@
     \draw[box] (0.179,0.95) rectangle (1.333,4.02);
 
     % --- nodes: two columns of three tensors ---
-    \node[tn, fill=tnorange] at (0.644,3.518) {};
+	\node[tn, fill=tnorange] at (0.644,3.518) {};
     \node[tn, fill=tngreen]  at (0.644,2.536) {};
     \node[tn, fill=tnblue]   at (0.644,1.553) {};
     \node[tn, fill=tnorange] at (2.443,3.518) {};
