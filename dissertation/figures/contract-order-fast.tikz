@@ -1,0 +1,97 @@
+% Contracting the same 2-column ladder from the top down (the "fast"
+% order): five steps, presented left to right with arrows in between.
+% In each panel the red block is the tensor accumulated so far; the
+% nodes still to be contracted are the ones drawn next to it: first the
+% two top nodes, then the left middle node, the right middle node, the
+% left bottom node and finally the right bottom node (the whole). Once
+% a node's position is covered by the red block it is no longer drawn.
+% All bonds between the remaining tensors are kept; their ends are
+% tucked inside the red blocks or the nodes so no tip sticks out.
+% The rectangle marks the two top tensors contracted in the first step;
+% in the later steps the next tensor is clear from the context. The
+% cost of each step is written at the top of the panel (d^3 is a
+% placeholder).
+% Self-contained: the colours are defined inside the picture.
+\begin{tikzpicture}[>=Stealth, line join=round, line cap=round,
+    tn/.style={circle, draw=tnoutline, line width=0.8mm, inner sep=0pt,
+               minimum size=0.68cm},
+    wire/.style={line width=0.8mm, black},
+    box/.style={draw=black, line width=0.2mm}]
+    \definecolor{tnorange}{RGB}{255,192,0}       % top tensors
+    \definecolor{tngreen}{RGB}{146,208,80}       % middle tensors
+    \definecolor{tnblue}{RGB}{0,176,240}         % bottom tensors
+    \definecolor{tnred}{RGB}{192,0,0}            % contracted tensors
+    \definecolor{tnoutline}{RGB}{23,44,81}       % navy outline
+
+    % node centres: left column x=0, right column x=1.4 per panel;
+    % rows: top 3.1, middle 2.0, bottom 0.9
+
+    % ============ step 1: contract the two top nodes ============
+    \draw[wire] (0,3.42) -- (0,0.58);
+    \draw[wire] (1.4,3.42) -- (1.4,0.58);
+    \draw[wire] (0,3.1) -- (1.4,3.1);
+    \draw[wire] (0,2.0) -- (1.4,2.0);
+    \draw[wire] (0,0.9) -- (1.4,0.9);
+    \draw[box] (-0.47,2.62) rectangle (1.87,3.58);
+    \node[tn, fill=tnorange] at (0,3.1) {};
+    \node[tn, fill=tnorange] at (1.4,3.1) {};
+    \node[tn, fill=tngreen]  at (0,2.0) {};
+    \node[tn, fill=tngreen]  at (1.4,2.0) {};
+    \node[tn, fill=tnblue]   at (0,0.9) {};
+    \node[tn, fill=tnblue]   at (1.4,0.9) {};
+    \node[font=\footnotesize] at (0.7,3.9) {cost = $d^3$};
+    \draw[-{Stealth}, wire] (2.15,2.0) -- (2.65,2.0);
+
+    % ============ step 2: merge the left middle node ============
+    % vertical chain bonds through each column (ends tucked inside the
+    % red block / bottom nodes), plus the horizontal bonds
+    \draw[wire] (3.3,3.36) -- (3.3,0.62);
+    \draw[wire] (4.7,3.36) -- (4.7,0.62);
+    \draw[wire] (3.3,3.1) -- (4.7,3.1);
+    \draw[wire] (3.3,2.0) -- (4.7,2.0);
+    \draw[wire] (3.3,0.9) -- (4.7,0.9);
+    \fill[tnred, rounded corners=0.08cm] (2.96,3.44) -- (5.04,3.44)
+        -- (5.04,2.76) -- (3.64,2.76) -- (3.64,1.66) -- (2.96,1.66) -- cycle;
+    \node[tn, fill=tngreen]  at (4.7,2.0) {};
+    \node[tn, fill=tnblue]   at (3.3,0.9) {};
+    \node[tn, fill=tnblue]   at (4.7,0.9) {};
+    \node[font=\footnotesize] at (4.0,3.9) {cost = $d^4$};
+    \draw[-{Stealth}, wire] (5.45,2.0) -- (5.95,2.0);
+
+    % ============ step 3: merge the right middle node ============
+    % vertical chain bonds (ends inside the red block), plus A3--B3
+    \draw[wire] (6.6,3.36) -- (6.6,0.62);
+    \draw[wire] (8.0,3.36) -- (8.0,0.62);
+    \draw[wire] (6.6,3.1) -- (8.0,3.1);
+    \draw[wire] (6.6,2.0) -- (8.0,2.0);
+    \draw[wire] (6.6,0.9) -- (8.0,0.9);
+    \fill[tnred, rounded corners=0.08cm] (6.26,1.66) rectangle (8.34,3.44);
+    \node[tn, fill=tnblue]   at (6.6,0.9) {};
+    \node[tn, fill=tnblue]   at (8.0,0.9) {};
+    \node[font=\footnotesize] at (7.3,3.9) {cost = $d^4$};
+    \draw[-{Stealth}, wire] (8.75,2.0) -- (9.25,2.0);
+
+    % ============ step 4: merge the left bottom node ============
+    % vertical chain bonds (ends inside the red block / B3), plus the
+    % horizontal bond from the red block to B3
+    \draw[wire] (9.9,3.36) -- (9.9,0.62);
+    \draw[wire] (11.3,3.36) -- (11.3,0.62);
+    \draw[wire] (9.9,3.1) -- (11.3,3.1);
+    \draw[wire] (9.9,2.0) -- (11.3,2.0);
+    \draw[wire] (9.9,0.9) -- (11.3,0.9);
+    \fill[tnred, rounded corners=0.08cm] (9.56,3.44) -- (11.64,3.44)
+        -- (11.64,1.66) -- (10.24,1.66) -- (10.24,0.56) -- (9.56,0.56) -- cycle;
+    \node[tn, fill=tnblue]   at (11.3,0.9) {};
+    \node[font=\footnotesize] at (10.6,3.9) {cost = $d^3$};
+    \draw[-{Stealth}, wire] (12.05,2.0) -- (12.55,2.0);
+
+    % ============ step 5: merge the right bottom node (the whole) ============
+    % everything is contracted: the bonds are all behind the red block
+    \draw[wire] (13.2,3.36) -- (13.2,0.62);
+    \draw[wire] (14.6,3.36) -- (14.6,0.62);
+    \draw[wire] (13.2,3.1) -- (14.6,3.1);
+    \draw[wire] (13.2,2.0) -- (14.6,2.0);
+    \draw[wire] (13.2,0.9) -- (14.6,0.9);
+    \fill[tnred, rounded corners=0.08cm] (12.86,0.56) rectangle (14.94,3.44);
+    \node[font=\footnotesize] at (13.9,3.9) {cost = $d^2$};
+\end{tikzpicture}

@@ -1,0 +1,99 @@
+% Contracting a tensor network "vertically first" is a bad idea: summing
+% the vertical (chain) bonds of the left column first builds an
+% intermediate that holds every horizontal leg at once, so the memory
+% footprint scales as RAM = D^4 while the CPU cost scales as D^5
+% (all bond dimensions taken equal to D).
+% Faithful reproduction of tensor-template/79_contract_order_slow.pdf,
+% reduced to a 2-column ladder (6 nodes); the bottom (grey) row, the
+% right-hand column, the red rectangle and the RAM/CPU cost labels of
+% the original are omitted. The arrows on the right show the next
+% contraction steps: first the boxed left column is contracted into a
+% single red tensor (cost = d^5), then the remaining column too, so
+% two red tensors joined by the three bonds are left; contracting
+% those together costs d^3.
+% Self-contained: the colours are defined inside the picture, so this
+% file can be \input anywhere.
+\begin{tikzpicture}[>=Stealth, line join=round, line cap=round,
+    tn/.style={circle, draw=tnoutline, line width=0.8mm, inner sep=0pt,
+               minimum size=0.68cm},
+    wire/.style={line width=0.8mm, black},
+    idx/.style={font=\large},
+    box/.style={draw=black, line width=0.2mm}]
+    \definecolor{tnorange}{RGB}{255,192,0}       % top tensors
+    \definecolor{tngreen}{RGB}{146,208,80}       % middle tensors
+    \definecolor{tnblue}{RGB}{0,176,240}         % third tensors
+    \definecolor{tnred}{RGB}{192,0,0}            % contracted column
+    \definecolor{tnoutline}{RGB}{23,44,81}       % navy outline
+
+    % --- wires are drawn first so they emerge from behind the nodes ---
+    % vertical chain bonds through each column (kept inside the nodes,
+    % so no wire tip sticks out beyond the top/bottom tensors)
+    \draw[wire] (0.644,3.82) -- (0.644,1.25);
+    \draw[wire] (2.443,3.82) -- (2.443,1.25);
+    % horizontal bonds between the two columns
+    \draw[wire] (0.644,3.518) -- (2.443,3.518);
+    \draw[wire] (0.644,2.536) -- (2.443,2.536);
+    \draw[wire] (0.644,1.553) -- (2.443,1.553);
+
+    % --- box around the left column (the one contracted vertically) ---
+    \draw[box] (0.179,0.95) rectangle (1.333,4.02);
+
+    % --- nodes: two columns of three tensors ---
+    \node[tn, fill=tnorange] at (0.644,3.518) {};
+    \node[tn, fill=tngreen]  at (0.644,2.536) {};
+    \node[tn, fill=tnblue]   at (0.644,1.553) {};
+    \node[tn, fill=tnorange] at (2.443,3.518) {};
+    \node[tn, fill=tngreen]  at (2.443,2.536) {};
+    \node[tn, fill=tnblue]   at (2.443,1.553) {};
+
+
+    % --- cost label above the left panel ---
+    \node[font=\small] at (0.756,4.5) {cost = $d^5$};
+
+    % ================= next step of the contraction =================
+    % arrow from the current state to the state after contracting the
+    % boxed (left) column
+    \draw[-{Stealth}, wire] (3.25,2.49) -- (4.10,2.49);
+
+    % --- wires of the remaining column (behind the nodes) ---
+    % bonds from the contracted column to the remaining tensors
+    \draw[wire] (5.04,3.518) -- (5.96,3.518);
+    \draw[wire] (5.04,2.536) -- (5.96,2.536);
+    \draw[wire] (5.04,1.553) -- (5.96,1.553);
+    % vertical chain bond of the remaining column
+    \draw[wire] (5.96,3.82) -- (5.96,1.25);
+
+    % --- the boxed left column, contracted into one big red tensor ---
+    \fill[tnred, rounded corners=0.13cm] (4.36,1.15) rectangle (5.04,3.95);
+
+    % --- box around the remaining (right) column ---
+    \draw[box] (5.495,0.95) rectangle (6.649,4.02);
+
+    % --- remaining column: the three tensors still to be contracted ---
+    \node[tn, fill=tnorange] at (5.96,3.518) {};
+    \node[tn, fill=tngreen]  at (5.96,2.536) {};
+    \node[tn, fill=tnblue]   at (5.96,1.553) {};
+
+    \node[font=\small] at (5.756,4.5) {cost = $d^5$};
+
+    % ================= contracting everything =================
+    % arrow to the state where both columns are contracted
+    \draw[-{Stealth}, wire] (7.05,2.49) -- (7.90,2.49);
+
+    % --- both columns contracted into red tensors, still linked by the
+    %     three bonds (contracting the two together costs d^3) ---
+    % bonds between the two red tensors (behind them)
+    \draw[wire] (8.855,3.518) -- (9.435,3.518);
+    \draw[wire] (8.855,2.536) -- (9.435,2.536);
+    \draw[wire] (8.855,1.553) -- (9.435,1.553);
+
+    % --- the two red tensors ---
+    \fill[tnred, rounded corners=0.13cm] (8.175,1.15) rectangle (8.855,3.95);
+    \fill[tnred, rounded corners=0.13cm] (9.435,1.15) rectangle (10.115,3.95);
+
+    % --- box around the two contracted columns ---
+    \draw[box] (8.05,0.95) rectangle (10.464,4.02);
+
+    % --- cost label above the final panel ---
+    \node[font=\small] at (9.26,4.5) {cost = $d^3$};
+\end{tikzpicture}

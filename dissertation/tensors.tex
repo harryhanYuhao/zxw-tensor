@@ -112,7 +112,7 @@ Contraction is the more complicated operation.
 For the matrices, $M_{ij}$ and $N(jk)$, their contraction over the index $j$ is a matrix $P_{ik}$ defined by $P_{ik} = \sum_{j=0}^{n-1} M_{ij} N_{jk}$, which is exactly the matrix multiplication.
 Other contraction operations are generalisation of matrix multiplication, which we will discuss in the next section.
 
-\subsection{A Note on Abstract Tensor Product}
+\subsection{Abstract Tensor Product}
 
 In multilinear algebra, the definition of tensor product is thus. 
 
@@ -144,7 +144,7 @@ It is clear that
 	\item In general, a rank-$k$ tensor $T_{i_1 i_2 \cdots}$ have additions and scalar multiplications, so the set of all rank-$k$ tensor with fixed dimension for each of its index, denoted by $\T_{i_1, i_2 \cdots}$, is a vector space.
 	This vector space has a set of basis $\{e_{j_1, j_2, \cdots, j_k}, \cdots\}$ , where $e_{j_1, j_2, \cdots,}(i_1, i_2, \cdots) = 1$ if and only if $i_1 = j_1, i_2 = j_2, \cdots$, and $0$ otherwise.
 	It is clear that this basis is in one-to-one correspondence with the tensor product of vector spaces $V_0, V_1, \cdots, V_k$, where dimension of $V_i$ is the dimension of the index $i$.
-	\item Flatten is the canonical isomorphism between the vector space $V_1 \otimes V_2 \otimes \cdots \otimes V_k \rightarrow (V_1 \otimes V_2) \otimes \cdots \otimes V_k$. (And unflatten its inverser.)
+	\item Flatten is the canonical isomorphism between the vector space $V_1 \otimes V_2 \otimes \cdots \otimes V_k \rightarrow (V_1 \otimes V_2) \otimes \cdots \otimes V_k$. (And unflatten its inverse.)
 	\item Outer product $(\T_1, \T_2) \rightarrow \T_1 \otimes \T_2$ is a bilinear form, therefore this map is the canonical bilinear map guaranteed by the universal property of tensor product.
 \end{enumerate}
 
@@ -190,7 +190,8 @@ For example vector $v$, matrix $M$, and rank-three tensor $T$ are represented as
 Using diagrams these rules are crystal clear but we still need to demonstrate they self consistent.
 For example, we have implicitly assumed that the order of contraction does not matter, which is indeed true, if we observe that the parentheses and the order of the nested summation of the contraction can be freely rearranged, as shown in the following equation:
 
-\begin{align*}
+\begin{equation}
+	\begin{split}
 	\sum_{j=0}^{m-1} \sum_{i=0}^{n-1} \sum_{k=0}^{p-1} T_{ijk} S_{kl} R_{jm}
 	&=
 	\left(\sum_{i=0}^{n-1} \left(\sum_{j=0}^{m-1} \left(\sum_{k=0}^{p-1} T_{ijk}\right) S_{kl}\right) R_{jm} \cdots \right) \\
@@ -199,7 +200,8 @@ For example, we have implicitly assumed that the order of contraction does not m
 	&=
 	\sum_{j=0}^{m-1} \left(\sum_{k=0}^{p-1} \left(\sum_{i=0}^{n-1} T_{ijk} S_{kl}\right) R_{jm} \cdots \right) \\
 	&= \cdots
-\end{align*}
+	\end{split}
+\end{equation}\label{eq:contraction-order}
 
 
 \section{Complexity of Contraction}
@@ -231,6 +233,48 @@ This is an important observation that worth to be written down.
 	Contracting all the internal bonds of $T$ will take $O(d^{n+k})$ operations.
 \end{lemma}
 
-It may surprise the reader that different order of contraction will lead to different complexities. 
+It may surprise the reader that different orders of contraction may have different computation costs.
 For example, contracting the following tensor fully, which will gives a scalar, can be done in two different orders. 
+
+
+The first contraction order takes $O(d^5)$, while the second contraction order takes $O(d^4)$.
+
+\begin{figure}[ht]
+	\centering
+	\input{./figures/contract-order-slow.tikz}
+	\caption{Rank 1, 2, and 3 tensors}
+\end{figure}
+\begin{figure}[ht]
+	\centering
+	\input{./figures/contract-order-fast.tikz}
+	\caption{Rank 1, 2, and 3 tensors}
+\end{figure}
+
+\begin{remark}
+As equation \eqref{eq:contraction-order} shows, differet orders of tensor contraction corresponds to different order of the nested summation, which is a result of three basic rules of arithmetic: commutativity, associativity, and distributivity.
+It may puzzle the readers that why simple arithmetic identities can lead to such a difference in computation costs.
+Let me break it down in this section.
+
+Consider the following identity
+$$
+	(a_1 + a_2 + \cdots + a_n)(b_1 + b_2 + \cdots + b_m) = a_1 b_1 + a_1 b_2 + \cdots + a_n b_m
+$$
+
+The left-hand side of the equation takes $n-1$ additions for $a_i$, $m-1$ additions for $b_i$, and one multiplication between the sums, which is a total of $m+n -1$ operations.
+The right hand side, however, takes $nm$ multiplications between $a_i$ and $b_i$ and $nm-1$ additions, amounting to a total of $2nm - 1$ operations. 
+This is a big difference all caused by the distributive law.
+
+The impact of order of operation for matrices is even more pronounced.
+For example, consider $\vec{v_1}, \vec{v_2} \in \C^n $ and $M \in \C^{n \times n}$. 
+Consider the following operations calculated in two different orders:
+$$
+(M\vec{v_1}^T ) \vec{v_2} = M(\vec{v_1}^T \vec{v_2})
+$$
+
+The left-hand side take two matrix-vector multiplications, which is $O(n^2)$ operations, while the right-hand side takes one outer product, costing $O(n^2)$ and one matrix-scalar multiplication, consting $O(n^3)$ operations.
+\end{remark}
+
+In general, finding the optimal order of contraction for a tensor network is aan NP-Complete problem.
+
+
 

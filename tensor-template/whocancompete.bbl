@@ -1,0 +1,358 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+\providecommand{\eprint}[2][]{\url{#2}}
+
+\bibitem{white1992}
+S.~R. White,
+\newblock \emph{Density matrix formulation for quantum renormalization groups},
+\newblock Phys. Rev. Lett. \textbf{69}, 2863 (1992),
+\newblock \doi{10.1103/PhysRevLett.69.2863}.
+
+\bibitem{pan2019}
+F.~Pan, P.~Zhou, S.~Li and P.~Zhang,
+\newblock \emph{Contracting arbitrary tensor networks: general approximate
+  algorithm and applications in graphical models and quantum circuit
+  simulations} (2019), \eprint{1912.03014}.
+
+\bibitem{schollwoeck2011}
+U.~Schollwöck,
+\newblock \emph{The density-matrix renormalization group in the age of matrix
+  product states},
+\newblock Annals of Physics \textbf{326}(1), 96 (2011),
+\newblock \doi{https://doi.org/10.1016/j.aop.2010.09.012}.
+
+\bibitem{orus2014}
+R.~Or\'{u}s,
+\newblock \emph{A practical introduction to tensor networks: Matrix product
+  states and projected entangled pair states},
+\newblock Ann. Phys. \textbf{349}, 117 (2014),
+\newblock \doi{10.1016/j.aop.2014.06.013}.
+
+\bibitem{bridgeman2017}
+J.~C. Bridgeman and C.~T. Chubb,
+\newblock \emph{Hand-waving and interpretive dance: an introductory course on
+  tensor networks},
+\newblock Journal of Physics A: Mathematical and Theoretical \textbf{50}(22),
+  223001 (2017),
+\newblock \doi{10.1088/1751-8121/aa6dc3}.
+
+\bibitem{cirac2021}
+J.~I. Cirac, D.~P\'erez-Garc\'{\i}a, N.~Schuch and F.~Verstraete,
+\newblock \emph{Matrix product states and projected entangled pair states:
+  Concepts, symmetries, theorems},
+\newblock Rev. Mod. Phys. \textbf{93}, 045003 (2021),
+\newblock \doi{10.1103/RevModPhys.93.045003}.
+
+\bibitem{becca2017}
+F.~Becca and S.~Sorella,
+\newblock \emph{Quantum Monte Carlo Approaches for Correlated Systems},
+\newblock Cambridge University Press, 1 edn.,
+\newblock ISBN 978-1-107-12993-1 978-1-316-41704-1,
+\newblock \doi{10.1017/9781316417041} (2017).
+
+\bibitem{louvet2024}
+T.~Louvet, T.~Ayral and X.~Waintal,
+\newblock \emph{On the feasibility of performing quantum chemistry calculations
+  on quantum computers} (2024), \eprint{2306.02620}.
+
+\bibitem{fishman2022}
+M.~Fishman, S.~R. White and E.~M. Stoudenmire,
+\newblock \emph{{The ITensor Software Library for Tensor Network
+  Calculations}},
+\newblock SciPost Phys. Codebases p.~4 (2022),
+\newblock \doi{10.21468/SciPostPhysCodeb.4}.
+
+\bibitem{nielsen2000}
+M.~A. Nielsen and I.~L. Chuang,
+\newblock \emph{Quantum Computation and Quantum Information: 10th Anniversary
+  Edition},
+\newblock Cambridge University Press, New York, NY, USA, 10th edn.,
+\newblock ISBN 1107002176, 9781107002173 (2011).
+
+\bibitem{larocca2025}
+M.~Larocca, S.~Thanasilp, S.~Wang, K.~Sharma, J.~Biamonte, P.~J. Coles,
+  L.~Cincio, J.~R. McClean, Z.~Holmes and M.~Cerezo,
+\newblock \emph{Barren plateaus in variational quantum computing},
+\newblock Nature Reviews Physics \textbf{7}(4), 174 (2025),
+\newblock \doi{10.1038/s42254-025-00813-9}.
+
+\bibitem{waintal2024}
+X.~Waintal,
+\newblock \emph{The quantum house of cards},
+\newblock Proceedings of the National Academy of Sciences \textbf{121}(1),
+  e2313269120 (2024),
+\newblock \doi{10.1073/pnas.2313269120},
+\newblock \eprint{https://www.pnas.org/doi/pdf/10.1073/pnas.2313269120}.
+
+\bibitem{waintal2019}
+X.~Waintal,
+\newblock \emph{What determines the ultimate precision of a quantum computer},
+\newblock Phys. Rev. A \textbf{99}, 042318 (2019),
+\newblock \doi{10.1103/PhysRevA.99.042318}.
+
+\bibitem{ayral2023}
+T.~Ayral, T.~Louvet, Y.~Zhou, C.~Lambert, E.~M. Stoudenmire and X.~Waintal,
+\newblock \emph{Density-matrix renormalization group algorithm for simulating
+  quantum circuits with a finite fidelity},
+\newblock PRX Quantum \textbf{4}, 020304 (2023),
+\newblock \doi{10.1103/PRXQuantum.4.020304}.
+
+\bibitem{arute2019}
+F.~Arute, K.~Arya, R.~Babbush, D.~Bacon, J.~C. Bardin, R.~Barends, R.~Biswas,
+  S.~Boixo, F.~G. S.~L. Brandao, D.~A. Buell and et~al.,
+\newblock \emph{Quantum supremacy using a programmable superconducting
+  processor},
+\newblock Nature \textbf{574}(7779), 505–510 (2019),
+\newblock \doi{10.1038/s41586-019-1666-5}.
+
+\bibitem{bravyi2022}
+S.~Bravyi, D.~Gosset and Y.~Liu,
+\newblock \emph{How to simulate quantum measurement without computing
+  marginals},
+\newblock Phys. Rev. Lett. \textbf{128}, 220503 (2022),
+\newblock \doi{10.1103/PhysRevLett.128.220503}.
+
+\bibitem{pfeifer2014}
+R.~N.~C. Pfeifer, J.~Haegeman and F.~Verstraete,
+\newblock \emph{Faster identification of optimal contraction sequences for
+  tensor networks},
+\newblock Phys. Rev. E \textbf{90}, 033315 (2014),
+\newblock \doi{10.1103/PhysRevE.90.033315}.
+
+\bibitem{morvan2024}
+A.~Morvan, B.~Villalonga, X.~Mi, S.~Mandrà, A.~Bengtsson, P.~V. Klimov,
+  Z.~Chen, S.~Hong, C.~Erickson, I.~K. Drozdov, J.~Chau, G.~Laun \emph{et~al.},
+\newblock \emph{Phase transitions in random circuit sampling},
+\newblock Nature \textbf{634}(8033), 328 (2024),
+\newblock \doi{10.1038/s41586-024-07998-6}.
+
+\bibitem{aaronson2004}
+S.~Aaronson and D.~Gottesman,
+\newblock \emph{Improved simulation of stabilizer circuits},
+\newblock Phys. Rev. A \textbf{70}, 052328 (2004),
+\newblock \doi{10.1103/PhysRevA.70.052328}.
+
+\bibitem{mirsky1975}
+L.~Mirsky,
+\newblock \emph{A trace inequality of {John} von {Neumann}},
+\newblock Monatshefte für Mathematik \textbf{79}(4), 303 (1975),
+\newblock \doi{10.1007/BF01647331}.
+
+\bibitem{eisert2010}
+J.~Eisert, M.~Cramer and M.~B. Plenio,
+\newblock \emph{Colloquium: Area laws for the entanglement entropy},
+\newblock Rev. Mod. Phys. \textbf{82}, 277 (2010),
+\newblock \doi{10.1103/RevModPhys.82.277}.
+
+\bibitem{hastings2007}
+M.~B. Hastings,
+\newblock \emph{An area law for one-dimensional quantum systems},
+\newblock Journal of Statistical Mechanics: Theory and Experiment
+  \textbf{2007}(08), P08024 (2007),
+\newblock \doi{10.1088/1742-5468/2007/08/P08024}.
+
+\bibitem{fannes1992}
+M.~Fannes, B.~Nachtergaele and R.~F. Werner,
+\newblock \emph{Finitely correlated states on quantum spin chains},
+\newblock Communications in Mathematical Physics \textbf{144}(3), 443 (1992),
+\newblock \doi{10.1007/BF02099178}.
+
+\bibitem{perez-garcia2007}
+D.~Perez-Garcia, F.~Verstraete, M.~M. Wolf and J.~I. Cirac,
+\newblock \emph{Matrix product state representations},
+\newblock Quantum Info. Comput. \textbf{7}(5), 401–430 (2007).
+
+\bibitem{vidal2004}
+G.~Vidal,
+\newblock \emph{Efficient simulation of one-dimensional quantum many-body
+  systems},
+\newblock Phys. Rev. Lett. \textbf{93}, 040502 (2004),
+\newblock \doi{10.1103/PhysRevLett.93.040502}.
+
+\bibitem{zhou2020}
+Y.~Zhou, E.~M. Stoudenmire and X.~Waintal,
+\newblock \emph{What limits the simulation of quantum computers?},
+\newblock Phys. Rev. X \textbf{10}, 041038 (2020),
+\newblock \doi{10.1103/PhysRevX.10.041038}.
+
+\bibitem{pfeuty1970}
+P.~Pfeuty,
+\newblock \emph{The one-dimensional ising model with a transverse field},
+\newblock Annals of Physics \textbf{57}(1), 79 (1970),
+\newblock \doi{https://doi.org/10.1016/0003-4916(70)90270-8}.
+
+\bibitem{hubig2017}
+C.~Hubig, I.~P. McCulloch and U.~Schollw\"ock,
+\newblock \emph{Generic construction of efficient matrix product operators},
+\newblock Phys. Rev. B \textbf{95}, 035129 (2017),
+\newblock \doi{10.1103/PhysRevB.95.035129}.
+
+\bibitem{nunez2025}
+Y.~N. Fernández, M.~K. Ritter, M.~Jeannin, J.-W. Li, T.~Kloss, T.~Louvet,
+  S.~Terasaki, O.~Parcollet, J.~von Delft, H.~Shinaoka and X.~Waintal,
+\newblock \emph{{Learning tensor networks with tensor cross interpolation: New
+  algorithms and libraries}},
+\newblock SciPost Phys. \textbf{18}, 104 (2025),
+\newblock \doi{10.21468/SciPostPhys.18.3.104}.
+
+\bibitem{lubich2015}
+C.~Lubich, I.~V. Oseledets and B.~Vandereycken,
+\newblock \emph{Time integration of tensor trains},
+\newblock SIAM Journal on Numerical Analysis \textbf{53}(2), 917 (2015),
+\newblock \doi{10.1137/140976546},
+\newblock \eprint{https://doi.org/10.1137/140976546}.
+
+\bibitem{haegeman2016}
+J.~Haegeman, C.~Lubich, I.~Oseledets, B.~Vandereycken and F.~Verstraete,
+\newblock \emph{Unifying time evolution and optimization with matrix product
+  states},
+\newblock Phys. Rev. B \textbf{94}, 165116 (2016),
+\newblock \doi{10.1103/PhysRevB.94.165116}.
+
+\bibitem{hauschild2018}
+J.~Hauschild and F.~Pollmann,
+\newblock \emph{{Efficient numerical simulations with Tensor Networks: Tensor
+  Network Python (TeNPy)}},
+\newblock SciPost Phys. Lect. Notes p.~5 (2018),
+\newblock \doi{10.21468/SciPostPhysLectNotes.5}.
+
+\bibitem{nunez2022}
+Y.~N\'u\~nez Fern\'andez, M.~Jeannin, P.~T. Dumitrescu, T.~Kloss, J.~Kaye,
+  O.~Parcollet and X.~Waintal,
+\newblock \emph{Learning feynman diagrams with tensor trains},
+\newblock Phys. Rev. X \textbf{12}, 041018 (2022),
+\newblock \doi{10.1103/PhysRevX.12.041018}.
+
+\bibitem{goreinov1997}
+S.~A. Goreinov, N.~L. Zamarashkin and E.~E. Tyrtyshnikov,
+\newblock \emph{Pseudo-skeleton approximations by matrices of maximal volume},
+\newblock Mathematical Notes \textbf{62}(4), 515 (1997).
+
+\bibitem{bebendorf2000}
+M.~Bebendorf,
+\newblock \emph{Approximation of boundary element matrices},
+\newblock Numerische Mathematik \textbf{86}(4), 565 (2000),
+\newblock \doi{https://doi.org/10.1007/PL00005410}.
+
+\bibitem{goreinov2010}
+S.~A. Goreinov, I.~V. Oseledets, D.~V. Savostyanov, E.~E. Tyrtyshnikov and
+  N.~L. Zamarashkin,
+\newblock \emph{How to Find a Good Submatrix}, pp. 247--256,
+\newblock World Scientific,
+\newblock \doi{10.1142/9789812836021_0015} (2010).
+
+\bibitem{oseledets2010}
+I.~Oseledets and E.~Tyrtyshnikov,
+\newblock \emph{Tt-cross approximation for multidimensional arrays},
+\newblock Linear Algebra and its Applications \textbf{432}(1), 70 (2010),
+\newblock \doi{https://doi.org/10.1016/j.laa.2009.07.024}.
+
+\bibitem{oseledets2011}
+I.~V. Oseledets,
+\newblock \emph{Tensor-train decomposition},
+\newblock SIAM Journal on Scientific Computing \textbf{33}(5), 2295 (2011).
+
+\bibitem{savostyanov2011}
+D.~Savostyanov and I.~Oseledets,
+\newblock \emph{Fast adaptive interpolation of multi-dimensional arrays in
+  tensor train format},
+\newblock In \emph{The 2011 International Workshop on Multidimensional (nD)
+  Systems}, pp. 1--8,
+\newblock \doi{10.1109/nDS.2011.6076873} (2011).
+
+\bibitem{savostyanov2014}
+D.~V. Savostyanov,
+\newblock \emph{Quasioptimality of maximum-volume cross interpolation of
+  tensors},
+\newblock Linear Algebra and its Applications \textbf{458}, 217 (2014),
+\newblock \doi{https://doi.org/10.1016/j.laa.2014.06.006}.
+
+\bibitem{dolgov2020}
+S.~Dolgov and D.~Savostyanov,
+\newblock \emph{Parallel cross interpolation for high-precision calculation of
+  high-dimensional integrals},
+\newblock Computer Physics Communications \textbf{246}, 106869 (2020).
+
+\bibitem{golub1996}
+G.~H. Golub and C.~F. Van~Loan,
+\newblock \emph{Matrix Computations},
+\newblock The Johns Hopkins University Press, third edn. (1996).
+
+\bibitem{niedermeier2025}
+M.~Niedermeier, A.~Moulinas, T.~Louvet, J.~L. Lado and X.~Waintal,
+\newblock \emph{Solving the gross-pitaevskii equation on multiple different
+  scales using the quantics tensor train representation} (2025),
+  \eprint{2507.04262}.
+
+\bibitem{trefethen2019}
+L.~N. Trefethen,
+\newblock \emph{Approximation Theory and Approximation Practice, Extended
+  Edition},
+\newblock SIAM-Society for Industrial and Applied Mathematics, Philadelphia,
+  PA, USA,
+\newblock ISBN 978-1-61197-593-2, 978-1-61197-594-9 (2019).
+
+\bibitem{kazeev2012}
+V.~A. Kazeev and B.~N. Khoromskij,
+\newblock \emph{Low-rank explicit qtt representation of the laplace operator
+  and its inverse},
+\newblock SIAM Journal on Matrix Analysis and Applications \textbf{33}(3), 742
+  (2012),
+\newblock \doi{10.1137/100820479},
+\newblock \eprint{https://doi.org/10.1137/100820479}.
+
+\bibitem{kazeev2013}
+V.~A. Kazeev, B.~N. Khoromskij and E.~E. Tyrtyshnikov,
+\newblock \emph{Multilevel toeplitz matrices generated by tensor-structured
+  vectors and convolution with logarithmic complexity},
+\newblock SIAM Journal on Scientific Computing \textbf{35}(3), A1511 (2013),
+\newblock \doi{10.1137/110844830},
+\newblock \eprint{https://doi.org/10.1137/110844830}.
+
+\bibitem{kazeev2013b}
+V.~A. Kazeev, B.~N. Khoromskij and E.~E. Tyrtyshnikov,
+\newblock \emph{Multilevel toeplitz matrices generated by tensor-structured
+  vectors and convolution with logarithmic complexity},
+\newblock SIAM Journal on Scientific Computing \textbf{35}(3), A1511 (2013),
+\newblock \doi{10.1137/110844830},
+\newblock \eprint{https://doi.org/10.1137/110844830}.
+
+\bibitem{roberts2014}
+J.~A. Roberts, D.~V. Savostyanov and E.~E. Tyrtyshnikov,
+\newblock \emph{Superfast solution of linear convolutional volterra equations
+  using qtt approximation},
+\newblock Journal of Computational and Applied Mathematics \textbf{260}, 434
+  (2014),
+\newblock \doi{https://doi.org/10.1016/j.cam.2013.10.025}.
+
+\bibitem{dolgov2012}
+S.~Dolgov, B.~Khoromskij and D.~Savostyanov,
+\newblock \emph{Superfast {Fourier} {Transform} {Using} {QTT} {Approximation}},
+\newblock Journal of Fourier Analysis and Applications \textbf{18}(5), 915
+  (2012),
+\newblock \doi{10.1007/s00041-012-9227-4}.
+
+\bibitem{woolfe2014}
+K.~Woolfe, C.~Hill and L.~Hollenberg,
+\newblock \emph{Scaling and eﬃcient classical simulation of the quantum
+  fourier transform},
+\newblock Quantum Inf. Comput. \textbf{17}, 1 (2014),
+\newblock \doi{10.26421/QIC17.1-2-1}.
+
+\bibitem{chen2023}
+J.~Chen, E.~Stoudenmire and S.~R. White,
+\newblock \emph{Quantum fourier transform has small entanglement},
+\newblock PRX Quantum \textbf{4}, 040318 (2023),
+\newblock \doi{10.1103/PRXQuantum.4.040318}.
+
+\bibitem{chen2024}
+J.~Chen and M.~Lindsey,
+\newblock \emph{Direct interpolative construction of the discrete fourier
+  transform as a matrix product operator} (2024), \eprint{2404.03182}.
+
+\end{thebibliography}

@@ -1,0 +1,1500 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.6.27)  4 AUG 2026 21:02
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**whocancompete.tex
+(./whocancompete.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+(./SciPost.cls
+Document Class: SciPost 
+(/usr/share/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count275
+\c@section=\count276
+\c@subsection=\count277
+\c@subsubsection=\count278
+\c@paragraph=\count279
+\c@subparagraph=\count280
+\c@figure=\count281
+\c@table=\count282
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen148
+) (/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+) (/usr/share/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (/usr/share/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+\Gm@cnth=\count283
+\Gm@cntv=\count284
+\c@Gm@tempcnt=\count285
+\Gm@bindingoffset=\dimen149
+\Gm@wd@mp=\dimen150
+\Gm@odd@mp=\dimen151
+\Gm@even@mp=\dimen152
+\Gm@layoutwidth=\dimen153
+\Gm@layoutheight=\dimen154
+\Gm@layouthoffset=\dimen155
+\Gm@layoutvoffset=\dimen156
+\Gm@dimlist=\toks18
+) (/usr/share/texmf-dist/tex/latex/tocloft/tocloft.sty
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has section divisions on input line 51.
+\cftparskip=\skip51
+\cftbeforetoctitleskip=\skip52
+\cftaftertoctitleskip=\skip53
+\cftbeforepartskip=\skip54
+\cftpartnumwidth=\skip55
+\cftpartindent=\skip56
+\cftbeforesecskip=\skip57
+\cftsecindent=\skip58
+\cftsecnumwidth=\skip59
+\cftbeforesubsecskip=\skip60
+\cftsubsecindent=\skip61
+\cftsubsecnumwidth=\skip62
+\cftbeforesubsubsecskip=\skip63
+\cftsubsubsecindent=\skip64
+\cftsubsubsecnumwidth=\skip65
+\cftbeforeparaskip=\skip66
+\cftparaindent=\skip67
+\cftparanumwidth=\skip68
+\cftbeforesubparaskip=\skip69
+\cftsubparaindent=\skip70
+\cftsubparanumwidth=\skip71
+\cftbeforeloftitleskip=\skip72
+\cftafterloftitleskip=\skip73
+\cftbeforefigskip=\skip74
+\cftfigindent=\skip75
+\cftfignumwidth=\skip76
+\c@lofdepth=\count286
+\c@lotdepth=\count287
+\cftbeforelottitleskip=\skip77
+\cftafterlottitleskip=\skip78
+\cftbeforetabskip=\skip79
+\cfttabindent=\skip80
+\cfttabnumwidth=\skip81
+) (/usr/share/texmf-dist/tex/latex/tocbibind/tocbibind.sty
+Package: tocbibind 2010/10/13 v1.5k extra ToC listings
+Package tocbibind Info: The document has section divisions on input line 50.
+
+
+Package tocbibind Note: Using section or other style headings.
+
+) (/usr/share/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2025/01/04 v2.17 Sectioning titles
+\ttl@box=\box53
+\beforetitleunit=\skip82
+\aftertitleunit=\skip83
+\ttl@plus=\dimen157
+\ttl@minus=\dimen158
+\ttl@toksa=\toks19
+\titlewidth=\dimen159
+\titlewidthlast=\dimen160
+\titlewidthfirst=\dimen161
+) (/usr/share/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2024/02/08 v1.3d Input encoding file
+\inpenc@prehook=\toks20
+\inpenc@posthook=\toks21
+) (/usr/share/texmf-dist/tex/latex/doi/doi.sty
+Package: doi 2018/09/09 handle doi numbers
+ (/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2026-01-29 v7.01p Hypertext links for LaTeX
+ (/usr/share/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+) (/usr/share/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (/usr/share/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+ (/usr/share/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+) (/usr/share/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+ (/usr/share/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)) (/usr/share/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2026-01-29 v2.58 Cross-referencing by name of section
+ (/usr/share/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (/usr/share/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+ (/usr/share/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count288
+) (/usr/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count289
+) (/usr/share/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
+)
+\@linkdim=\dimen162
+\Hy@linkcounter=\count290
+\Hy@pagecounter=\count291
+ (/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2026-01-29 v7.01p Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (/usr/share/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count292
+ (/usr/share/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2026-01-29 v7.01p Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4201.
+Package hyperref Info: Link nesting OFF on input line 4206.
+Package hyperref Info: Hyper index ON on input line 4209.
+Package hyperref Info: Plain pages OFF on input line 4216.
+Package hyperref Info: Backreferencing OFF on input line 4221.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4468.
+\c@Hy@tempcnt=\count293
+ (/usr/share/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4807.
+\XeTeXLinkMargin=\dimen163
+ (/usr/share/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+ (/usr/share/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count294
+\Field@Width=\dimen164
+\Fld@charsize=\dimen165
+Package hyperref Info: Hyper figures OFF on input line 6084.
+Package hyperref Info: Link nesting OFF on input line 6089.
+Package hyperref Info: Hyper index ON on input line 6092.
+Package hyperref Info: backreferencing OFF on input line 6099.
+Package hyperref Info: Link coloring OFF on input line 6104.
+Package hyperref Info: Link coloring with OCG OFF on input line 6109.
+Package hyperref Info: PDF/A mode OFF on input line 6114.
+\Hy@abspage=\count295
+\c@Item=\count296
+\c@Hfootnote=\count297
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+ (/usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2026-01-29 v7.01p Hyperref driver for pdfTeX
+\Fld@listcount=\count298
+\c@bookmark@seq@number=\count299
+ (/usr/share/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
+ (/usr/share/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 284.
+)
+\Hy@SectionHShift=\skip84
+)) (/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2025/07/09 v2.17z AMS math features
+\@mathmargin=\skip85
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2024/11/17 v2.01 AMS text
+ (/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks22
+\ex@=\dimen166
+)) (/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen167
+) (/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2022/04/08 v2.04 operator names
+)
+\inf@bad=\count300
+LaTeX Info: Redefining \frac on input line 233.
+\uproot@=\count301
+\leftroot@=\count302
+LaTeX Info: Redefining \overline on input line 398.
+LaTeX Info: Redefining \colon on input line 409.
+\classnum@=\count303
+\DOTSCASE@=\count304
+LaTeX Info: Redefining \ldots on input line 495.
+LaTeX Info: Redefining \dots on input line 498.
+LaTeX Info: Redefining \cdots on input line 619.
+\Mathstrutbox@=\box54
+\strutbox@=\box55
+LaTeX Info: Redefining \big on input line 721.
+LaTeX Info: Redefining \Big on input line 722.
+LaTeX Info: Redefining \bigg on input line 723.
+LaTeX Info: Redefining \Bigg on input line 724.
+\big@size=\dimen168
+LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
+\macc@depth=\count305
+LaTeX Info: Redefining \bmod on input line 904.
+LaTeX Info: Redefining \pmod on input line 909.
+LaTeX Info: Redefining \smash on input line 939.
+LaTeX Info: Redefining \relbar on input line 969.
+LaTeX Info: Redefining \Relbar on input line 970.
+\c@MaxMatrixCols=\count306
+\dotsspace@=\muskip18
+\c@parentequation=\count307
+\dspbrk@lvl=\count308
+\tag@help=\toks23
+\row@=\count309
+\column@=\count310
+\maxfields@=\count311
+\andhelp@=\toks24
+\eqnshift@=\dimen169
+\alignsep@=\dimen170
+\tagshift@=\dimen171
+\tagwidth@=\dimen172
+\totwidth@=\dimen173
+\lineht@=\dimen174
+\@envbody=\toks25
+\multlinegap=\skip86
+\multlinetaggap=\skip87
+\mathdisplay@stack=\toks26
+LaTeX Info: Redefining \[ on input line 2950.
+LaTeX Info: Redefining \] on input line 2951.
+) (/usr/share/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2026/02/16 line numbers on paragraphs v5.7
+\linenopenalty=\count312
+\output=\toks27
+\linenoprevgraf=\count313
+\linenumbersep=\dimen175
+\linenumberwidth=\dimen176
+\c@linenumber=\count314
+\c@pagewiselinenumber=\count315
+\c@LN@truepage=\count316
+\c@internallinenumber=\count317
+\c@internallinenumbers=\count318
+\quotelinenumbersep=\dimen177
+\bframerule=\dimen178
+\bframesep=\dimen179
+\bframebox=\box56
+\@LN@amsmath@ams@eqpen=\count319
+) (/usr/share/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+\f@nch@headwidth=\skip88
+\f@nch@offset@elh=\skip89
+\f@nch@offset@erh=\skip90
+\f@nch@offset@olh=\skip91
+\f@nch@offset@orh=\skip92
+\f@nch@offset@elf=\skip93
+\f@nch@offset@erf=\skip94
+\f@nch@offset@olf=\skip95
+\f@nch@offset@orf=\skip96
+\f@nch@height=\skip97
+\f@nch@footalignment=\skip98
+\f@nch@widthL=\skip99
+\f@nch@widthC=\skip100
+\f@nch@widthR=\skip101
+\@temptokenb=\toks28
+) (/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+ (/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+ (/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
+) (/usr/share/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+) (/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+ (/usr/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+) (/usr/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+)
+\Gin@req@height=\dimen180
+\Gin@req@width=\dimen181
+) (/usr/share/texmf-dist/tex/latex/cite/cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
+) (/usr/share/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2023/08/05 v3.6o Customizing captions (AR)
+ (/usr/share/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
+\caption@tempdima=\dimen182
+\captionmargin=\dimen183
+\caption@leftmargin=\dimen184
+\caption@rightmargin=\dimen185
+\caption@width=\dimen186
+\caption@indent=\dimen187
+\caption@parindent=\dimen188
+\caption@hangindent=\dimen189
+Package caption Info: Standard document class detected.
+)
+\c@caption@flags=\count320
+\c@continuedfloat=\count321
+Package caption Info: hyperref package is loaded.
+))
+Package hyperref Info: Option `colorlinks' set `true' on input line 12.
+ (/usr/share/texmf-dist/tex/latex/mathdesign/mathdesign.sty
+Package: mathdesign 2013/08/29 v2.31 Math Design Project
+ (/usr/share/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+) (/usr/share/texmf-dist/tex/latex/mathdesign/mdbch/mdbch.cfg)
+LaTeX Encoding Info:    Redeclaring text command \textcircled (encoding OMS) on input line 206.
+ (/usr/share/texmf-dist/tex/latex/mathdesign/mdbch/mdbch.sty
+Package: mdbch 2013/08/29 v2.31 bitstream bitstream charter + mdbch (Math Design Project)
+ (/usr/share/texmf-dist/tex/latex/mathdesign/mdfont.def
+File: mdfont.def 2013/08/29 v2.31 (Math Design Project)
+) (/usr/share/texmf-dist/tex/latex/mathdesign/mdsffont.def
+File: mdsffont.def 2013/08/29 v2.31 (Math Design Project)
+
+
+LaTeX Info: Font shape OT1/phv/mc/n has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 53.
+
+
+LaTeX Info: Font shape OT1/phv/mc/sc has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 56.
+
+
+LaTeX Info: Font shape OT1/phv/mc/sl has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 59.
+
+
+LaTeX Info: Font shape OT1/phv/mc/it has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 79.
+
+
+LaTeX Info: Font shape T1/phv/mc/n has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 102.
+
+
+LaTeX Info: Font shape T1/phv/mc/sc has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 105.
+
+
+LaTeX Info: Font shape T1/phv/mc/sl has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 108.
+
+
+LaTeX Info: Font shape T1/phv/mc/it has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 128.
+
+
+LaTeX Info: Font shape OT1/uhv/mc/n has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 259.
+
+
+LaTeX Info: Font shape OT1/uhv/mc/sc has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 262.
+
+
+LaTeX Info: Font shape OT1/uhv/mc/sl has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 265.
+
+
+LaTeX Info: Font shape OT1/uhv/mc/it has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 268.
+
+
+LaTeX Info: Font shape T1/uhv/mc/n has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 313.
+
+
+LaTeX Info: Font shape T1/uhv/mc/sc has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 316.
+
+
+LaTeX Info: Font shape T1/uhv/mc/sl has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 319.
+
+
+LaTeX Info: Font shape T1/uhv/mc/it has incorrect series value `mc'.
+            It should not contain an `m'! Please correct it.
+            Found on input line 322.
+
+) (/usr/share/texmf-dist/tex/latex/mathdesign/mdttfont.def
+File: mdttfont.def 2013/08/29 v2.31 (Math Design Project)
+)
+\symmdcal=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `mdcal' in version `bold'
+(Font)                  OMS/mdbch/m/n --> OMS/mdbch/b/n on input line 97.
+\symmdscr=\mathgroup5
+LaTeX Font Info:    Overwriting symbol font `mdscr' in version `bold'
+(Font)                  OMS/mdbch/m/n --> OMS/mdbch/b/n on input line 103.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/xmdeuf/m/n --> U/xmdeuf/b/n on input line 110.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/mdbch/m/n on input line 121.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/mdbch/m/it on input line 122.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/mdbch/m/n on input line 123.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/mdbch/m/n on input line 124.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/mdbch/b/n on input line 126.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/mdbch/b/it on input line 127.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/mdbch/b/n on input line 128.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/mdbch/b/n on input line 129.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
+(Font)                  OT1/mdbch/m/n --> OT1/mdbch/m/n on input line 131.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/mdbch/b/n on input line 132.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/mdbch/m/it on input line 133.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 134.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 135.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
+(Font)                  OT1/mdbch/b/n --> OT1/mdbch/b/n on input line 137.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/mdbch/b/n on input line 138.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/mdbch/b/it on input line 139.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/b/n on input line 140.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/b/n on input line 141.
+\symlettersupright=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `lettersupright' in version `bold'
+(Font)                  OML/mdbch/m/n --> OML/mdbch/b/n on input line 144.
+LaTeX Font Info:    Redeclaring math alphabet \mathrm on input line 145.
+LaTeX Font Info:    Overwriting math alphabet `\mathcal' in version `normal'
+(Font)                  OMS/mdbch/m/n --> OMS/mdbch/m/n on input line 167.
+ (/usr/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2025/11/04 v2.10 package option processing (HA)
+ (/usr/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks29
+\XKV@tempa@toks=\toks30
+\XKV@tempb@toks=\toks31
+)
+\XKV@depth=\count322
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+LaTeX Font Info:    Trying to load font information for OT1+mdbch on input line 186.
+ (/usr/share/texmf-dist/tex/latex/mathdesign/mdbch/ot1mdbch.fd
+File: ot1mdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OT1/mdbch.
+)
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 10.51207pt on input line 186.
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 449.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 450.
+Now handling font encoding MDA ...
+... no UTF-8 mapping file for font encoding MDA
+\symmathdesignA=\mathgroup7
+LaTeX Font Info:    Overwriting symbol font `mathdesignA' in version `bold'
+(Font)                  MDA/mdbch/m/n --> MDA/mdbch/b/n on input line 491.
+Now handling font encoding MDB ...
+... no UTF-8 mapping file for font encoding MDB
+\symmathdesignB=\mathgroup8
+LaTeX Font Info:    Overwriting symbol font `mathdesignB' in version `bold'
+(Font)                  MDB/mdbch/m/n --> MDB/mdbch/b/n on input line 498.
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 532.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 533.
+\rulethickness=\skip102
+) (/usr/share/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+mdbch on input line 116.
+ (/usr/share/texmf-dist/tex/latex/mathdesign/mdbch/t1mdbch.fd
+File: t1mdbch.fd 2013/08/29 Fontinst v1.933 font definitions for T1/mdbch.
+)
+LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
+(Font)              scaled to size 10.51207pt on input line 116.
+))
+\symusualmathcal=\mathgroup9
+LaTeX Font Info:    Redeclaring math alphabet \mathcal on input line 19.
+ (/usr/share/texmf-dist/tex/latex/tools/dcolumn.sty
+Package: dcolumn 2025/10/21 v1.06 decimal alignment package (DPC)
+ (/usr/share/texmf-dist/tex/latex/tools/array.sty
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
+\col@sep=\dimen190
+\ar@mcellbox=\box57
+\extrarowheight=\dimen191
+\NC@list=\toks32
+\extratabsurround=\skip103
+\backup@length=\skip104
+\ar@cellbox=\box58
+)) (/usr/share/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2025/10/21 v1.2g Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup10
+\symboldletters=\mathgroup11
+\symboldsymbols=\mathgroup12
+\symboldlargesymbols=\mathgroup13
+Package bm Info: No bold for \OMS/cmsy/m/n, using \pmb.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
+) (/usr/share/texmf-dist/tex/latex/doublestroke/dsfont.sty
+Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
+) (/usr/share/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box59
+\UL@hyphenbox=\box60
+\UL@skip=\skip105
+\UL@hook=\toks33
+\UL@height=\dimen192
+\UL@pe=\count323
+\UL@pixel=\dimen193
+\ULC@box=\box61
+Package: ulem 2019/11/18
+\ULdepth=\dimen194
+) (/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count324
+) (./whocancompete.aux)
+\openout1 = `whocancompete.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for MDA/cmr/m/n on input line 60.
+LaTeX Font Info:    Trying to load font information for MDA+cmr on input line 60.
+ (/usr/share/texmf-dist/tex/latex/mathdesign/mdacmr.fd
+File: mdacmr.fd 
+)
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for MDB/cmr/m/n on input line 60.
+LaTeX Font Info:    Trying to load font information for MDB+cmr on input line 60.
+ (/usr/share/texmf-dist/tex/latex/mathdesign/mdbcmr.fd
+File: mdbcmr.fd 
+)
+LaTeX Font Info:    ... okay on input line 60.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: includehead includefoot 
+* h-part:(L,W,R)=(85.35826pt, 426.79135pt, 85.35826pt)
+* v-part:(T,H,B)=(34.1433pt, 776.76025pt, 34.1433pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=426.79135pt
+* \textheight=687.61696pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=13.08827pt
+* \topmargin=-38.1267pt
+* \headheight=34.1433pt
+* \headsep=25.0pt
+* \topskip=11.0pt
+* \footskip=30.0pt
+* \marginparwidth=50.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package hyperref Info: Link coloring ON on input line 60.
+(./whocancompete.out) (./whocancompete.out)
+\@outlinefile=\write3
+\openout3 = `whocancompete.out'.
+
+ (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count325
+\scratchdimen=\dimen195
+\scratchbox=\box62
+\nofMPsegments=\count326
+\nofMParguments=\count327
+\everyMPshowfont=\toks34
+\MPscratchCnt=\count328
+\MPscratchDim=\dimen196
+\MPnumerator=\count329
+\makeMPintoPDFobject=\count330
+\everyMPtoPDFconversion=\toks35
+) (/usr/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+ (/usr/share/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
+ (/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
+(Font)              scaled to size 13.82408pt on input line 63.
+LaTeX Font Info:    Font shape `T1/mdbch/b/n' will be
+(Font)              scaled to size 13.82408pt on input line 66.
+LaTeX Font Info:    Font shape `T1/mdbch/b/n' will be
+(Font)              scaled to size 10.51207pt on input line 72.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 72.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 5.76004pt on input line 72.
+LaTeX Font Info:    Trying to load font information for OML+mdbch on input line 72.
+ (/usr/share/texmf-dist/tex/latex/mathdesign/mdbch/omlmdbch.fd
+File: omlmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OML/mdbch.
+)
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 10.51207pt on input line 72.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 7.68005pt on input line 72.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 5.76004pt on input line 72.
+LaTeX Font Info:    Trying to load font information for OMS+mdbch on input line 72.
+ (/usr/share/texmf-dist/tex/latex/mathdesign/mdbch/omsmdbch.fd
+File: omsmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OMS/mdbch.
+)
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 10.51207pt on input line 72.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 72.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 5.76004pt on input line 72.
+LaTeX Font Info:    Trying to load font information for OMX+mdbch on input line 72.
+ (/usr/share/texmf-dist/tex/latex/mathdesign/mdbch/omxmdbch.fd
+File: omxmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OMX/mdbch.
+)
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 10.51207pt on input line 72.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 72.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 5.76004pt on input line 72.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 10.51207pt on input line 72.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 72.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 5.76004pt on input line 72.
+LaTeX Font Info:    Trying to load font information for MDA+mdbch on input line 72.
+ (/usr/share/texmf-dist/tex/latex/mathdesign/mdbch/mdamdbch.fd
+File: mdamdbch.fd 2013/08/29 Fontinst v1.933 font definitions for MDA/mdbch.
+)
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 10.51207pt on input line 72.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 72.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 5.76004pt on input line 72.
+LaTeX Font Info:    Trying to load font information for MDB+mdbch on input line 72.
+ (/usr/share/texmf-dist/tex/latex/mathdesign/mdbch/mdbmdbch.fd
+File: mdbmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for MDB/mdbch.
+)
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 10.51207pt on input line 72.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 72.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 5.76004pt on input line 72.
+LaTeX Font Info:    Font shape `OT1/mdbch/b/n' will be
+(Font)              scaled to size 10.51207pt on input line 72.
+LaTeX Font Info:    Font shape `OT1/mdbch/b/n' will be
+(Font)              scaled to size 7.68005pt on input line 72.
+LaTeX Font Info:    Font shape `OT1/mdbch/b/n' will be
+(Font)              scaled to size 5.76004pt on input line 72.
+LaTeX Font Info:    Font shape `OML/mdbch/b/it' will be
+(Font)              scaled to size 10.51207pt on input line 72.
+LaTeX Font Info:    Font shape `OML/mdbch/b/it' will be
+(Font)              scaled to size 7.68005pt on input line 72.
+LaTeX Font Info:    Font shape `OML/mdbch/b/it' will be
+(Font)              scaled to size 5.76004pt on input line 72.
+LaTeX Font Info:    Font shape `OMS/mdbch/b/n' will be
+(Font)              scaled to size 10.51207pt on input line 72.
+LaTeX Font Info:    Font shape `OMS/mdbch/b/n' will be
+(Font)              scaled to size 7.68005pt on input line 72.
+LaTeX Font Info:    Font shape `OMS/mdbch/b/n' will be
+(Font)              scaled to size 5.76004pt on input line 72.
+LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
+(Font)              scaled to size 10.51207pt on input line 72.
+LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
+(Font)              scaled to size 7.68005pt on input line 72.
+LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
+(Font)              scaled to size 5.76004pt on input line 72.
+LaTeX Font Info:    Font shape `T1/mdbch/b/n' will be
+(Font)              scaled to size 7.68005pt on input line 72.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 4.80003pt on input line 72.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 4.80003pt on input line 72.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 4.80003pt on input line 72.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 4.80003pt on input line 72.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 4.80003pt on input line 72.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 4.80003pt on input line 72.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 4.80003pt on input line 72.
+LaTeX Font Info:    Font shape `OT1/mdbch/b/n' will be
+(Font)              scaled to size 4.80003pt on input line 72.
+LaTeX Font Info:    Font shape `OML/mdbch/b/it' will be
+(Font)              scaled to size 4.80003pt on input line 72.
+LaTeX Font Info:    Font shape `OMS/mdbch/b/n' will be
+(Font)              scaled to size 4.80003pt on input line 72.
+LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
+(Font)              scaled to size 4.80003pt on input line 72.
+LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
+(Font)              scaled to size 9.60007pt on input line 79.
+
+Overfull \hbox (34.6672pt too wide) in paragraph at lines 110--110
+[][][][] 
+ []
+
+
+Overfull \hbox (1.09496pt too wide) in paragraph at lines 97--112
+[][] [] 
+ []
+
+(./whocancompete.toc [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texmf-dist/fonts/enc/dvips/ly1/texnansi.enc}
+
+] [2])
+\tf@toc=\write4
+\openout4 = `whocancompete.toc'.
+
+ [3]
+LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
+(Font)              scaled to size 11.52008pt on input line 151.
+LaTeX Font Info:    Font shape `T1/mdbch/b/n' will be
+(Font)              scaled to size 11.52008pt on input line 151.
+LaTeX Font Info:    Trying to load font information for TS1+mdbch on input line 154.
+ (/usr/share/texmf-dist/tex/latex/mathdesign/mdbch/ts1mdbch.fd
+File: ts1mdbch.fd 2013/08/29 Fontinst v1.933 font definitions for TS1/mdbch.
+)
+LaTeX Font Info:    Font shape `TS1/mdbch/m/n' will be
+(Font)              scaled to size 10.51207pt on input line 154.
+ [4]
+Overfull \hbox (10.51917pt too wide) in paragraph at lines 207--207
+|[]\T1/mdbch/b/n/14.4 The quan-tum com-puter: a ma-chine for per-form-ing cer-tain matrix-
+ []
+
+[5] [6]
+LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 269.
+LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
+(Font)              scaled to size 5.76004pt on input line 269.
+<76_quantum_circuit.pdf, id=425, 419.5675pt x 334.24875pt>
+File: 76_quantum_circuit.pdf Graphic file (type pdf)
+<use 76_quantum_circuit.pdf>
+Package pdftex.def Info: 76_quantum_circuit.pdf  used on input line 276.
+(pdftex.def)             Requested size: 209.78323pt x 167.12396pt.
+ [7 <./76_quantum_circuit.pdf>] [8]
+<1_simple_tensors.pdf, id=462, 412.54124pt x 125.46875pt>
+File: 1_simple_tensors.pdf Graphic file (type pdf)
+<use 1_simple_tensors.pdf>
+Package pdftex.def Info: 1_simple_tensors.pdf  used on input line 340.
+(pdftex.def)             Requested size: 123.76332pt x 37.6409pt.
+<2_big_tensor.pdf, id=463, 261.97874pt x 114.4275pt>
+File: 2_big_tensor.pdf Graphic file (type pdf)
+<use 2_big_tensor.pdf>
+Package pdftex.def Info: 2_big_tensor.pdf  used on input line 346.
+(pdftex.def)             Requested size: 104.78964pt x 45.77019pt.
+<16_slicing.pdf, id=464, 150.5625pt x 143.53625pt>
+File: 16_slicing.pdf Graphic file (type pdf)
+<use 16_slicing.pdf>
+Package pdftex.def Info: 16_slicing.pdf  used on input line 351.
+(pdftex.def)             Requested size: 45.16908pt x 43.0612pt.
+LaTeX Font Info:    Font shape `T1/mdbch/m/it' will be
+(Font)              scaled to size 10.51207pt on input line 355.
+ [9 <./1_simple_tensors.pdf> <./2_big_tensor.pdf> <./16_slicing.pdf>]
+<17_copy.pdf, id=513, 60.225pt x 60.225pt>
+File: 17_copy.pdf Graphic file (type pdf)
+<use 17_copy.pdf>
+Package pdftex.def Info: 17_copy.pdf  used on input line 358.
+(pdftex.def)             Requested size: 24.08955pt x 24.08955pt.
+LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
+(Font)              scaled to size 8.64006pt on input line 361.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 8.64006pt on input line 361.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 8.64006pt on input line 361.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 8.64006pt on input line 361.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 8.64006pt on input line 361.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 8.64006pt on input line 361.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 8.64006pt on input line 361.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 8.64006pt on input line 361.
+LaTeX Font Info:    Font shape `OT1/mdbch/b/n' will be
+(Font)              scaled to size 8.64006pt on input line 361.
+LaTeX Font Info:    Font shape `OML/mdbch/b/it' will be
+(Font)              scaled to size 8.64006pt on input line 361.
+LaTeX Font Info:    Font shape `OMS/mdbch/b/n' will be
+(Font)              scaled to size 8.64006pt on input line 361.
+LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
+(Font)              scaled to size 8.64006pt on input line 361.
+<72_flattening.pdf, id=515, 137.51375pt x 116.435pt>
+File: 72_flattening.pdf Graphic file (type pdf)
+<use 72_flattening.pdf>
+Package pdftex.def Info: 72_flattening.pdf  used on input line 364.
+(pdftex.def)             Requested size: 55.00452pt x 46.57317pt.
+<73_flattening_id.pdf, id=516, 372.39125pt x 163.61125pt>
+File: 73_flattening_id.pdf Graphic file (type pdf)
+<use 73_flattening_id.pdf>
+Package pdftex.def Info: 73_flattening_id.pdf  used on input line 370.
+(pdftex.def)             Requested size: 111.71823pt x 49.08374pt.
+<75_flattening_vec.pdf, id=517, 145.54375pt x 233.87375pt>
+File: 75_flattening_vec.pdf Graphic file (type pdf)
+<use 75_flattening_vec.pdf>
+Package pdftex.def Info: 75_flattening_vec.pdf  used on input line 376.
+(pdftex.def)             Requested size: 43.66345pt x 70.16266pt.
+<3_tensor_contract.pdf, id=518, 334.24875pt x 130.4875pt>
+File: 3_tensor_contract.pdf Graphic file (type pdf)
+<use 3_tensor_contract.pdf>
+Package pdftex.def Info: 3_tensor_contract.pdf  used on input line 389.
+(pdftex.def)             Requested size: 100.27539pt x 39.14655pt.
+ [10 <./17_copy.pdf> <./72_flattening.pdf> <./73_flattening_id.pdf> <./75_flattening_vec.pdf> <./3_tensor_contract.pdf>]
+<13_tensor_product.pdf, id=572, 327.2225pt x 138.5175pt>
+File: 13_tensor_product.pdf Graphic file (type pdf)
+<use 13_tensor_product.pdf>
+Package pdftex.def Info: 13_tensor_product.pdf  used on input line 397.
+(pdftex.def)             Requested size: 98.1675pt x 41.55556pt.
+<14_scalar_product.pdf, id=573, 154.5775pt x 77.28876pt>
+File: 14_scalar_product.pdf Graphic file (type pdf)
+<use 14_scalar_product.pdf>
+Package pdftex.def Info: 14_scalar_product.pdf  used on input line 401.
+(pdftex.def)             Requested size: 46.3736pt x 23.1868pt.
+<15_trace.pdf, id=574, 119.44624pt x 104.39pt>
+File: 15_trace.pdf Graphic file (type pdf)
+<use 15_trace.pdf>
+Package pdftex.def Info: 15_trace.pdf  used on input line 405.
+(pdftex.def)             Requested size: 35.83414pt x 31.31723pt.
+<4_tensor_network.pdf, id=575, 195.73125pt x 128.48pt>
+File: 4_tensor_network.pdf Graphic file (type pdf)
+<use 4_tensor_network.pdf>
+Package pdftex.def Info: 4_tensor_network.pdf  used on input line 410.
+(pdftex.def)             Requested size: 58.71982pt x 38.54428pt.
+<5_tensor_network_matrix.pdf, id=576, 253.94875pt x 128.48pt>
+File: 5_tensor_network_matrix.pdf Graphic file (type pdf)
+<use 5_tensor_network_matrix.pdf>
+Package pdftex.def Info: 5_tensor_network_matrix.pdf  used on input line 414.
+(pdftex.def)             Requested size: 76.1852pt x 38.54428pt.
+<79_contract_order_slow.pdf, id=577, 495.8525pt x 257.96375pt>
+File: 79_contract_order_slow.pdf Graphic file (type pdf)
+<use 79_contract_order_slow.pdf>
+Package pdftex.def Info: 79_contract_order_slow.pdf  used on input line 419.
+(pdftex.def)             Requested size: 148.7569pt x 77.38971pt.
+<80_contract_order_fast.pdf, id=578, 791.95876pt x 251.94125pt>
+File: 80_contract_order_fast.pdf Graphic file (type pdf)
+<use 80_contract_order_fast.pdf>
+Package pdftex.def Info: 80_contract_order_fast.pdf  used on input line 423.
+(pdftex.def)             Requested size: 237.58946pt x 75.58295pt.
+ [11 <./13_tensor_product.pdf> <./14_scalar_product.pdf> <./15_trace.pdf> <./4_tensor_network.pdf> <./5_tensor_network_matrix.pdf> <./79_contract_order_slow.pdf>]
+<6_fusing_indices.pdf, id=646, 302.12875pt x 130.4875pt>
+File: 6_fusing_indices.pdf Graphic file (type pdf)
+<use 6_fusing_indices.pdf>
+Package pdftex.def Info: 6_fusing_indices.pdf  used on input line 433.
+(pdftex.def)             Requested size: 90.63931pt x 39.14655pt.
+<74_flattening_eq.pdf, id=648, 442.65375pt x 136.51pt>
+File: 74_flattening_eq.pdf Graphic file (type pdf)
+<use 74_flattening_eq.pdf>
+Package pdftex.def Info: 74_flattening_eq.pdf  used on input line 438.
+(pdftex.def)             Requested size: 132.79713pt x 40.95331pt.
+<7_factoring_tensor.pdf, id=649, 665.48625pt x 232.87pt>
+File: 7_factoring_tensor.pdf Graphic file (type pdf)
+<use 7_factoring_tensor.pdf>
+Package pdftex.def Info: 7_factoring_tensor.pdf  used on input line 452.
+(pdftex.def)             Requested size: 199.64742pt x 69.86153pt.
+ [12 <./80_contract_order_fast.pdf> <./6_fusing_indices.pdf> <./74_flattening_eq.pdf>]
+<8_factoring_tensor.pdf, id=705, 377.41pt x 207.77625pt>
+File: 8_factoring_tensor.pdf Graphic file (type pdf)
+<use 8_factoring_tensor.pdf>
+Package pdftex.def Info: 8_factoring_tensor.pdf  used on input line 457.
+(pdftex.def)             Requested size: 113.22386pt x 62.33334pt.
+
+Overfull \hbox (15.95155pt too wide) in paragraph at lines 461--468
+\T1/mdbch/m/n/10.95 Eq. []. The ma-trix of Eq. [] was ac-tu-ally an ex-am-ple of fused in-dices: the ten-sor $\OT1/mdbch/m/n/10.95 [\OML/mdbch/m/it/10.95 C[]\OT1/mdbch/m/n/10.95 ][]$
+ []
+
+<9_control_not.pdf, id=708, 352.31625pt x 154.5775pt>
+File: 9_control_not.pdf Graphic file (type pdf)
+<use 9_control_not.pdf>
+Package pdftex.def Info: 9_control_not.pdf  used on input line 483.
+(pdftex.def)             Requested size: 105.69568pt x 46.3736pt.
+[13 <./7_factoring_tensor.pdf> <./8_factoring_tensor.pdf> <./9_control_not.pdf>]
+<10_bell_circuit.pdf, id=771, 212.795pt x 171.64125pt>
+File: 10_bell_circuit.pdf Graphic file (type pdf)
+<use 10_bell_circuit.pdf>
+Package pdftex.def Info: 10_bell_circuit.pdf  used on input line 517.
+(pdftex.def)             Requested size: 63.83897pt x 51.49275pt.
+<18_circuit_is_TN.pdf, id=774, 354.32375pt x 175.65625pt>
+File: 18_circuit_is_TN.pdf Graphic file (type pdf)
+<use 18_circuit_is_TN.pdf>
+Package pdftex.def Info: 18_circuit_is_TN.pdf  used on input line 526.
+(pdftex.def)             Requested size: 106.29794pt x 52.69727pt.
+ [14 <./10_bell_circuit.pdf> <./18_circuit_is_TN.pdf>]
+<19_state_emulator.pdf, id=810, 937.5025pt x 175.65625pt>
+File: 19_state_emulator.pdf Graphic file (type pdf)
+<use 19_state_emulator.pdf>
+Package pdftex.def Info: 19_state_emulator.pdf  used on input line 545.
+(pdftex.def)             Requested size: 234.37505pt x 43.91394pt.
+<70_mps.pdf, id=811, 294.09875pt x 213.79875pt>
+File: 70_mps.pdf Graphic file (type pdf)
+<use 70_mps.pdf>
+Package pdftex.def Info: 70_mps.pdf  used on input line 557.
+(pdftex.def)             Requested size: 88.2303pt x 64.1401pt.
+<20_mps.pdf, id=812, 249.93375pt x 230.8625pt>
+File: 20_mps.pdf Graphic file (type pdf)
+<use 20_mps.pdf>
+Package pdftex.def Info: 20_mps.pdf  used on input line 561.
+(pdftex.def)             Requested size: 62.48328pt x 57.71547pt.
+<21_mps_creation.pdf, id=813, 533.995pt x 230.8625pt>
+File: 21_mps_creation.pdf Graphic file (type pdf)
+<use 21_mps_creation.pdf>
+Package pdftex.def Info: 21_mps_creation.pdf  used on input line 566.
+(pdftex.def)             Requested size: 133.49841pt x 57.71547pt.
+ [15 <./19_state_emulator.pdf> <./70_mps.pdf> <./20_mps.pdf> <./21_mps_creation.pdf>]
+<25_mps_1gate.pdf, id=876, 418.56375pt x 214.8025pt>
+File: 25_mps_1gate.pdf Graphic file (type pdf)
+<use 25_mps_1gate.pdf>
+Package pdftex.def Info: 25_mps_1gate.pdf  used on input line 602.
+(pdftex.def)             Requested size: 104.64067pt x 53.70049pt.
+<26_mps_2gate.pdf, id=877, 748.7975pt x 215.80624pt>
+File: 26_mps_2gate.pdf Graphic file (type pdf)
+<use 26_mps_2gate.pdf>
+Package pdftex.def Info: 26_mps_2gate.pdf  used on input line 606.
+(pdftex.def)             Requested size: 187.19891pt x 53.95142pt.
+ [16 <./25_mps_1gate.pdf> <./26_mps_2gate.pdf>]
+<84_tebd_general_gate.pdf, id=903, 595.22375pt x 215.80624pt>
+File: 84_tebd_general_gate.pdf Graphic file (type pdf)
+<use 84_tebd_general_gate.pdf>
+Package pdftex.def Info: 84_tebd_general_gate.pdf  used on input line 612.
+(pdftex.def)             Requested size: 148.80557pt x 53.95142pt.
+<71_mpo.pdf, id=904, 357.335pt x 304.13625pt>
+File: 71_mpo.pdf Graphic file (type pdf)
+<use 71_mpo.pdf>
+Package pdftex.def Info: 71_mpo.pdf  used on input line 619.
+(pdftex.def)             Requested size: 107.20132pt x 91.24158pt.
+<27_mpo_cnot.pdf, id=905, 151.56625pt x 229.85875pt>
+File: 27_mpo_cnot.pdf Graphic file (type pdf)
+<use 27_mpo_cnot.pdf>
+Package pdftex.def Info: 27_mpo_cnot.pdf  used on input line 628.
+(pdftex.def)             Requested size: 37.89146pt x 57.46454pt.
+<28_mpo.mps_zipup.pdf, id=906, 947.54pt x 276.03125pt>
+File: 28_mpo.mps_zipup.pdf Graphic file (type pdf)
+<use 28_mpo.mps_zipup.pdf>
+Package pdftex.def Info: 28_mpo.mps_zipup.pdf  used on input line 632.
+(pdftex.def)             Requested size: 236.88441pt x 69.00763pt.
+ [17 <./84_tebd_general_gate.pdf> <./71_mpo.pdf> <./27_mpo_cnot.pdf> <./28_mpo.mps_zipup.pdf>]
+<29_swap.pdf, id=955, 290.08376pt x 128.48pt>
+File: 29_swap.pdf Graphic file (type pdf)
+<use 29_swap.pdf>
+Package pdftex.def Info: 29_swap.pdf  used on input line 639.
+(pdftex.def)             Requested size: 72.52075pt x 32.11992pt.
+<30_swap4gate.pdf, id=956, 407.5225pt x 223.83624pt>
+File: 30_swap4gate.pdf Graphic file (type pdf)
+<use 30_swap4gate.pdf>
+Package pdftex.def Info: 30_swap4gate.pdf  used on input line 643.
+(pdftex.def)             Requested size: 101.88037pt x 55.95892pt.
+<GHZ_time.pdf, id=959, 505.89pt x 361.35pt>
+File: GHZ_time.pdf Graphic file (type pdf)
+<use GHZ_time.pdf>
+Package pdftex.def Info: GHZ_time.pdf  used on input line 656.
+(pdftex.def)             Requested size: 284.52756pt x 203.23682pt.
+<77_observable.pdf, id=960, 473.77pt x 238.8925pt>
+File: 77_observable.pdf Graphic file (type pdf)
+<use 77_observable.pdf>
+Package pdftex.def Info: 77_observable.pdf  used on input line 666.
+(pdftex.def)             Requested size: 142.1321pt x 71.66829pt.
+<78_observable_contract.pdf, id=961, 1009.7725pt x 244.915pt>
+File: 78_observable_contract.pdf Graphic file (type pdf)
+<use 78_observable_contract.pdf>
+Package pdftex.def Info: 78_observable_contract.pdf  used on input line 670.
+(pdftex.def)             Requested size: 252.4425pt x 61.22859pt.
+ [18 <./29_swap.pdf> <./30_swap4gate.pdf> <./77_observable.pdf>] [19 <./GHZ_time.pdf> <./78_observable_contract.pdf>]
+<22_mps_sampling.pdf, id=1065, 319.1925pt x 221.82875pt>
+File: 22_mps_sampling.pdf Graphic file (type pdf)
+<use 22_mps_sampling.pdf>
+Package pdftex.def Info: 22_mps_sampling.pdf  used on input line 695.
+(pdftex.def)             Requested size: 79.79793pt x 55.45705pt.
+<23_contracting_sampling.pdf, id=1066, 1007.765pt x 230.8625pt>
+File: 23_contracting_sampling.pdf Graphic file (type pdf)
+<use 23_contracting_sampling.pdf>
+Package pdftex.def Info: 23_contracting_sampling.pdf  used on input line 700.
+(pdftex.def)             Requested size: 251.94063pt x 57.71547pt.
+<24_second_sampling.pdf, id=1067, 404.51125pt x 224.84pt>
+File: 24_second_sampling.pdf Graphic file (type pdf)
+<use 24_second_sampling.pdf>
+Package pdftex.def Info: 24_second_sampling.pdf  used on input line 708.
+(pdftex.def)             Requested size: 101.12756pt x 56.20985pt.
+ [20 <./22_mps_sampling.pdf> <./23_contracting_sampling.pdf> <./24_second_sampling.pdf>]
+<31_amplitudes.pdf, id=1136, 256.96pt x 173.64874pt>
+File: 31_amplitudes.pdf Graphic file (type pdf)
+<use 31_amplitudes.pdf>
+Package pdftex.def Info: 31_amplitudes.pdf  used on input line 741.
+(pdftex.def)             Requested size: 64.23984pt x 43.41208pt.
+ [21 <./31_amplitudes.pdf>]
+<81_random_circuit.pdf, id=1164, 470.75874pt x 349.305pt>
+File: 81_random_circuit.pdf Graphic file (type pdf)
+<use 81_random_circuit.pdf>
+Package pdftex.def Info: 81_random_circuit.pdf  used on input line 757.
+(pdftex.def)             Requested size: 235.3788pt x 174.65207pt.
+ [22 <./81_random_circuit.pdf>] [23] [24]
+<86_schmidt_decomp.pdf, id=1212, 249.93375pt x 178.6675pt>
+File: 86_schmidt_decomp.pdf Graphic file (type pdf)
+<use 86_schmidt_decomp.pdf>
+Package pdftex.def Info: 86_schmidt_decomp.pdf  used on input line 919.
+(pdftex.def)             Requested size: 62.48328pt x 44.66676pt.
+ [25 <./86_schmidt_decomp.pdf>]
+<87_reduced_density_matrix.pdf, id=1243, 677.53125pt x 146.5475pt>
+File: 87_reduced_density_matrix.pdf Graphic file (type pdf)
+<use 87_reduced_density_matrix.pdf>
+Package pdftex.def Info: 87_reduced_density_matrix.pdf  used on input line 935.
+(pdftex.def)             Requested size: 169.38239pt x 36.63678pt.
+ [26 <./87_reduced_density_matrix.pdf>]
+<38_orthogonal_center.pdf, id=1296, 749.80125pt x 344.28625pt>
+File: 38_orthogonal_center.pdf Graphic file (type pdf)
+<use 38_orthogonal_center.pdf>
+Package pdftex.def Info: 38_orthogonal_center.pdf  used on input line 966.
+(pdftex.def)             Requested size: 262.43437pt x 120.50198pt.
+<39_isometry.pdf, id=1297, 228.855pt x 402.50375pt>
+File: 39_isometry.pdf Graphic file (type pdf)
+<use 39_isometry.pdf>
+Package pdftex.def Info: 39_isometry.pdf  used on input line 974.
+(pdftex.def)             Requested size: 80.10043pt x 140.87842pt.
+<40_norm_mps.pdf, id=1298, 329.23pt x 303.1325pt>
+File: 40_norm_mps.pdf Graphic file (type pdf)
+<use 40_norm_mps.pdf>
+Package pdftex.def Info: 40_norm_mps.pdf  used on input line 978.
+(pdftex.def)             Requested size: 115.23222pt x 106.09796pt.
+ [27 <./38_orthogonal_center.pdf> <./39_isometry.pdf> <./40_norm_mps.pdf>]
+<88_canonical_avg.pdf, id=1373, 441.65pt x 303.1325pt>
+File: 88_canonical_avg.pdf Graphic file (type pdf)
+<use 88_canonical_avg.pdf>
+Package pdftex.def Info: 88_canonical_avg.pdf  used on input line 986.
+(pdftex.def)             Requested size: 154.5798pt x 106.09796pt.
+<41_reduced_density_matrix.pdf, id=1374, 540.0175pt x 313.17pt>
+File: 41_reduced_density_matrix.pdf Graphic file (type pdf)
+<use 41_reduced_density_matrix.pdf>
+Package pdftex.def Info: 41_reduced_density_matrix.pdf  used on input line 991.
+(pdftex.def)             Requested size: 189.00896pt x 109.61113pt.
+<42_svd_mps_compression.pdf, id=1375, 348.30125pt x 396.48125pt>
+File: 42_svd_mps_compression.pdf Graphic file (type pdf)
+<use 42_svd_mps_compression.pdf>
+Package pdftex.def Info: 42_svd_mps_compression.pdf  used on input line 999.
+(pdftex.def)             Requested size: 121.90726pt x 138.77051pt.
+ [28 <./88_canonical_avg.pdf> <./41_reduced_density_matrix.pdf>]
+<43_tebd_approx.pdf, id=1429, 982.67125pt x 285.065pt>
+File: 43_tebd_approx.pdf Graphic file (type pdf)
+<use 43_tebd_approx.pdf>
+Package pdftex.def Info: 43_tebd_approx.pdf  used on input line 1007.
+(pdftex.def)             Requested size: 245.6672pt x 71.26607pt.
+ [29 <./42_svd_mps_compression.pdf> <./43_tebd_approx.pdf>]
+<Fig_Main_f_vs_F.pdf, id=1489, 226.9278pt x 198.7425pt>
+File: Fig_Main_f_vs_F.pdf Graphic file (type pdf)
+<use Fig_Main_f_vs_F.pdf>
+Package pdftex.def Info: Fig_Main_f_vs_F.pdf  used on input line 1034.
+(pdftex.def)             Requested size: 284.52756pt x 249.2099pt.
+ [30 <./Fig_Main_f_vs_F.pdf>]
+<44_dmrg_circuit.pdf, id=1529, 340.27126pt x 232.87pt>
+File: 44_dmrg_circuit.pdf Graphic file (type pdf)
+<use 44_dmrg_circuit.pdf>
+Package pdftex.def Info: 44_dmrg_circuit.pdf  used on input line 1048.
+(pdftex.def)             Requested size: 102.08215pt x 69.86153pt.
+<45_dmrg_fidelity.pdf, id=1530, 541.02126pt x 248.93pt>
+File: 45_dmrg_fidelity.pdf Graphic file (type pdf)
+<use 45_dmrg_fidelity.pdf>
+Package pdftex.def Info: 45_dmrg_fidelity.pdf  used on input line 1056.
+(pdftex.def)             Requested size: 162.30762pt x 74.67957pt.
+<46_dmrg_fidelity_contracted.pdf, id=1531, 398.48875pt x 167.62625pt>
+File: 46_dmrg_fidelity_contracted.pdf Graphic file (type pdf)
+<use 46_dmrg_fidelity_contracted.pdf>
+Package pdftex.def Info: 46_dmrg_fidelity_contracted.pdf  used on input line 1063.
+(pdftex.def)             Requested size: 119.54755pt x 50.28825pt.
+
+Overfull \hbox (0.55879pt too wide) in paragraph at lines 1079--1081
+\T1/mdbch/m/n/10.95 and the op-ti-mum is found by tak-ing the deriva-tive $\OML/mdbch/m/it/10.95 @\OMS/cmsy/m/n/10.95 C\OML/mdbch/m/it/10.95 =@M[] \OT1/mdbch/m/n/10.95 = 0$\T1/mdbch/m/n/10.95 . We ar-rive at $\OML/mdbch/m/it/10.95 M[] \OT1/mdbch/m/n/10.95 = \OML/mdbch/m/it/10.95 T[]$\T1/mdbch/m/n/10.95 .
+ []
+
+[31 <./44_dmrg_circuit.pdf> <./45_dmrg_fidelity.pdf> <./46_dmrg_fidelity_contracted.pdf>]
+<47_opt_mps.pdf, id=1578, 644.4075pt x 249.93375pt>
+File: 47_opt_mps.pdf Graphic file (type pdf)
+<use 47_opt_mps.pdf>
+Package pdftex.def Info: 47_opt_mps.pdf  used on input line 1086.
+(pdftex.def)             Requested size: 193.32373pt x 74.9807pt.
+<49_enrichment.pdf, id=1579, 760.8425pt x 344.28625pt>
+File: 49_enrichment.pdf Graphic file (type pdf)
+<use 49_enrichment.pdf>
+Package pdftex.def Info: 49_enrichment.pdf  used on input line 1114.
+(pdftex.def)             Requested size: 228.2545pt x 103.28667pt.
+<48_2sites_dmrg.pdf, id=1580, 730.73pt x 285.065pt>
+File: 48_2sites_dmrg.pdf Graphic file (type pdf)
+<use 48_2sites_dmrg.pdf>
+Package pdftex.def Info: 48_2sites_dmrg.pdf  used on input line 1124.
+(pdftex.def)             Requested size: 219.22069pt x 85.52016pt.
+ [32 <./47_opt_mps.pdf> <./49_enrichment.pdf>]
+<82_tfi.pdf, id=1634, 559.08875pt x 425.59pt>
+File: 82_tfi.pdf Graphic file (type pdf)
+<use 82_tfi.pdf>
+Package pdftex.def Info: 82_tfi.pdf  used on input line 1151.
+(pdftex.def)             Requested size: 223.63153pt x 170.23297pt.
+ [33 <./48_2sites_dmrg.pdf>]
+<83_landau_zener.pdf, id=1664, 540.0175pt x 317.185pt>
+File: 83_landau_zener.pdf Graphic file (type pdf)
+<use 83_landau_zener.pdf>
+Package pdftex.def Info: 83_landau_zener.pdf  used on input line 1156.
+(pdftex.def)             Requested size: 216.00316pt x 126.87173pt.
+ [34 <./82_tfi.pdf> <./83_landau_zener.pdf>] [35]
+<50_dmrg_H_functional.pdf, id=1725, 467.7475pt x 313.17pt>
+File: 50_dmrg_H_functional.pdf Graphic file (type pdf)
+<use 50_dmrg_H_functional.pdf>
+Package pdftex.def Info: 50_dmrg_H_functional.pdf  used on input line 1255.
+(pdftex.def)             Requested size: 140.32532pt x 93.95172pt.
+<51_dmrg_H_contract.pdf, id=1726, 903.375pt x 519.9425pt>
+File: 51_dmrg_H_contract.pdf Graphic file (type pdf)
+<use 51_dmrg_H_contract.pdf>
+Package pdftex.def Info: 51_dmrg_H_contract.pdf  used on input line 1260.
+(pdftex.def)             Requested size: 225.8432pt x 129.9853pt.
+<52_dmrg_H_diag.pdf, id=1727, 416.55624pt x 207.77625pt>
+File: 52_dmrg_H_diag.pdf Graphic file (type pdf)
+<use 52_dmrg_H_diag.pdf>
+Package pdftex.def Info: 52_dmrg_H_diag.pdf  used on input line 1265.
+(pdftex.def)             Requested size: 104.1388pt x 51.94392pt.
+ [36 <./50_dmrg_H_functional.pdf> <./51_dmrg_H_contract.pdf>]
+<53_tebd_H.pdf, id=1777, 685.56125pt x 237.88875pt>
+File: 53_tebd_H.pdf Graphic file (type pdf)
+<use 53_tebd_H.pdf>
+Package pdftex.def Info: 53_tebd_H.pdf  used on input line 1298.
+(pdftex.def)             Requested size: 171.3899pt x 59.47203pt.
+ [37 <./52_dmrg_H_diag.pdf> <./53_tebd_H.pdf>]
+<Ising_imaginary_tebd.pdf, id=1819, 505.89pt x 361.35pt>
+File: Ising_imaginary_tebd.pdf Graphic file (type pdf)
+<use Ising_imaginary_tebd.pdf>
+Package pdftex.def Info: Ising_imaginary_tebd.pdf  used on input line 1308.
+(pdftex.def)             Requested size: 284.52756pt x 203.23682pt.
+ [38 <./Ising_imaginary_tebd.pdf>]
+<54_element_wise_product.pdf, id=1843, 155.58125pt x 220.825pt>
+File: 54_element_wise_product.pdf Graphic file (type pdf)
+<use 54_element_wise_product.pdf>
+Package pdftex.def Info: 54_element_wise_product.pdf  used on input line 1335.
+(pdftex.def)             Requested size: 38.8952pt x 55.2061pt.
+<55_als_functional.pdf, id=1844, 640.3925pt x 465.74pt>
+File: 55_als_functional.pdf Graphic file (type pdf)
+<use 55_als_functional.pdf>
+Package pdftex.def Info: 55_als_functional.pdf  used on input line 1361.
+(pdftex.def)             Requested size: 160.09773pt x 116.43471pt.
+ [39 <./54_element_wise_product.pdf>]
+<56_als_effective.pdf, id=1854, 366.36874pt x 216.81pt>
+File: 56_als_effective.pdf Graphic file (type pdf)
+<use 56_als_effective.pdf>
+Package pdftex.def Info: 56_als_effective.pdf  used on input line 1365.
+(pdftex.def)             Requested size: 91.59195pt x 54.20236pt.
+ [40 <./55_als_functional.pdf> <./56_als_effective.pdf>]
+<schematic_cross_interpolation.pdf, id=1894, 963.6pt x 369.38pt>
+File: schematic_cross_interpolation.pdf Graphic file (type pdf)
+<use schematic_cross_interpolation.pdf>
+Package pdftex.def Info: schematic_cross_interpolation.pdf  used on input line 1402.
+(pdftex.def)             Requested size: 426.79135pt x 163.59859pt.
+ [41 <./schematic_cross_interpolation.pdf>] [42]
+<principle_ci_1col.pdf, id=1930, 505.89pt x 361.35pt>
+File: principle_ci_1col.pdf Graphic file (type pdf)
+<use principle_ci_1col.pdf>
+Package pdftex.def Info: principle_ci_1col.pdf  used on input line 1553.
+(pdftex.def)             Requested size: 237.76833pt x 169.83452pt.
+
+Underfull \hbox (badness 2600) in paragraph at lines 1557--1557
+\T1/mdbch/m/n/10.95 Interpolation for a $\OML/mdbch/m/it/10.95 M \OMS/mdbch/m/n/10.95 ^^B \OML/mdbch/m/it/10.95 M$ \T1/mdbch/m/n/10.95 ma-trix with $\OML/mdbch/m/it/10.95 M \OT1/mdbch/m/n/10.95 = 20$\T1/mdbch/m/n/10.95 . In this toy ex-am-ple,
+ []
+
+[43] [44 <./principle_ci_1col.pdf>]
+<32_naive_tci.pdf, id=1988, 548.0475pt x 230.8625pt>
+File: 32_naive_tci.pdf Graphic file (type pdf)
+<use 32_naive_tci.pdf>
+Package pdftex.def Info: 32_naive_tci.pdf  used on input line 1622.
+(pdftex.def)             Requested size: 192.0548pt x 80.9017pt.
+<33_tci_indices.pdf, id=1989, 409.53pt x 316.18124pt>
+File: 33_tci_indices.pdf Graphic file (type pdf)
+<use 33_tci_indices.pdf>
+Package pdftex.def Info: 33_tci_indices.pdf  used on input line 1629.
+(pdftex.def)             Requested size: 170.71393pt x 131.80136pt.
+ [45 <./32_naive_tci.pdf> <./33_tci_indices.pdf>]
+<34_tci_form.pdf, id=2033, 598.235pt x 141.52875pt>
+File: 34_tci_form.pdf Graphic file (type pdf)
+<use 34_tci_form.pdf>
+Package pdftex.def Info: 34_tci_form.pdf  used on input line 1673.
+(pdftex.def)             Requested size: 170.71393pt x 40.38794pt.
+<35_pi_tensor.pdf, id=2034, 563.10374pt x 316.18124pt>
+File: 35_pi_tensor.pdf Graphic file (type pdf)
+<use 35_pi_tensor.pdf>
+Package pdftex.def Info: 35_pi_tensor.pdf  used on input line 1698.
+(pdftex.def)             Requested size: 170.71393pt x 95.85378pt.
+ [46 <./34_tci_form.pdf> <./35_pi_tensor.pdf>]
+<36_nesting1.pdf, id=2090, 349.305pt x 317.185pt>
+File: 36_nesting1.pdf Graphic file (type pdf)
+<use 36_nesting1.pdf>
+Package pdftex.def Info: 36_nesting1.pdf  used on input line 1724.
+(pdftex.def)             Requested size: 128.0387pt x 116.26279pt.
+<37_nesting2.pdf, id=2091, 350.30875pt x 350.30875pt>
+File: 37_nesting2.pdf Graphic file (type pdf)
+<use 37_nesting2.pdf>
+Package pdftex.def Info: 37_nesting2.pdf  used on input line 1728.
+(pdftex.def)             Requested size: 128.0387pt x 128.0407pt.
+ [47 <./36_nesting1.pdf> <./37_nesting2.pdf>]
+Overfull \hbox (33.91377pt too wide) detected at line 1765
+[][][]\OML/mdbch/m/it/10.95 I \OT1/mdbch/m/n/10.95 = 10[] [][] \OML/mdbch/m/it/10.95 dx[] [][] dx[] [] [] [][] dx[] []  [] []  [] :
+ []
+
+<multivariate_integral_convergence.pdf, id=2154, 301.125pt x 225.84375pt>
+File: multivariate_integral_convergence.pdf Graphic file (type pdf)
+<use multivariate_integral_convergence.pdf>
+Package pdftex.def Info: multivariate_integral_convergence.pdf  used on input line 1777.
+(pdftex.def)             Requested size: 256.07741pt x 192.0749pt.
+<85_gross_pitaevskii.pdf, id=2159, 690.58pt x 218.8175pt>
+File: 85_gross_pitaevskii.pdf Graphic file (type pdf)
+<use 85_gross_pitaevskii.pdf>
+Package pdftex.def Info: 85_gross_pitaevskii.pdf  used on input line 1791.
+(pdftex.def)             Requested size: 426.79135pt x 135.23473pt.
+[48] [49 <./multivariate_integral_convergence.pdf> <./85_gross_pitaevskii.pdf>]
+<57_quantics.pdf, id=2281, 454.69875pt x 226.8475pt>
+File: 57_quantics.pdf Graphic file (type pdf)
+<use 57_quantics.pdf>
+Package pdftex.def Info: 57_quantics.pdf  used on input line 1831.
+(pdftex.def)             Requested size: 128.0387pt x 63.87685pt.
+ [50] [51 <./57_quantics.pdf>] [52]
+<58_elementary_addition.pdf, id=2323, 385.44pt x 268.00125pt>
+File: 58_elementary_addition.pdf Graphic file (type pdf)
+<use 58_elementary_addition.pdf>
+Package pdftex.def Info: 58_elementary_addition.pdf  used on input line 1927.
+(pdftex.def)             Requested size: 128.0387pt x 89.02545pt.
+<11_magic_quantics_tensor.pdf, id=2326, 252.945pt x 247.92625pt>
+File: 11_magic_quantics_tensor.pdf Graphic file (type pdf)
+<use 11_magic_quantics_tensor.pdf>
+Package pdftex.def Info: 11_magic_quantics_tensor.pdf  used on input line 1946.
+(pdftex.def)             Requested size: 75.88408pt x 74.37845pt.
+<12_magic_quantics_mpo.pdf, id=2327, 538.01pt x 199.74625pt>
+File: 12_magic_quantics_mpo.pdf Graphic file (type pdf)
+<use 12_magic_quantics_mpo.pdf>
+Package pdftex.def Info: 12_magic_quantics_mpo.pdf  used on input line 1951.
+(pdftex.def)             Requested size: 161.40424pt x 59.92433pt.
+ [53 <./58_elementary_addition.pdf> <./11_magic_quantics_tensor.pdf> <./12_magic_quantics_mpo.pdf>]
+<59_convolution.pdf, id=2381, 538.01pt x 205.76875pt>
+File: 59_convolution.pdf Graphic file (type pdf)
+<use 59_convolution.pdf>
+Package pdftex.def Info: 59_convolution.pdf  used on input line 1967.
+(pdftex.def)             Requested size: 161.40424pt x 61.7311pt.
+<60_translation.pdf, id=2382, 538.01pt x 225.84375pt>
+File: 60_translation.pdf Graphic file (type pdf)
+<use 60_translation.pdf>
+Package pdftex.def Info: 60_translation.pdf  used on input line 1976.
+(pdftex.def)             Requested size: 161.40424pt x 67.75363pt.
+<61_translation_m.pdf, id=2383, 538.01pt x 197.73875pt>
+File: 61_translation_m.pdf Graphic file (type pdf)
+<use 61_translation_m.pdf>
+Package pdftex.def Info: 61_translation_m.pdf  used on input line 1980.
+(pdftex.def)             Requested size: 161.40424pt x 59.32208pt.
+ [54 <./59_convolution.pdf> <./60_translation.pdf> <./61_translation_m.pdf>]
+<62_quantics_3D.pdf, id=2448, 985.6825pt x 106.3975pt>
+File: 62_quantics_3D.pdf Graphic file (type pdf)
+<use 62_quantics_3D.pdf>
+Package pdftex.def Info: 62_quantics_3D.pdf  used on input line 2039.
+(pdftex.def)             Requested size: 246.42001pt x 26.5993pt.
+<63_quantics_interleaved.pdf, id=2449, 985.6825pt x 113.42375pt>
+File: 63_quantics_interleaved.pdf Graphic file (type pdf)
+<use 63_quantics_interleaved.pdf>
+Package pdftex.def Info: 63_quantics_interleaved.pdf  used on input line 2043.
+(pdftex.def)             Requested size: 246.42001pt x 28.35587pt.
+ [55
+pdfTeX warning (ext4): destination with the same identifier (name{equation.120}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.2047 \begin{center}
+                      <./62_quantics_3D.pdf>]
+<64_quantics_mirror.pdf, id=2473, 991.705pt x 114.4275pt>
+File: 64_quantics_mirror.pdf Graphic file (type pdf)
+<use 64_quantics_mirror.pdf>
+Package pdftex.def Info: 64_quantics_mirror.pdf  used on input line 2048.
+(pdftex.def)             Requested size: 247.92564pt x 28.6068pt.
+<65_quantics_tree.pdf, id=2474, 528.97626pt x 265.99374pt>
+File: 65_quantics_tree.pdf Graphic file (type pdf)
+<use 65_quantics_tree.pdf>
+Package pdftex.def Info: 65_quantics_tree.pdf  used on input line 2053.
+(pdftex.def)             Requested size: 158.69409pt x 79.79874pt.
+<66_helmoltz.pdf, id=2475, 277.035pt x 355.3275pt>
+File: 66_helmoltz.pdf Graphic file (type pdf)
+<use 66_helmoltz.pdf>
+Package pdftex.def Info: 66_helmoltz.pdf  used on input line 2077.
+(pdftex.def)             Requested size: 83.11113pt x 106.59906pt.
+ [56 <./63_quantics_interleaved.pdf> <./64_quantics_mirror.pdf> <./65_quantics_tree.pdf>] [57 <./66_helmoltz.pdf>] [58]
+<fig_heat_step_oscillations.pdf, id=2568, 722.7pt x 433.62pt>
+File: fig_heat_step_oscillations.pdf Graphic file (type pdf)
+<use fig_heat_step_oscillations.pdf>
+Package pdftex.def Info: fig_heat_step_oscillations.pdf  used on input line 2179.
+(pdftex.def)             Requested size: 284.52756pt x 170.71892pt.
+
+Underfull \hbox (badness 1558) in paragraph at lines 2182--2182
+[]\T1/mdbch/m/n/10.95 Figure 8: |Il-lus-tra-tion of us-ing QFT to solve the heat equa-tion [] us-ing
+ []
+
+
+Underfull \hbox (badness 1087) in paragraph at lines 2182--2182
+\T1/mdbch/m/n/10.95 quan-tics. The plot shows $\OML/mdbch/m/it/10.95 u\OT1/mdbch/m/n/10.95 (\OML/mdbch/m/it/10.95 x; t\OT1/mdbch/m/n/10.95 )$ \T1/mdbch/m/n/10.95 ver-sus $\OML/mdbch/m/it/10.95 x$ \T1/mdbch/m/n/10.95 for dif-fer-ent times, us-ing an ini-
+ []
+
+
+Underfull \hbox (badness 1270) in paragraph at lines 2182--2182
+\T1/mdbch/m/n/10.95 tial con-di-tion that con-tains Heav-i-side func-tions and rapidly os-cil-lat-ing terms:
+ []
+
+[59] [60 <./fig_heat_step_oscillations.pdf>]
+Overfull \hbox (6.94029pt too wide) in paragraph at lines 2235--2236
+[][][]$\T1/mdbch/m/n/10.95 https : / / gricad-[]gitlab . univ-[]grenoble-[]alpes . fr / theorypheliqs / whocancompete-[]tutorial$[][] con-
+ []
+
+
+Overfull \hbox (11.57614pt too wide) in paragraph at lines 2236--2237
+[][][]$\T1/mdbch/m/n/10.95 https : / / gricad-[]gitlab . univ-[]grenoble-[]alpes . fr / theorypheliqs / whocancompete-[]example$[][] con-
+ []
+
+[61] (./whocancompete.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 23--28
+[]\T1/mdbch/m/n/10.95 U. Scholl-wöck,  \T1/mdbch/m/it/10.95 The density-matrix renor-mal-iza-tion group in the age
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--28
+\T1/mdbch/m/it/10.95 of ma-trix prod-uct states\T1/mdbch/m/n/10.95 ,  An-nals of Physics \T1/mdbch/b/n/10.95 326\T1/mdbch/m/n/10.95 (1), 96 (2011),
+ []
+
+
+Underfull \hbox (badness 2753) in paragraph at lines 64--69
+[]\T1/mdbch/m/n/10.95 M. Fish-man, S. R. White and E. M. Stouden-mire,  \T1/mdbch/m/it/10.95 The ITen-sor Soft-ware Li-
+ []
+
+
+Underfull \hbox (badness 2781) in paragraph at lines 64--69
+\T1/mdbch/m/it/10.95 brary for Ten-sor Net-work Cal-cu-la-tions\T1/mdbch/m/n/10.95 ,  Sci-Post Phys. Code-bases p. 4 (2022),
+ []
+
+[62]
+Underfull \hbox (badness 2111) in paragraph at lines 121--126
+[]\T1/mdbch/m/n/10.95 R. N. C. Pfeifer, J. Haege-man and F. Ver-straete,  \T1/mdbch/m/it/10.95 Faster iden-ti-fi-ca-tion of op-ti-
+ []
+
+[63]
+Underfull \hbox (badness 1852) in paragraph at lines 218--223
+[]\T1/mdbch/m/n/10.95 J. Hauschild and F. Poll-mann,  \T1/mdbch/m/it/10.95 Ef-fi-cient nu-mer-i-cal sim-u-la-tions with Ten-sor Net-
+ []
+
+
+Underfull \hbox (badness 1057) in paragraph at lines 218--223
+\T1/mdbch/m/it/10.95 works: Ten-sor Net-work Python (TeNPy)\T1/mdbch/m/n/10.95 ,  Sci-Post Phys. Lect. Notes p. 5 (2018),
+ []
+
+
+Underfull \hbox (badness 1152) in paragraph at lines 243--248
+[]\T1/mdbch/m/n/10.95 S. A. Gor-einov, I. V. Os-eledets, D. V. Savostyanov, E. E. Tyr-tysh-nikov and N. L.
+ []
+
+
+Underfull \hbox (badness 1067) in paragraph at lines 243--248
+\T1/mdbch/m/n/10.95 Za-ma-rashkin,  \T1/mdbch/m/it/10.95 How to Find a Good Sub-ma-trix\T1/mdbch/m/n/10.95 , pp. 247--256,  World Sci-en-tific,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--254
+[]\T1/mdbch/m/n/10.95 I. Os-eledets and E. Tyr-tysh-nikov,  \T1/mdbch/m/it/10.95 Tt-cross ap-prox-i-ma-tion for mul-ti-di-men-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--254
+\T1/mdbch/m/it/10.95 sional ar-rays\T1/mdbch/m/n/10.95 ,  Lin-ear Al-ge-bra and its Ap-pli-ca-tions \T1/mdbch/b/n/10.95 432\T1/mdbch/m/n/10.95 (1), 70 (2010),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--274
+[]\T1/mdbch/m/n/10.95 D. V. Savostyanov,  \T1/mdbch/m/it/10.95 Qua-siop-ti-mal-ity of maximum-volume cross in-ter-po-la-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--274
+\T1/mdbch/m/it/10.95 tion of ten-sors\T1/mdbch/m/n/10.95 ,  Lin-ear Al-ge-bra and its Ap-pli-ca-tions \T1/mdbch/b/n/10.95 458\T1/mdbch/m/n/10.95 , 217 (2014),
+ []
+
+[64]) [65] (./whocancompete.aux)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2026-01-19>
+ ***********
+Package rerunfilecheck Info: File `whocancompete.out' has not changed.
+(rerunfilecheck)             Checksum: 5C700BF414CE97B2B47C4C3B4B365583;16421.
+ ) 
+Here is how much of TeX's memory you used:
+ 16492 strings out of 469431
+ 262242 string characters out of 5468814
+ 663555 words of memory out of 5000000
+ 44553 multiletter control sequences out of 15000+600000
+ 694380 words of font info for 155 fonts, out of 8000000 for 9000
+ 59 hyphenation exceptions out of 8191
+ 105i,14n,107p,1416b,608s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/share/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb></usr/share/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chb8t.pfb></usr/share/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr7m.pfb></usr/share/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr7t.pfb></usr/share/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr7v.pfb></usr/share/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr7y.pfb></usr/share/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr8t.pfb></usr/share/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chri7m.pfb></usr/share/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chrma.
+pfb>
+Output written on whocancompete.pdf (65 pages, 4491471 bytes).
+PDF statistics:
+ 2855 PDF objects out of 2984 (max. 8388607)
+ 1908 compressed objects within 20 object streams
+ 329 named destinations out of 1000 (max. 500000)
+ 1013 words of extra memory for PDF output out of 10000 (max. 10000000)
+
