@@ -1,0 +1,47 @@
+% A symmetric tensor $T$ is invariant under permuting its edges: the
+% five-legged spider on the left has five equal-length edges drawn as
+% Bezier curves, each with a distinct curvature, labelled $i,j,k,l,m$
+% in clockwise order; the same tensor on the right shows the very same
+% five curves permuted among these labelled positions.
+% Self-contained: the colours are defined inside the picture, so this
+% file can be \input anywhere.
+\begin{tikzpicture}[>=Stealth, line join=round, line cap=round,
+    tn/.style={circle, draw=tnoutline, line width=1.2mm, inner sep=0pt,
+               minimum size=1.0cm, font=\Large},
+    wire/.style={line width=1.2mm, black},
+    idx/.style={font=\normalsize}]
+    \definecolor{tnblue}{RGB}{68,114,196}        % blue        -- the tensor T
+    \definecolor{tnoutline}{RGB}{23,44,81}       % navy outline
+
+    % ---- left: $T$ with five equal edges, each a Bezier curve with a
+    % distinct curvature ----
+    \draw[wire] (0.00,0.00) .. controls (-0.53,0.97) .. (0.00,2.20);
+    \draw[wire] (0.00,0.00) .. controls (0.90,0.63) .. (2.09,0.68);
+    \draw[wire] (0.00,0.00) .. controls (-1.05,0.34) .. (-2.09,0.68);
+    \draw[wire] (0.00,0.00) .. controls (-0.88,-0.66) .. (-1.29,-1.78);
+    \draw[wire] (0.00,0.00) .. controls (0.14,-1.09) .. (1.29,-1.78);
+    \node[tn, fill=tnblue, text=white] at (0,0) {$T$};
+
+    % ---- equals ----
+    \node[font=\huge] at (3.0,0) {$=$};
+
+    % ---- right: the same five curves, permuted around the node ----
+    \draw[wire] (6.00,0.00) .. controls (5.67,1.05) .. (8.09,0.68);
+    \draw[wire] (6.00,0.00) .. controls (7.08,-0.20) ..(6.00,2.20); 
+    \draw[wire] (6.00,0.00) .. controls (4.92,-0.20) .. (4.71,-1.78);
+    \draw[wire] (6.00,0.00) .. controls (5.35,-0.89) .. (3.91,0.68);
+    \draw[wire] (6.00,0.00) .. controls (6.35,-1.04) .. (7.29,-1.78);
+    \node[tn, fill=tnblue, text=white] at (6.0,0) {$T$};
+
+    % ---- edge labels: i, j, k, l, m in clockwise order from the top ----
+    \node[idx] at (0,2.45) {$i$};
+    \node[idx] at (2.38,0.77) {$j$};
+    \node[idx] at (1.48,-2.05) {$k$};
+    \node[idx] at (-1.48,-2.05) {$l$};
+    \node[idx] at (-2.38,0.77) {$m$};
+    \node[idx] at (6.0,2.45) {$i$};
+    \node[idx] at (8.38,0.77) {$j$};
+    \node[idx] at (7.48,-2.05) {$k$};
+    \node[idx] at (4.52,-2.05) {$l$};
+    \node[idx] at (3.62,0.77) {$m$};
+\end{tikzpicture}

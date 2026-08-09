@@ -1,0 +1,81 @@
+% Graph Board TikZ export
+% Exported: 2026-08-09T12:35:20.617Z
+% Title: Untitled Graph
+% Nodes: 28, Edges: 11
+
+\begingroup
+% --- Colors (define-if-not-already-defined) ---
+\providecolor{zxRed}{RGB}{232,165,165}   % X spiders
+\providecolor{zxGreen}{RGB}{216,248,216} % Z spiders
+\providecolor{zxYellow}{RGB}{255,255,0}     % hadamard 
+
+\tikzset{
+    EMPTY/.style={minimum size=3.4mm,
+        outer sep=-1.7mm},
+    DOT/.style={inner sep=0mm, minimum size=3.4mm, shape=circle,
+        draw=black, outer sep=-0.5mm, line width=1pt},
+    BLACK_DOT/.style={minimum size=2mm,
+        outer sep=-1mm, fill=black, shape=circle},
+    WORD_BALL/.style={draw=black, shape=rectangle, minimum size=6.5mm,
+        rounded corners=3.2mm, inner sep=1.2mm, outer sep=-1.0mm,
+        scale=1, font={\large\boldmath}, line width=1pt},
+    GREEN_DOT/.style={DOT, fill=zxGreen},
+    GREEN_WORD_BALL/.style={WORD_BALL, fill=zxGreen},
+    RED_DOT/.style={DOT, fill=zxRed},
+    RED_WORD_BALL/.style={GREEN_WORD_BALL, fill=zxRed},
+    YELLOW_BOX/.style={fill=zxYellow, draw=black, line width=1pt, shape=rectangle, inner sep=0.6mm,
+        minimum height=3.4mm, minimum width=3.4mm,
+        font={\large\boldmath}},
+    EDGE/.style={draw=black, line width=1pt}
+}
+\pgfdeclarelayer{edgelayer}
+\pgfdeclarelayer{nodelayer}
+\pgfsetlayers{edgelayer,nodelayer,main}
+
+\begin{tikzpicture}
+    \begin{pgfonlayer}{nodelayer}
+        \node [EMPTY] (1) at (-4.41071, 2.125) {};
+        \node [EMPTY] (2) at (-4.41071, 1.125) {};
+        \node [EMPTY] (3) at (-2.41071, 2.125) {};
+        \node [EMPTY] (4) at (-2.41071, 1.125) {};
+        \node [GREEN_DOT] (5) at (-3.41071, 2.125) {};
+        \node [RED_DOT] (6) at (-3.41071, 1.125) {};
+        \node [EMPTY] (7) at (-1.91071, 1.625) {$=$};
+        \node [label=above:{$\sqrt{2}$}, EMPTY] (8) at (-4.91071, 1.125) {};
+        \node [label=above:{$$\begin{pmatrix} 	1 & 0 & 0 & 0 \\ 	0 & 1 & 0 & 0 \\ 	0 & 0 & 0 & 1 \\ 	0 & 0 & 1 & 0 \end{pmatrix}$$}, EMPTY] (9) at (-0.41071, 0.625) {};
+        \node [label=above:{$\text{CNOT}$}, EMPTY] (10) at (-2.41071, -0.375) {};
+        \node [EMPTY] (11) at (2.08929, 1.625) {};
+        \node [EMPTY] (12) at (4.08929, 1.625) {};
+        \node [RED_WORD_BALL] (13) at (3.08929, 1.625) {$\pi$};
+        \node [label=above:{$\text{X}$}, EMPTY] (14) at (3.08929, 0.625) {};
+        \node [EMPTY] (15) at (-4.91071, -1.375) {};
+        \node [EMPTY] (16) at (-2.91071, -1.375) {};
+        \node [GREEN_WORD_BALL] (17) at (-3.91071, -1.375) {$\pi$};
+        \node [label=above:{$\text{Z}$}, EMPTY] (18) at (-3.91071, -2.875) {};
+        \node [EMPTY] (19) at (2.08929, -1.375) {};
+        \node [EMPTY] (20) at (4.08929, -1.375) {};
+        \node [GREEN_WORD_BALL] (21) at (3.08929, -1.375) {$\frac{\pi}{4}$};
+        \node [label=above:{$\text{T}$}, EMPTY] (22) at (3.08929, -2.875) {};
+        \node [EMPTY] (23) at (5.08929, 1.625) {$=$};
+        \node [label=above:{$$ \begin{pmatrix} 0 & 1 \\ 1 & 0 \\ \end{pmatrix} $$}, EMPTY] (24) at (6.58929, 0.625) {};
+        \node [EMPTY] (25) at (-1.91071, -1.375) {$=$};
+        \node [label=above:{$$ \begin{pmatrix} 1 & 0 \\ 0 & -1 \\ \end{pmatrix} $$}, EMPTY] (26) at (-0.41071, -1.875) {};
+        \node [EMPTY] (27) at (5.08929, -1.375) {$=$};
+        \node [label=above:{$$ \begin{pmatrix} 1 & 0 \\ 0 & e^{i \pi/4} \\ \end{pmatrix} $$}, EMPTY] (28) at (6.58929, -1.875) {};
+    \end{pgfonlayer}
+    \begin{pgfonlayer}{edgelayer}
+        \draw[EDGE] (6) to (2);
+        \draw[EDGE] (5) to (6);
+        \draw[EDGE] (1) to (5);
+        \draw[EDGE] (5) to (3);
+        \draw[EDGE] (6) to (4);
+        \draw[EDGE] (13) to (11);
+        \draw[EDGE] (13) to (12);
+        \draw[EDGE] (17) to (15);
+        \draw[EDGE] (17) to (16);
+        \draw[EDGE] (21) to (19);
+        \draw[EDGE] (21) to (20);
+    \end{pgfonlayer}
+\end{tikzpicture}
+
+\endgroup

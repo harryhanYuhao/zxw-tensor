@@ -1,0 +1,225 @@
+% Graph Board TikZ export
+% Exported: 2026-08-09T17:21:23.093Z
+% Title: Untitled Graph
+% Nodes: 111, Edges: 72
+
+\begingroup
+% --- Colors (define-if-not-already-defined) ---
+\providecolor{zxRed}{RGB}{232,165,165}   % X spiders
+\providecolor{zxGreen}{RGB}{216,248,216} % Z spiders
+\providecolor{zxYellow}{RGB}{255,255,0}     % hadamard 
+
+\tikzset{
+    EMPTY/.style={minimum size=3.4mm,
+        outer sep=-1.7mm},
+    DOT/.style={inner sep=0mm, minimum size=3.4mm, shape=circle,
+        draw=black, outer sep=-0.5mm, line width=1pt},
+    BLACK_DOT/.style={minimum size=2mm,
+        outer sep=-1mm, fill=black, shape=circle},
+    WORD_BALL/.style={draw=black, shape=rectangle, minimum size=6.5mm,
+        rounded corners=3.2mm, inner sep=1.2mm, outer sep=-1.0mm,
+        scale=1, font={\large\boldmath}, line width=1pt},
+    GREEN_DOT/.style={DOT, fill=zxGreen},
+    GREEN_WORD_BALL/.style={WORD_BALL, fill=zxGreen},
+    RED_DOT/.style={DOT, fill=zxRed},
+    RED_WORD_BALL/.style={GREEN_WORD_BALL, fill=zxRed},
+    YELLOW_BOX/.style={fill=zxYellow, draw=black, line width=1pt, shape=rectangle, inner sep=0.6mm,
+        minimum height=3.4mm, minimum width=3.4mm,
+        font={\large\boldmath}},
+    EDGE/.style={draw=black, line width=1pt}
+}
+\pgfdeclarelayer{edgelayer}
+\pgfdeclarelayer{nodelayer}
+\pgfsetlayers{edgelayer,nodelayer,main}
+
+\begin{tikzpicture}
+    \begin{pgfonlayer}{nodelayer}
+        \node [GREEN_WORD_BALL] (1) at (-7.29636, 3.29974) {$\alpha$};
+        \node [GREEN_WORD_BALL] (2) at (-6.29636, 2.29974) {$\beta$};
+        \node [EMPTY] (3) at (-7.29636, 2.79974) {};
+        \node [EMPTY] (4) at (-6.29636, 2.79974) {};
+        \node [EMPTY] (5) at (-6.79636, 2.79974) {$\cdots$};
+        \node [EMPTY] (6) at (-8.29636, 4.29974) {};
+        \node [EMPTY] (7) at (-8.29636, 3.29974) {};
+        \node [EMPTY] (8) at (-8.29636, 2.29974) {};
+        \node [EMPTY] (9) at (-8.29636, 1.29974) {};
+        \node [EMPTY] (10) at (-5.29636, 4.29974) {};
+        \node [EMPTY] (11) at (-5.29636, 3.29974) {};
+        \node [EMPTY] (12) at (-5.29636, 2.29974) {};
+        \node [EMPTY] (13) at (-5.29636, 1.29974) {};
+        \node [EMPTY] (14) at (-5.29636, 3.79974) {$\cdots$};
+        \node [EMPTY] (15) at (-5.29636, 1.79974) {$\cdots$};
+        \node [EMPTY] (16) at (-8.29636, 1.79974) {$\cdots$};
+        \node [EMPTY] (17) at (-8.29636, 3.79974) {$\cdots$};
+        \node [label=above:{$\color{red} \mathbf{f}$}, EMPTY] (18) at (-3.79636, 2.79974) {$=$};
+        \node [GREEN_WORD_BALL] (19) at (-0.79636, 2.79974) {$\alpha+\beta$};
+        \node [EMPTY] (20) at (-2.29636, 4.29974) {};
+        \node [EMPTY] (21) at (-2.29636, 3.29974) {};
+        \node [EMPTY] (22) at (-2.29636, 2.29974) {};
+        \node [EMPTY] (23) at (-2.29636, 1.29974) {};
+        \node [EMPTY] (24) at (0.70364, 4.29974) {};
+        \node [EMPTY] (25) at (0.70364, 3.29974) {};
+        \node [EMPTY] (26) at (0.70364, 2.29974) {};
+        \node [EMPTY] (27) at (0.70364, 1.29974) {};
+        \node [EMPTY] (28) at (0.70364, 3.79974) {$\cdots$};
+        \node [EMPTY] (29) at (0.20364, 1.79974) {$\cdots$};
+        \node [EMPTY] (30) at (-2.29636, 1.79974) {$\cdots$};
+        \node [EMPTY] (31) at (-2.29636, 3.79974) {$\cdots$};
+        \node [GREEN_WORD_BALL] (32) at (4.27656, 3.03932) {$\alpha$};
+        \node [YELLOW_BOX] (33) at (3.27656, 4.03932) {};
+        \node [YELLOW_BOX] (34) at (3.27656, 2.03932) {};
+        \node [YELLOW_BOX] (35) at (5.27656, 4.03932) {};
+        \node [YELLOW_BOX] (36) at (5.27656, 2.03932) {};
+        \node [EMPTY] (37) at (6.27656, 3.03932) {$\cdots$};
+        \node [EMPTY] (38) at (2.27656, 3.03932) {$\cdots$};
+        \node [label=above:{$\color{red} \mathbf{h}$}, EMPTY] (39) at (7.27656, 3.03932) {$=$};
+        \node [EMPTY] (40) at (2.27656, 4.03932) {};
+        \node [EMPTY] (41) at (2.27656, 2.03932) {};
+        \node [EMPTY] (42) at (6.27656, 4.03932) {};
+        \node [EMPTY] (43) at (6.27656, 2.03932) {};
+        \node [RED_WORD_BALL] (44) at (9.27656, 3.03932) {$\alpha$};
+        \node [EMPTY] (45) at (10.27656, 3.03932) {$\cdots$};
+        \node [EMPTY] (46) at (8.27656, 3.03932) {$\cdots$};
+        \node [EMPTY] (47) at (8.27656, 4.03932) {};
+        \node [EMPTY] (48) at (8.27656, 2.03932) {};
+        \node [EMPTY] (49) at (10.27656, 4.03932) {};
+        \node [EMPTY] (50) at (10.27656, 2.03932) {};
+        \node [GREEN_DOT] (51) at (4.20364, -1.70026) {};
+        \node [EMPTY] (52) at (2.70364, -1.70026) {};
+        \node [EMPTY] (53) at (5.70364, -1.70026) {};
+        \node [label=above:{$\color{red} \mathbf{id}$}, EMPTY] (54) at (7.20364, -1.70026) {$=$};
+        \node [EMPTY] (55) at (8.20364, -1.70026) {};
+        \node [EMPTY] (56) at (10.20364, -1.70026) {};
+        \node [GREEN_WORD_BALL] (57) at (-6.29636, -0.70026) {$\alpha$};
+        \node [RED_WORD_BALL] (58) at (-7.29636, -0.70026) {$\pi$};
+        \node [EMPTY] (59) at (-5.29636, -0.70026) {$\cdots$};
+        \node [EMPTY] (60) at (-5.29636, -0.20026) {};
+        \node [EMPTY] (61) at (-5.29636, -1.20026) {};
+        \node [EMPTY] (62) at (-8.29636, -0.70026) {};
+        \node [GREEN_WORD_BALL] (63) at (-1.29636, -0.70026) {$\alpha$};
+        \node [RED_WORD_BALL] (64) at (-0.29636, -0.20026) {$\pi$};
+        \node [RED_WORD_BALL] (65) at (-0.29636, -1.20026) {$\pi$};
+        \node [EMPTY] (66) at (-2.29636, -0.70026) {};
+        \node [label=above:{$\color{red} \mathbf{\pi}$}, EMPTY] (67) at (-3.79636, -0.70026) {$\propto$};
+        \node [GREEN_WORD_BALL] (68) at (3.70364, -4.20026) {$\alpha$};
+        \node [RED_DOT] (69) at (2.70364, -4.20026) {};
+        \node [EMPTY] (70) at (5.20364, -4.20026) {$\cdots$};
+        \node [EMPTY] (71) at (5.20364, -3.70026) {};
+        \node [EMPTY] (72) at (5.20364, -4.70026) {};
+        \node [label=above:{$\color{red} \mathbf{c}$}, EMPTY] (73) at (6.70364, -4.20026) {$\propto$};
+        \node [EMPTY] (74) at (9.20364, -4.20026) {$\cdots$};
+        \node [EMPTY] (75) at (9.70364, -3.70026) {};
+        \node [EMPTY] (76) at (9.70364, -4.70026) {};
+        \node [RED_DOT] (77) at (8.70364, -3.70026) {};
+        \node [RED_DOT] (78) at (8.70364, -4.70026) {};
+        \node [YELLOW_BOX] (79) at (3.77656, 0.53932) {};
+        \node [YELLOW_BOX] (80) at (4.77656, 0.53932) {};
+        \node [EMPTY] (81) at (2.77656, 0.53932) {};
+        \node [EMPTY] (82) at (5.77656, 0.53932) {};
+        \node [label=above:{$\color{red} \mathbf{hh}$}, EMPTY] (83) at (7.27656, 0.53932) {$=$};
+        \node [EMPTY] (84) at (8.27656, 0.53932) {};
+        \node [EMPTY] (85) at (10.27656, 0.53932) {};
+        \node [EMPTY] (86) at (-8.29636, -2.20026) {};
+        \node [EMPTY] (87) at (-8.29636, -3.20026) {};
+        \node [EMPTY] (88) at (-5.29636, -3.20026) {};
+        \node [EMPTY] (89) at (-5.29636, -2.20026) {};
+        \node [EMPTY] (90) at (-2.29636, -2.20026) {};
+        \node [EMPTY] (91) at (-2.29636, -3.20026) {};
+        \node [EMPTY] (92) at (0.20364, -2.20026) {};
+        \node [label=above:{$\color{red} \mathbf{sc}$}, EMPTY] (93) at (-3.79636, -2.70026) {$=$};
+        \node [EMPTY] (94) at (0.20364, -3.20026) {};
+        \node [GREEN_DOT] (95) at (-7.29636, -2.20026) {};
+        \node [GREEN_DOT] (96) at (-7.29636, -3.20026) {};
+        \node [GREEN_DOT] (97) at (-0.79636, -2.70026) {};
+        \node [RED_DOT] (98) at (-6.29636, -2.20026) {};
+        \node [RED_DOT] (99) at (-6.29636, -3.20026) {};
+        \node [RED_DOT] (100) at (-1.29636, -2.70026) {};
+        \node [EMPTY] (101) at (0.70364, -0.20026) {};
+        \node [EMPTY] (102) at (0.70364, -1.20026) {};
+        \node [YELLOW_BOX] (103) at (-7.29636, -4.70026) {};
+        \node [EMPTY] (104) at (-8.29636, -4.70026) {};
+        \node [EMPTY] (105) at (-6.29636, -4.70026) {};
+        \node [label=above:{$\color{red} \mathbf{eu}$}, EMPTY] (106) at (-5.29636, -4.70026) {$\propto$};
+        \node [GREEN_WORD_BALL] (107) at (-3.29636, -4.70026) {$-\frac{\pi}{2}$};
+        \node [EMPTY] (108) at (-4.29636, -4.70026) {};
+        \node [EMPTY] (109) at (0.70364, -4.70026) {};
+        \node [RED_WORD_BALL] (110) at (-1.79636, -4.70026) {$-\frac{\pi}{2}$};
+        \node [GREEN_WORD_BALL] (111) at (-0.29636, -4.70026) {$-\frac{\pi}{2}$};
+    \end{pgfonlayer}
+    \begin{pgfonlayer}{edgelayer}
+        \draw[EDGE] (1) to (3);
+        \draw[EDGE] (3) to (2);
+        \draw[EDGE] (2) to (4);
+        \draw[EDGE] (1) to (4);
+        \draw[EDGE] (6) to (1);
+        \draw[EDGE] (7) to (1);
+        \draw[EDGE] (2) to (8);
+        \draw[EDGE] (9) to (2);
+        \draw[EDGE] (10) to (1);
+        \draw[EDGE] (11) to (1);
+        \draw[EDGE] (12) to (2);
+        \draw[EDGE] (13) to (2);
+        \draw[EDGE] (19) to (22);
+        \draw[EDGE] (23) to (19);
+        \draw[EDGE] (26) to (19);
+        \draw[EDGE] (27) to (19);
+        \draw[EDGE] (20) to (19);
+        \draw[EDGE] (21) to (19);
+        \draw[EDGE] (24) to (19);
+        \draw[EDGE] (25) to (19);
+        \draw[EDGE] (33) to (32);
+        \draw[EDGE] (34) to (32);
+        \draw[EDGE] (35) to (32);
+        \draw[EDGE] (36) to (32);
+        \draw[EDGE] (33) to (40);
+        \draw[EDGE] (41) to (34);
+        \draw[EDGE] (36) to (43);
+        \draw[EDGE] (42) to (35);
+        \draw[EDGE] (47) to (44);
+        \draw[EDGE] (44) to (48);
+        \draw[EDGE] (44) to (49);
+        \draw[EDGE] (44) to (50);
+        \draw[EDGE] (53) to (51);
+        \draw[EDGE] (51) to (52);
+        \draw[EDGE] (55) to (56);
+        \draw[EDGE] (58) to (57);
+        \draw[EDGE] (57) to (60);
+        \draw[EDGE] (61) to (57);
+        \draw[EDGE] (62) to (58);
+        \draw[EDGE] (63) to (64);
+        \draw[EDGE] (65) to (63);
+        \draw[EDGE] (69) to (68);
+        \draw[EDGE] (68) to (71);
+        \draw[EDGE] (72) to (68);
+        \draw[EDGE] (77) to (75);
+        \draw[EDGE] (78) to (76);
+        \draw[EDGE] (82) to (80);
+        \draw[EDGE] (80) to (79);
+        \draw[EDGE] (79) to (81);
+        \draw[EDGE] (84) to (85);
+        \draw[EDGE] (95) to (99);
+        \draw[EDGE] (96) to (99);
+        \draw[EDGE] (95) to (98);
+        \draw[EDGE] (96) to (98);
+        \draw[EDGE] (86) to (95);
+        \draw[EDGE] (96) to (87);
+        \draw[EDGE] (99) to (88);
+        \draw[EDGE] (98) to (89);
+        \draw[EDGE] (90) to (100);
+        \draw[EDGE] (91) to (100);
+        \draw[EDGE] (100) to (97);
+        \draw[EDGE] (92) to (97);
+        \draw[EDGE] (94) to (97);
+        \draw[EDGE] (63) to (66);
+        \draw[EDGE] (101) to (64);
+        \draw[EDGE] (102) to (65);
+        \draw[EDGE] (103) to (104);
+        \draw[EDGE] (103) to (105);
+        \draw[EDGE] (107) to (108);
+        \draw[EDGE] (107) to (110);
+        \draw[EDGE] (110) to (111);
+        \draw[EDGE] (111) to (109);
+    \end{pgfonlayer}
+\end{tikzpicture}
+
+\endgroup

@@ -1,0 +1,59 @@
+% Graph Board TikZ export
+% Exported: 2026-08-09T20:24:18.248Z
+% Title: Untitled Graph
+% Nodes: 11, Edges: 9
+\begingroup
+% --- Colors (define-if-not-already-defined) ---
+\providecolor{zxRed}{RGB}{232,165,165}   % X spiders
+\providecolor{zxGreen}{RGB}{216,248,216} % Z spiders
+\providecolor{zxYellow}{RGB}{255,255,0}     % hadamard 
+\tikzset{
+    EMPTY/.style={minimum size=3.4mm,
+        outer sep=-1.7mm},
+    DOT/.style={inner sep=0mm, minimum size=3.4mm, shape=circle,
+        draw=black, outer sep=-0.5mm, line width=1pt},
+    BLACK_DOT/.style={minimum size=2mm,
+        outer sep=-1mm, fill=black, shape=circle},
+    WORD_BALL/.style={draw=black, shape=rectangle, minimum size=6.5mm,
+        rounded corners=3.2mm, inner sep=1.2mm, outer sep=-1.0mm,
+        scale=1, font={\large\boldmath}, line width=1pt},
+    GREEN_DOT/.style={DOT, fill=zxGreen},
+    GREEN_WORD_BALL/.style={WORD_BALL, fill=zxGreen},
+    RED_DOT/.style={DOT, fill=zxRed},
+    RED_WORD_BALL/.style={GREEN_WORD_BALL, fill=zxRed},
+    YELLOW_BOX/.style={fill=zxYellow, draw=black, line width=1pt, shape=rectangle, inner sep=0.6mm,
+        minimum height=3.4mm, minimum width=3.4mm,
+        font={\large\boldmath}},
+    EDGE/.style={draw=black, line width=1pt}
+}
+\pgfdeclarelayer{edgelayer}
+\pgfdeclarelayer{nodelayer}
+\pgfsetlayers{edgelayer,nodelayer,main}
+% 
+\begin{tikzpicture}
+    \begin{pgfonlayer}{nodelayer}
+        \node [GREEN_DOT] (1) at (-3.27273, 0) {};
+        \node [RED_DOT] (2) at (-1.27273, 0) {};
+        \node [EMPTY] (3) at (-2.27273, 0.5) {};
+        \node [EMPTY] (4) at (-2.27273, -0.5) {};
+        \node [EMPTY] (5) at (-4.27273, 0) {};
+        \node [EMPTY] (6) at (-0.27273, 0) {};
+        \node [EMPTY] (7) at (1.72727, 0) {};
+        \node [EMPTY] (8) at (4.72727, 0) {};
+        \node [GREEN_DOT] (9) at (2.72727, 0) {};
+        \node [RED_DOT] (10) at (3.72727, 0) {};
+        \node [EMPTY] (11) at (0.72727, 0) {$\propto$};
+    \end{pgfonlayer}
+    \begin{pgfonlayer}{edgelayer}
+        \draw[EDGE] (3) to (1);
+        \draw[EDGE] (4) to (1);
+        \draw[EDGE] (3) to (2);
+        \draw[EDGE] (4) to (2);
+        \draw[EDGE] (6) to (2);
+        \draw[EDGE] (1) to (5);
+        \draw[EDGE] (7) to (9);
+        \draw[EDGE] (10) to (8);
+        % skipped edge HLR8RRtF-g4V4V2LGE9un: endpoint not in node list
+    \end{pgfonlayer}
+\end{tikzpicture}
+\endgroup

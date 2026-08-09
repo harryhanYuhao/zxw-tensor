@@ -1,0 +1,88 @@
+% Graph Board TikZ export
+% Exported: 2026-08-08T21:08:59.930Z
+% Title: Untitled Graph
+% Nodes: 28, Edges: 18
+
+\begingroup
+% --- Colors (define-if-not-already-defined) ---
+\providecolor{zxRed}{RGB}{232,165,165}   % X spiders
+\providecolor{zxGreen}{RGB}{216,248,216} % Z spiders
+\providecolor{zxYellow}{RGB}{255,255,0}     % hadamard 
+
+\tikzset{
+    EMPTY/.style={minimum size=3.4mm,
+        outer sep=-1.7mm},
+    DOT/.style={inner sep=0mm, minimum size=3.4mm, shape=circle,
+        draw=black, outer sep=-0.5mm, line width=1pt},
+    BLACK_DOT/.style={minimum size=2mm,
+        outer sep=-1mm, fill=black, shape=circle},
+    WORD_BALL/.style={draw=black, shape=rectangle, minimum size=7.5mm,
+        rounded corners=3.6mm, inner sep=1.2mm, outer sep=-0.5mm,
+        scale=1, font={\Large\boldmath}, line width=1pt},
+    GREEN_DOT/.style={DOT, fill=zxGreen},
+    GREEN_WORD_BALL/.style={WORD_BALL, fill=zxGreen},
+    RED_DOT/.style={DOT, fill=zxRed},
+    RED_WORD_BALL/.style={GREEN_WORD_BALL, fill=zxRed},
+    YELLOW_BOX/.style={fill=zxYellow, draw=black, line width=1pt, shape=rectangle, inner sep=0.6mm,
+        minimum height=3.4mm, minimum width=3.4mm,
+        font={\Large\boldmath}},
+    EDGE/.style={draw=black, line width=1pt}
+}
+\pgfdeclarelayer{edgelayer}
+\pgfdeclarelayer{nodelayer}
+\pgfsetlayers{edgelayer,nodelayer,main}
+
+\begin{tikzpicture}
+    \begin{pgfonlayer}{nodelayer}
+        \node [GREEN_WORD_BALL] (1) at (-3.07143, 0.21429) {$\alpha$};
+        \node [EMPTY] (2) at (-4.57143, 1.21429) {};
+        \node [EMPTY] (3) at (-4.57143, 0.71429) {};
+        \node [EMPTY] (4) at (-4.57143, -0.28571) {};
+        \node [EMPTY] (5) at (-4.57143, -0.78571) {};
+        \node [EMPTY] (6) at (-4.57143, 0.21429) {$\cdots$};
+        \node [EMPTY] (7) at (-1.57143, 1.21429) {};
+        \node [EMPTY] (8) at (-1.57143, 0.71429) {};
+        \node [EMPTY] (9) at (-1.57143, -0.28571) {};
+        \node [EMPTY] (10) at (-1.57143, -0.78571) {};
+        \node [EMPTY] (11) at (-1.57143, 0.21429) {$\cdots$};
+        \node [RED_WORD_BALL] (12) at (1.42857, 0.21429) {$\alpha$};
+        \node [EMPTY] (13) at (-0.07143, 1.21429) {};
+        \node [EMPTY] (14) at (-0.07143, 0.71429) {};
+        \node [EMPTY] (15) at (-0.07143, -0.28571) {};
+        \node [EMPTY] (16) at (-0.07143, -0.78571) {};
+        \node [EMPTY] (17) at (-0.07143, 0.21429) {$\cdots$};
+        \node [EMPTY] (18) at (2.92857, 1.21429) {};
+        \node [EMPTY] (19) at (2.92857, 0.71429) {};
+        \node [EMPTY] (20) at (2.92857, -0.28571) {};
+        \node [EMPTY] (21) at (2.92857, -0.78571) {};
+        \node [EMPTY] (22) at (2.92857, 0.21429) {$\cdots$};
+        \node [EMPTY] (23) at (4.92857, 1.21429) {};
+        \node [EMPTY] (24) at (4.92857, -0.78571) {};
+        \node [YELLOW_BOX] (25) at (4.92857, 0.21429) {};
+        \node [label=above:{$z \text{ spider}$}, EMPTY] (26) at (-3.07143, -1.78571) {};
+        \node [label=above:{$x \text{ spider}$}, EMPTY] (27) at (1.42857, -1.78571) {};
+        \node [label=above:{$\text{Hadamard}$}, EMPTY] (28) at (4.92857, -1.78571) {};
+    \end{pgfonlayer}
+    \begin{pgfonlayer}{edgelayer}
+        \draw[EDGE] (1) to (4);
+        \draw[EDGE] (5) to (1);
+        \draw[EDGE] (2) to (1);
+        \draw[EDGE] (3) to (1);
+        \draw[EDGE] (7) to (1);
+        \draw[EDGE] (8) to (1);
+        \draw[EDGE] (9) to (1);
+        \draw[EDGE] (10) to (1);
+        \draw[EDGE] (12) to (15);
+        \draw[EDGE] (16) to (12);
+        \draw[EDGE] (13) to (12);
+        \draw[EDGE] (14) to (12);
+        \draw[EDGE] (18) to (12);
+        \draw[EDGE] (19) to (12);
+        \draw[EDGE] (20) to (12);
+        \draw[EDGE] (21) to (12);
+        \draw[EDGE] (23) to (25);
+        \draw[EDGE] (25) to (24);
+    \end{pgfonlayer}
+\end{tikzpicture}
+
+\endgroup

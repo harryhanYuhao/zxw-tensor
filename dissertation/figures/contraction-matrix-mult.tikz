@@ -1,0 +1,39 @@
+% Contracting two rank-two tensors in tensor-network notation: the
+% left-hand side is the vertical chain $i - M - j - N - k$, where the
+% middle edge $j$ is the contracted index; the result is the rank-two
+% tensor $(MN)_{ik} = \sum_j M_{ij} N_{jk}$, i.e. exactly matrix
+% multiplication, shown on the right.
+% Self-contained: the colours are defined inside the picture, so this
+% file can be \input anywhere.
+\begin{tikzpicture}[>=Stealth, line join=round, line cap=round,
+    tn/.style={circle, draw=tnoutline, line width=1.2mm, inner sep=0pt,
+               minimum size=0.85cm, font=\large},
+    wire/.style={line width=1.2mm, black},
+    idx/.style={font=\normalsize}]
+    \definecolor{tnorange}{RGB}{255,192,0}       % orange      -- M
+    \definecolor{tnlightgreen}{RGB}{146,208,80}  % light green -- N
+    \definecolor{tnblue}{RGB}{68,114,196}        % blue        -- MN
+    \definecolor{tnoutline}{RGB}{23,44,81}       % navy outline
+
+    % ---- left: the vertical chain i -- M -- j -- N -- k ----
+    \draw[wire] (0,1.5) -- (0,2.2);    % open edge i
+    \draw[wire] (0,-0.7) -- (0,0.7);   % contracted edge j
+    \draw[wire] (0,-2.2) -- (0,-1.5);  % open edge k
+    \node[tn, fill=tnorange, text=black] at (0,1.1) {$M$};
+    \node[tn, fill=tnlightgreen, text=white] at (0,-1.1) {$N$};
+
+    % ---- equals ----
+    \node[font=\huge] at (1.6,0) {$=$};
+
+    % ---- right: the result $(MN)_{ik}$ with its two open edges ----
+    \draw[wire] (2.65,0.4) -- (2.65,2.2);
+    \draw[wire] (2.65,-2.2) -- (2.65,-0.4);
+    \node[tn, fill=tnblue, text=white] at (2.65,0) {$M N$};
+
+    % ---- index labels ----
+    \node[idx] at (0.15,1.9) {$i$};
+    \node[idx] at (0.22,0) {$j$};
+    \node[idx] at (0.15,-1.9) {$k$};
+    \node[idx] at (2.8,1.9) {$i$};
+    \node[idx] at (2.8,-1.9) {$k$};
+\end{tikzpicture}

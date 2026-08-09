@@ -1,0 +1,56 @@
+% Graph Board TikZ export
+% Exported: 2026-08-09T12:04:44.164Z
+% Title: Untitled Graph
+% Nodes: 9, Edges: 5
+
+\begingroup
+% --- Colors (define-if-not-already-defined) ---
+\providecolor{zxRed}{RGB}{232,165,165}   % X spiders
+\providecolor{zxGreen}{RGB}{216,248,216} % Z spiders
+\providecolor{zxYellow}{RGB}{255,255,0}     % hadamard 
+
+\tikzset{
+    EMPTY/.style={minimum size=3.4mm,
+        outer sep=-1.7mm},
+    DOT/.style={inner sep=0mm, minimum size=3.4mm, shape=circle,
+        draw=black, outer sep=-0.5mm, line width=1pt},
+    BLACK_DOT/.style={minimum size=2mm,
+        outer sep=-1mm, fill=black, shape=circle},
+    WORD_BALL/.style={draw=black, shape=rectangle, minimum size=6.5mm,
+        rounded corners=3.2mm, inner sep=1.2mm, outer sep=-1.0mm,
+        scale=1, font={\large\boldmath}, line width=1pt},
+    GREEN_DOT/.style={DOT, fill=zxGreen},
+    GREEN_WORD_BALL/.style={WORD_BALL, fill=zxGreen},
+    RED_DOT/.style={DOT, fill=zxRed},
+    RED_WORD_BALL/.style={GREEN_WORD_BALL, fill=zxRed},
+    YELLOW_BOX/.style={fill=zxYellow, draw=black, line width=1pt, shape=rectangle, inner sep=0.6mm,
+        minimum height=3.4mm, minimum width=3.4mm,
+        font={\Large\boldmath}},
+    EDGE/.style={draw=black, line width=1pt}
+}
+\pgfdeclarelayer{edgelayer}
+\pgfdeclarelayer{nodelayer}
+\pgfsetlayers{edgelayer,nodelayer,main}
+
+\begin{tikzpicture}
+    \begin{pgfonlayer}{nodelayer}
+        \node [EMPTY] (1) at (-1.27778, 0.61111) {};
+        \node [EMPTY] (2) at (-1.27778, -0.38889) {};
+        \node [EMPTY] (3) at (0.72222, 0.61111) {};
+        \node [EMPTY] (4) at (0.72222, -0.38889) {};
+        \node [GREEN_DOT] (5) at (-0.27778, 0.61111) {};
+        \node [RED_DOT] (6) at (-0.27778, -0.38889) {};
+        \node [EMPTY] (7) at (1.22222, 0.11111) {$=$};
+        \node [label=above:{$\sqrt{2}$}, EMPTY] (8) at (-2.27778, 0.11111) {};
+        \node [label=above:{$\begin{pmatrix} 	1 & 0 & 0 & 0 \\ 	0 & 1 & 0 & 0 \\ 	0 & 0 & 0 & 1 \\ 	0 & 0 & 1 & 0 \end{pmatrix}$}, EMPTY] (9) at (2.72222, -0.88889) {};
+    \end{pgfonlayer}
+    \begin{pgfonlayer}{edgelayer}
+        \draw[EDGE] (6) to (2);
+        \draw[EDGE] (5) to (6);
+        \draw[EDGE] (1) to (5);
+        \draw[EDGE] (5) to (3);
+        \draw[EDGE] (6) to (4);
+    \end{pgfonlayer}
+\end{tikzpicture}
+
+\endgroup

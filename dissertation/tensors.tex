@@ -58,6 +58,11 @@ There are at least seven natural operations for tensors.
 		\item \textbf{Outer product} $\T \otimes \T \rightarrow \T$ Let $T_{ijk \cdots}$ and $S_{lmn \cdots}$ be any two tensors.
 		Their tensor product is defined by $(T \otimes S)_{ijklmn\cdots} = T_{ijk\cdots} S_{lmn\cdots}$. Outer product is sometimes called \textbf{tensor product} or \textbf{Kronecker product}.
 		\item \textbf{Contraction.} Let $T_{ijk\cdots}$ and $S_{ijk \cdots}$ be tensor of rank $m$ and $n$. Their contraction over the index $i$ is a tensor of rank $m+n - 2$ defined by $(T \cdot S)_{jk\cdots lm\cdots} = \sum_{i=0}^{n-1} T_{ijk\cdots} S_{ilm\cdots}$.
+		If there are many different tensors with the corresponding contraction indices specified, their full contraction give a new tensor defined as 
+		\begin{equation}
+			\sum_{i_1=0}^{n_1-1} \sum_{i_2=0}^{n_2-1} \cdots \sum_{i_k=0}^{n_k-1} T^{(1)}_{i_1 j_1 k_1 \cdots} T^{(2)}_{i_2 j_2 k_2 \cdots} \cdots T^{(k)}_{i_k j_k k_k \cdots}
+		\end{equation}\label{eq:contraction}
+		where $i_1$ to $i_k$ are the indices to be contracted.
 	\end{itemize}
 \end{observation}
 
@@ -108,9 +113,37 @@ Usually, outer product and flattenning are used together to convert tensor produ
 	\end{pmatrix}
 \end{equation}
 
+In general, if we have two matrices $M$ and $N$, their outer product will be 
+\begin{equation}
+	M \otimes N = 
+	\begin{pmatrix}
+		M_{00} N & M_{01} N & \cdots \\
+		M_{10} N & M_{11} N & \cdots \\
+		\vdots & \vdots & \ddots
+	\end{pmatrix}
+\end{equation}
+
 Contraction is the more complicated operation. 
 For the matrices, $M_{ij}$ and $N(jk)$, their contraction over the index $j$ is a matrix $P_{ik}$ defined by $P_{ik} = \sum_{j=0}^{n-1} M_{ij} N_{jk}$, which is exactly the matrix multiplication.
-Other contraction operations are generalisation of matrix multiplication, which we will discuss in the next section.
+
+Given a set of tensors and the corresponding contraction indices. 
+The contraction order does not matter, because we can freely change the order of and add parenthesis to nested summuations.
+
+\begin{equation}
+	\begin{split}
+		\sum_{i_1=0}^{n_1-1} \sum_{i_2=0}^{n_2-1} \cdots \sum_{i_k=0}^{n_k-1} T^{(1)}_{i_1 j_1 k_1 \cdots} T^{(2)}_{i_2 j_2 k_2 \cdots} \cdots T^{(k)}_{i_k j_k k_k \cdots} 
+		&=
+		\sum_{i_2=0}^{n_2-1} \sum_{i_1=0}^{n_1-1} \cdots \sum_{i_k=0}^{n_k-1} T^{(2)}_{i_2 j_2 k_2 \cdots} T^{(1)}_{i_1 j_1 k_1 \cdots} \cdots T^{(k)}_{i_k j_k k_k \cdots} \\ 
+		&= \sum_{i_1=0}^{n_1-1} \sum_{i_2=0}^{n_2-1} \cdots \sum_{i_k=0}^{n_k-1} T^{(1)}_{i_1 j_1 k_1 \cdots} \left( T^{(2)}_{i_2 j_2 k_2 \cdots} \cdots T^{(k)}_{i_k j_k k_k \cdots} \right) \\
+		&= \sum_{i_1=0}^{n_1-1} \sum_{i_2=0}^{n_2-1} \cdots \sum_{i_k=0}^{n_k-1} \left( T^{(1)}_{i_1 j_1 k_1 \cdots} T^{(2)}_{i_2 j_2 k_2 \cdots} \right) \cdots T^{(k)}_{i_k j_k k_k \cdots} \\
+		&= \cdots
+	\end{split}
+\end{equation}\label{eq:contraction-order}
+
+This is an important observation and we will make it a lemma. 
+\begin{lemma}[Contraction Order Does Not Matter]
+	Given a set of tensors and the corresponding contraction indices, the contraction order does not matter.
+\end{lemma} \label{lem:contraction-order}
 
 \subsection{Abstract Tensor Product}
 
@@ -159,15 +192,16 @@ As our investigation of tensor product in this thesis is of an algorithmic natur
 \section{Tensor Networks}
 
 Suppose we have two tensors $T_{ijk}$ and $S_{kl}$, where index $i $ and $j$ have dimension $n_1$ and $n_2$ while both of index $k$ and $l$ have dimension $n_1$.
-Suppose we would like to perform the following operation: `contracting the first index of $T$ with the second index of $S$, and contracting the last index of the resulting tensor with the first index another copy of $T$.' 
+If we would like to perform the following operation: `contracting the first index of $T$ with the second index of $S$, and contracting the last index of the resulting tensor with the first index another copy of $T$.' 
 The precise statement of specifying operations of tensor is too verbose and painful to articulate.
-
 Tensor network, a graphical representation of tensors and their operations, is used to make these statement concise and clear.
 
-Here are the rules to make a tensor network diagram:
+\begin{definition}[Tensor Network]
+	A tensor network is a generic graph structures consists of vertices and and edges that denotes the tensor resulted from the various operations on a set of tensors, following the following three rules.
 
-\textbf{Rule 1}. In tensor networkA rank-$k$ tensor is represented as a node with $k$ edges.
-Usually, shape, color, and labels of the nodes are use to differentiate different tensors.
+
+\textbf{Rule 1}. In tensor network, a rank-$k$ tensor is represented as a node with $k$ edges.
+Usually, the shape, color, and labels of the nodes are use to differentiate different tensors.
 For example vector $v$, matrix $M$, and rank-three tensor $T$ are represented as in figure \ref{fig:simple_tensors}.
 
 \begin{figure}[ht]
@@ -177,7 +211,7 @@ For example vector $v$, matrix $M$, and rank-three tensor $T$ are represented as
 	\label{fig:simple_tensors}
 \end{figure}
 
-\textbf{Rule 2}. A diagram with two tensors placed side by side is interpreted as the outer product of the two tensors.
+\textbf{Rule 2}. A diagram with two tensors placed side by side is interpreted as the outer product of the two tensors, as shown in figure \ref{fig:tensor-product}.
 
 \textbf{Rule 3}. An edge connecting two nodes represents the contraction of the two tensors over the index represented by that edge.
 \begin{figure}[ht]
@@ -187,22 +221,99 @@ For example vector $v$, matrix $M$, and rank-three tensor $T$ are represented as
 	\label{fig:tensor-product}
 \end{figure}
 
-Using diagrams these rules are crystal clear but we still need to demonstrate they self consistent.
-For example, we have implicitly assumed that the order of contraction does not matter, which is indeed true, if we observe that the parentheses and the order of the nested summation of the contraction can be freely rearranged, as shown in the following equation:
+\end{definition}
 
-\begin{equation}
-	\begin{split}
-	\sum_{j=0}^{m-1} \sum_{i=0}^{n-1} \sum_{k=0}^{p-1} T_{ijk} S_{kl} R_{jm}
-	&=
-	\left(\sum_{i=0}^{n-1} \left(\sum_{j=0}^{m-1} \left(\sum_{k=0}^{p-1} T_{ijk}\right) S_{kl}\right) R_{jm} \cdots \right) \\
-	&=
-	\sum_{k=0}^{p-1} \left(\sum_{j=0}^{m-1} \left(\sum_{i=0}^{n-1} T_{ijk} S_{kl}\right) R_{jm} \cdots \right) \\
-	&=
-	\sum_{j=0}^{m-1} \left(\sum_{k=0}^{p-1} \left(\sum_{i=0}^{n-1} T_{ijk} S_{kl}\right) R_{jm} \cdots \right) \\
-	&= \cdots
-	\end{split}
-\end{equation}\label{eq:contraction-order}
+We may also define tensor networks as a special kind of subgraph such that
+\begin{enumerate}
+		\item it allows loops and multiple edges,
+		\item its vertices are of different types,
+		\item the order of the edges of a vertex matters.
+\end{enumerate}
 
+The value of a tensor can be evaluated by plugging in the values of the indices. 
+In tensor network, this is analogous to assigns a value to each of the edges and the graph shall be evalulated to some number. 
+
+For example if we have tensor $H = \begin{pmatrix}
+	1 & 2 \\
+	3 & 4
+\end{pmatrix} $. In explicit tensor notation, $H_{00} = 1, H_{01} = 2,  H_{10} = 3$ and $H_{11} = 4$.
+In tensor network notation, $H$ is represented as a node with two edges. Labelling the edges with $0$ and $1$ respectively evaluates the tenor as shown in figure \ref{fig:tensor-net-eval}.
+
+\begin{figure}[ht]
+	\centering
+	\input{./figures/tensor-eval.tikz}
+	\caption{Evaluating a tensor network}
+	\label{fig:tensor-net-eval}
+\end{figure}
+\subsection{Order of Edges}
+
+
+While tensor networks do not differentiate input and output, it does different order of the bonds of a tensor. 
+For example, figure \ref{fig:tensor-transpose} shows the transpose of $H$.
+\begin{figure}[ht]
+	\centering
+	\input{./figures/tensor_transpose.tikz}
+	\caption{Transpose in Tensor Network}
+	\label{fig:tensor-transpose}
+\end{figure}
+
+
+The edges are typically ordered from top to bottom, from left to right. 
+Orders can also be specified by labelling the edges with indices of the tensro. 
+For example, in figure \ref{fig:contraction-matrix-mult} we demonstrated matrix multiplication, a non-commutative operation, in tensor network notation.
+
+\begin{figure}[ht]
+	\centering
+	\input{./figures/contraction-matrix-mult.tikz}
+\caption{Contracting the two rank-two tensors $M_{ij}$ and $N_{jk}$ over their shared index $j$ gives the rank-two tensor $(MN)_{ik} = \sum_j M_{ij} N_{jk}$}
+	\label{fig:contraction-matrix-mult}
+\end{figure}
+
+\subsection{Only Topology Matters}
+
+There is a subtlety in the graphical notation.
+Each subgraph of the tensor network can be itself be regarded as new tensor result from the full contraction of its nodes.
+For example in figure \ref{fig:contraction-matrix-mult}, the two nodes $M$ and $N$ can be regarded as a new node $MN$ with two edges, and in figure \ref{fig:tensor-product}, the two nodes $v$ and $w$ can be regarded as a new node $v \otimes w$ with two edges.
+Given a tensor network, there are many different ways to decompose a tensor network into subgraphs and many different order for contractions, will all of them give the same result?
+
+Luckily, lemma \ref{lem:contraction-order} guarantees that the answer is yes, as long as the nodes and their connections are determined.
+The tensor network notation precisely captures the nodes and connection between them, so the tensor network notation is unambiguous and well-defined.
+This property is summarised in the phrase `only topology matters'.
+
+\subsection{Symmetric Tensors}
+
+A special class of tensors is worth our attention. 
+
+\begin{definition}[Symmetric Tensor]
+	A tensor $T_{ijk\cdots}$ is called symmetric if it is invariant under any permutation of its indices, i.e. for any permutation $\sigma \in S_k$, we have
+	$$
+		T_{i_1 i_2 \cdots i_k} = T_{i_{\sigma(1)} i_{\sigma(2)} \cdots i_{\sigma(k)}}.
+	$$
+\end{definition}\label{def:symmetric-tensor}
+
+In tensor network notation, permuting the edges of a symmetric tensor does not change the tensor, as shown in figure \ref{fig:symmetric-tensor}.
+
+\begin{figure}[ht]
+	\centering
+	\input{./figures/symmetric-permutation.tikz}
+	\caption{Permuting the edges of a symmetric tensor does not change the tensor.}
+	\label{fig:symmetric-tensor}
+\end{figure}
+
+Tensor networks that consists of only symmetric tensors are be regarded as colored hypergraphs, as the order of the edges of a symmetric tensor does not matter.
+Therefore, if there are no dangling legs, the networks of symmetric tensors can indeed be regarded as a coloured hypergraph, and two networks that are isomorphic as hypergraphs are equivalent as tensor networks.
+
+If there are dangling legs, the order and connection to those legs still matters, as contraction between symmetric tensors may give non-symmetric tensors.
+In this case, we can regard each dangling leg as a normal edge connection to a special nodes colored in its unique color.
+
+We shall summarised this obeservation as \define{only connectivity matters}.
+
+\begin{lemma}[Only Connectivity Matters]
+	Two tensor networks without dangling legs that are composed of only symmetric tensors are equivalent if they are isomorphic as coloured hypergraphs.
+	That is, they equal to the same tensor if they have the same nodes and connections between them.
+
+	If they do have dangling legs, the ordering of the dangling legs still matters. 
+\end{lemma}\label{lem:only-connectivity-matters}
 
 \section{Complexity of Contraction}
 
@@ -274,7 +385,9 @@ $$
 
 The left-hand side take two matrix-vector multiplications, which is $O(n^2)$ operations, while the right-hand side takes one outer product, costing $O(n^2)$ and one matrix-scalar multiplication, consting $O(n^3)$ operations.
 
-In general, finding the optimal order of contraction for a tensor network is aan NP-Complete problem.
-
+% TODO: Is this statement true?
+In general, both finding the optimal order and determing if a given order is optimal are NP-hard problems.
+There are, nevertheless, many heuristic algorithms to find a good contraction order.
+In this thesis, we will discuss in detail one of such algorithm which relies on a graph theoretical property called treewdith.
 
 
