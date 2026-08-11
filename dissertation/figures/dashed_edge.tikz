@@ -1,0 +1,53 @@
+% Graph Board TikZ export
+% Exported: 2026-08-11T08:15:27.605Z
+% Title: Untitled Graph
+% Nodes: 6, Edges: 2
+
+\begingroup
+% --- Colors (define-if-not-already-defined) ---
+\providecolor{zxRed}{RGB}{232,165,165}   % X spiders
+\providecolor{zxGreen}{RGB}{216,248,216} % Z spiders
+\providecolor{zxYellow}{RGB}{255,255,0}     % hadamard 
+\providecolor{zxBlue}{RGB}{68,126,255}     % hadamard 
+
+
+\tikzset{
+    EMPTY/.style={minimum size=3.4mm,
+        outer sep=-1.7mm},
+    DOT/.style={inner sep=0mm, minimum size=3.4mm, shape=circle,
+        draw=black, outer sep=-0.5mm, line width=1pt},
+    BLACK_DOT/.style={minimum size=2mm, inner sep=0.3mm,
+        outer sep=-0.15mm, fill=black, shape=circle},
+    WORD_BALL/.style={draw=black, shape=rectangle, minimum size=6.5mm,
+        rounded corners=3.2mm, inner sep=1.2mm, outer sep=-1.0mm,
+        scale=1, font={\large\boldmath}, line width=1pt},
+    GREEN_DOT/.style={DOT, fill=zxGreen},
+    GREEN_WORD_BALL/.style={WORD_BALL, fill=zxGreen},
+    RED_DOT/.style={DOT, fill=zxRed},
+    RED_WORD_BALL/.style={GREEN_WORD_BALL, fill=zxRed},
+    YELLOW_BOX/.style={fill=zxYellow, draw=black, line width=1pt, shape=rectangle, inner sep=0.6mm,
+        minimum height=3.4mm, minimum width=3.4mm,
+        font={\large\boldmath}},
+    EDGE/.style={draw=black, line width=1pt},
+    BLUE_DASHED_EDGE/.style={-, dashed, dash pattern=on 2pt off 0.5pt, ultra thick, zxBlue}
+}
+\pgfdeclarelayer{edgelayer}
+\pgfdeclarelayer{nodelayer}
+\pgfsetlayers{edgelayer,nodelayer,main}
+
+\begin{tikzpicture}
+    \begin{pgfonlayer}{nodelayer}
+        \node [GREEN_DOT] (1) at (-2.91667, 0) {};
+        \node [GREEN_DOT] (2) at (-1.41667, 0) {};
+        \node [EMPTY] (3) at (-0.41667, 0) {$=$};
+        \node [GREEN_DOT] (4) at (0.58333, 0) {};
+        \node [GREEN_DOT] (5) at (2.58333, 0) {};
+        \node [YELLOW_BOX] (6) at (1.58333, 0) {};
+    \end{pgfonlayer}
+    \begin{pgfonlayer}{edgelayer}
+        \draw[BLUE_DASHED_EDGE] (1) to (2);
+        \draw[EDGE] (4) to (5);
+    \end{pgfonlayer}
+\end{tikzpicture}
+
+\endgroup

@@ -1,0 +1,92 @@
+% Graph Board TikZ export
+% Exported: 2026-08-11T21:32:56.647Z
+% Title: Untitled Graph
+% Nodes: 25, Edges: 22
+
+\begingroup
+% --- Colors (define-if-not-already-defined) ---
+\providecolor{zxRed}{RGB}{232,165,165}   % X spiders
+\providecolor{zxGreen}{RGB}{216,248,216} % Z spiders
+\providecolor{zxYellow}{RGB}{255,255,0}     % hadamard 
+\providecolor{zxBlue}{RGB}{68,126,255}     % hadamard 
+
+
+\tikzset{
+    EMPTY/.style={minimum size=3.4mm,
+        outer sep=-1.7mm},
+    DOT/.style={inner sep=0mm, minimum size=3.4mm, shape=circle,
+        draw=black, outer sep=-0.5mm, line width=1pt},
+    BLACK_DOT/.style={minimum size=2mm, inner sep=0.3mm,
+        outer sep=-0.15mm, fill=black, shape=circle},
+    WORD_BALL/.style={draw=black, shape=rectangle, minimum size=6.5mm,
+        rounded corners=3.2mm, inner sep=1.2mm, outer sep=-1.0mm,
+        scale=1, font={\large\boldmath}, line width=1pt},
+    GREEN_DOT/.style={DOT, fill=zxGreen},
+    GREEN_WORD_BALL/.style={WORD_BALL, fill=zxGreen},
+    RED_DOT/.style={DOT, fill=zxRed},
+    RED_WORD_BALL/.style={GREEN_WORD_BALL, fill=zxRed},
+    YELLOW_BOX/.style={fill=zxYellow, draw=black, line width=1pt, shape=rectangle, inner sep=0.6mm,
+        minimum height=3.4mm, minimum width=3.4mm,
+        font={\large\boldmath}},
+    EDGE/.style={draw=black, line width=1pt},
+    BLUE_DASHED_EDGE/.style={-, dashed, dash pattern=on 2pt off 0.5pt, ultra thick, zxBlue}
+}
+\pgfdeclarelayer{edgelayer}
+\pgfdeclarelayer{nodelayer}
+\pgfsetlayers{edgelayer,nodelayer,main}
+
+\begin{tikzpicture}
+    \begin{pgfonlayer}{nodelayer}
+        \node [GREEN_DOT] (1) at (-4.74, 1.36) {};
+        \node [GREEN_DOT] (2) at (-6.24, 0.36) {};
+        \node [GREEN_DOT] (3) at (-3.24, 1.36) {};
+        \node [GREEN_DOT] (4) at (-3.74, -1.64) {};
+        \node [GREEN_DOT] (5) at (-1.74, -1.14) {};
+        \node [GREEN_DOT] (6) at (-2.24, 0.36) {};
+        \node [RED_DOT] (7) at (-3.74, 0.86) {};
+        \node [RED_DOT] (8) at (-4.74, -0.64) {};
+        \node [RED_DOT] (9) at (-4.24, 0.36) {};
+        \node [RED_DOT] (10) at (-3.74, 1.86) {};
+        \node [RED_DOT] (11) at (-5.74, -1.64) {};
+        \node [GREEN_DOT] (12) at (0.76, 1.36) {};
+        \node [GREEN_DOT] (13) at (0.76, -0.64) {};
+        \node [GREEN_DOT] (14) at (0.76, -1.64) {};
+        \node [GREEN_DOT] (15) at (0.76, 0.36) {};
+        \node [RED_DOT] (16) at (2.76, -1.14) {};
+        \node [RED_DOT] (17) at (2.76, 0.86) {};
+        \node [GREEN_DOT] (18) at (4.76, 1.36) {};
+        \node [GREEN_DOT] (19) at (4.76, -0.64) {};
+        \node [GREEN_DOT] (20) at (4.76, -1.64) {};
+        \node [GREEN_DOT] (21) at (4.76, 0.36) {};
+        \node [GREEN_DOT] (22) at (6.76, -0.64) {};
+        \node [GREEN_DOT] (23) at (6.76, 0.86) {};
+        \node [EMPTY] (24) at (-0.74, -0.14) {$=$};
+        \node [EMPTY] (25) at (3.76, -0.14) {$=$};
+    \end{pgfonlayer}
+    \begin{pgfonlayer}{edgelayer}
+        \draw[EDGE] (1) to (9);
+        \draw[EDGE] (2) to (9);
+        \draw[EDGE] (7) to (9);
+        \draw[EDGE] (8) to (9);
+        \draw[EDGE] (5) to (6);
+        \draw[EDGE] (11) to (6);
+        \draw[EDGE] (3) to (10);
+        \draw[EDGE] (3) to (6);
+        \draw[EDGE] (4) to (11);
+        \draw[EDGE] (8) to (11);
+        \draw[EDGE] (11) to (1);
+        \draw[EDGE] (7) to (6);
+        \draw[EDGE] (12) to (16);
+        \draw[EDGE] (13) to (16);
+        \draw[EDGE] (17) to (15);
+        \draw[EDGE] (16) to (15);
+        \draw[EDGE] (14) to (16);
+        \draw[BLUE_DASHED_EDGE] (18) to (22);
+        \draw[BLUE_DASHED_EDGE] (19) to (22);
+        \draw[BLUE_DASHED_EDGE] (23) to (21);
+        \draw[BLUE_DASHED_EDGE] (22) to (21);
+        \draw[BLUE_DASHED_EDGE] (20) to (22);
+    \end{pgfonlayer}
+\end{tikzpicture}
+
+\endgroup

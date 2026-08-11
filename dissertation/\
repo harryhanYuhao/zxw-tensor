@@ -135,19 +135,10 @@ Using thses lemma, we can find the treewidth of more complicated graphs.
 	The treewidth of a circle graph is $2$.
 	By corollary \ref{cor:treewidth_delta_lower_bound}, the treewidth of a circle graph is at least $2$ as the minimum vertex degree of a circle graph is $2$.
 	We can construct a tree decomposition of a circle graph with width $2$ as follows.
-
 	Let vertex $a$ be the start of the cycle. Delete one edge next to $a$ and treat the rest of the graph as a tree, with the maximum bag of size $2$.
-	Add $a$ to all bags of the tree decomposition gives a tree decomposition of the circle graph with with bags of maximum size $3$ and width $2$.
+	Add $a$ to all bags of the tree decomposition of the rest of the graph. This gives a tree decomposition of the circle graph with width $2$.
 
-	See figure \ref{fig:tree_decomposition_of_circle_graph} for an example.
 \end{example}
-
-\begin{figure}[ht]
-	\centering
-	\input{./figures/tree_decomposition_cycle.tikz}
-	\caption{A tree decomposition of a circle graph.}
-	\label{fig:tree_decomposition_of_circle_graph}
-\end{figure}
 
 
 

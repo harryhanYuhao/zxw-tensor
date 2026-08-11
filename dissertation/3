@@ -139,7 +139,7 @@ Now, let us see ZX calculus in action.
 	\end{figure}
 \end{proof}
 
-\begin{lemma}[Hadamard self loop cancels]\label{lem:hadamard_self_loop_cancellation}
+\begin{lemma}[Hadamard self loop cancels]
 	A Hadamard gate on a spider can be removed without changing the tensor represented by the ZX diagram.
 	This identity is proved using euler decomposition, spider fusion, and lemma \ref{lem:double_edge_cancellation}. The proof is shown in figure \ref{fig:hadamard_self_loop_cancellation}.
 \end{lemma}
@@ -147,49 +147,21 @@ Now, let us see ZX calculus in action.
 \begin{figure}[ht]
 	\centering
 	\resizebox{0.8\linewidth}{!}{
-		\input{./figures/self_loop_cancellation.tikz}
+		\input{./figures/self_loop_cancelation.tikz}
 	}
 	\caption{Proof of the Hadamard self loop cancellation identity.}
 	\label{fig:hadamard_self_loop_cancellation}
 \end{figure}
 
-We are now ready to define a specific type of ZX diagrams that will be important for our later discussion on tensor contraction algorithm.
-
 \begin{definition}[Graph-like ZX diagrams]
 	A ZX diagram is called \define{graph-like} if it satisfies the following conditions:
 	\begin{enumerate}
 		\item All spiders are $z$-spiders.
-		\item All edges between spiders are Hadamard edges (dashed-blue edges).
+		\item All edges are Hadamard edges (dashed-blue edges).
 		\item There are no parallel edges or self-loops.
 		\item Every input and output is connected to a spider, and every spider is connected to at most one input or output.
 	\end{enumerate}
 \end{definition}
-
-It is evident that, using lemma \ref{lem:double_edge_cancellation} and lemma \ref{lem:hadamard_self_loop_cancellation}, any ZX diagram can be transformed into a graph-like ZX diagram.
-
-\begin{theorem}[Graph-like form of ZX diagrams]
-	Any ZX diagram, in particular any quantum circuit, can be transformed into a graph-like ZX diagram.
-\end{theorem}
-
-\begin{proof}
-	The transformation procedure is thus: 
-	\begin{enumerate}
-		\item Fuse as much $z$- and $x-$ spiders as possible so that there are no inter connection between $z$- and $x$-spiders. 
-		\item Use color change to transform all $x$-spiders into $z$-spiders by adding Hadamard gates on all their legs. 
-		\item Use lemma \ref{lem:double_edge_cancellation} and lemma \ref{lem:hadamard_self_loop_cancellation} to remove all parallel edges and self-loops.	
-	\end{enumerate}
-	
-	See figure \ref{fig:graph_like_transformation} for an example of the transformation.
-\end{proof}
-
-\begin{figure}[ht]
-	\centering
-	\resizebox{0.8\linewidth}{!}{
-		\input{./figures/transform_to_graph_like.tikz}
-	}
-	\caption{Transformation of a ZX diagram into a graph-like ZX diagram.}
-	\label{fig:graph_like_transformation}
-\end{figure}
 
 
 % TODO: finish the proof

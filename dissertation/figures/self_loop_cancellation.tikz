@@ -1,0 +1,86 @@
+% Graph Board TikZ export
+% Exported: 2026-08-11T21:20:34.910Z
+% Title: Untitled Graph
+% Nodes: 24, Edges: 17
+
+\begingroup
+% --- Colors (define-if-not-already-defined) ---
+\providecolor{zxRed}{RGB}{232,165,165}   % X spiders
+\providecolor{zxGreen}{RGB}{216,248,216} % Z spiders
+\providecolor{zxYellow}{RGB}{255,255,0}     % hadamard 
+\providecolor{zxBlue}{RGB}{68,126,255}     % hadamard 
+
+
+\tikzset{
+    EMPTY/.style={minimum size=3.4mm,
+        outer sep=-1.7mm},
+    DOT/.style={inner sep=0mm, minimum size=3.4mm, shape=circle,
+        draw=black, outer sep=-0.5mm, line width=1pt},
+    BLACK_DOT/.style={minimum size=2mm, inner sep=0.3mm,
+        outer sep=-0.15mm, fill=black, shape=circle},
+    WORD_BALL/.style={draw=black, shape=rectangle, minimum size=6.5mm,
+        rounded corners=3.2mm, inner sep=1.2mm, outer sep=-1.0mm,
+        scale=1, font={\large\boldmath}, line width=1pt},
+    GREEN_DOT/.style={DOT, fill=zxGreen},
+    GREEN_WORD_BALL/.style={WORD_BALL, fill=zxGreen},
+    RED_DOT/.style={DOT, fill=zxRed},
+    RED_WORD_BALL/.style={GREEN_WORD_BALL, fill=zxRed},
+    YELLOW_BOX/.style={fill=zxYellow, draw=black, line width=1pt, shape=rectangle, inner sep=0.6mm,
+        minimum height=3.4mm, minimum width=3.4mm,
+        font={\large\boldmath}},
+    EDGE/.style={draw=black, line width=1pt},
+    BLUE_DASHED_EDGE/.style={-, dashed, dash pattern=on 2pt off 0.5pt, ultra thick, zxBlue}
+}
+\pgfdeclarelayer{edgelayer}
+\pgfdeclarelayer{nodelayer}
+\pgfsetlayers{edgelayer,nodelayer,main}
+
+\begin{tikzpicture}
+    \begin{pgfonlayer}{nodelayer}
+        \node [GREEN_WORD_BALL] (1) at (-3.79167, 1.35417) {$\alpha$};
+        \node [EMPTY] (2) at (-4.79167, 1.35417) {};
+        \node [EMPTY] (3) at (-2.79167, 1.85417) {};
+        \node [EMPTY] (4) at (-2.79167, 0.85417) {};
+        \node [YELLOW_BOX] (5) at (-1.79167, 1.35417) {};
+        \node [GREEN_WORD_BALL] (6) at (1.70833, 1.35417) {$\alpha$};
+        \node [EMPTY] (7) at (0.20833, 1.35417) {};
+        \node [GREEN_WORD_BALL] (8) at (2.70833, 1.85417) {$\frac{\pi}{2}$};
+        \node [GREEN_WORD_BALL] (9) at (2.70833, 0.85417) {$\frac{\pi}{2}$};
+        \node [RED_WORD_BALL] (10) at (3.70833, 1.35417) {$\frac{\pi}{2}$};
+        \node [label=above:{$\color{red} \mathbf{e}$}, EMPTY] (11) at (-0.79167, 1.35417) {$=$};
+        \node [label=above:{$\color{red} \mathbf{f}$}, EMPTY] (12) at (-5.79167, -1.14583) {$=$};
+        \node [GREEN_WORD_BALL] (13) at (-3.29167, -1.14583) {$\pi + \alpha$};
+        \node [EMPTY] (14) at (-4.79167, -1.14583) {};
+        \node [EMPTY] (15) at (-2.29167, -0.64583) {};
+        \node [EMPTY] (16) at (-2.29167, -1.64583) {};
+        \node [RED_WORD_BALL] (17) at (-1.29167, -1.14583) {$\frac{\pi}{2}$};
+        \node [label=above:{$\text{\ref{lem:double_edge_cancellation}}$}, EMPTY] (18) at (-0.29167, -1.14583) {$\propto$};
+        \node [GREEN_WORD_BALL] (19) at (2.20833, -1.14583) {$\pi + \alpha$};
+        \node [EMPTY] (20) at (0.70833, -1.14583) {};
+        \node [RED_WORD_BALL] (21) at (3.70833, -1.14583) {$\frac{\pi}{2}$};
+        \node [EMPTY] (22) at (5.20833, -1.14583) {$\propto$};
+        \node [GREEN_WORD_BALL] (23) at (7.70833, -1.14583) {$\pi + \alpha$};
+        \node [EMPTY] (24) at (6.20833, -1.14583) {};
+    \end{pgfonlayer}
+    \begin{pgfonlayer}{edgelayer}
+        \draw[EDGE] (1) to (2);
+        \draw[EDGE] (3) to (1);
+        \draw[EDGE] (1) to (4);
+        \draw[EDGE] (4) to (5);
+        \draw[EDGE] (5) to (3);
+        \draw[EDGE] (6) to (7);
+        \draw[EDGE] (8) to (6);
+        \draw[EDGE] (6) to (9);
+        \draw[EDGE] (9) to (10);
+        \draw[EDGE] (10) to (8);
+        \draw[EDGE] (13) to (14);
+        \draw[EDGE] (15) to (13);
+        \draw[EDGE] (13) to (16);
+        \draw[EDGE] (16) to (17);
+        \draw[EDGE] (17) to (15);
+        \draw[EDGE] (19) to (20);
+        \draw[EDGE] (23) to (24);
+    \end{pgfonlayer}
+\end{tikzpicture}
+
+\endgroup

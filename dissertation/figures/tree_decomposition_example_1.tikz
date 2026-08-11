@@ -1,0 +1,73 @@
+% Graph Board TikZ export
+% Exported: 2026-08-10T21:07:29.267Z
+% Title: Untitled Graph
+% Nodes: 15, Edges: 15
+
+\begingroup
+% --- Colors (define-if-not-already-defined) ---
+\providecolor{zxRed}{RGB}{232,165,165}   % X spiders
+\providecolor{zxGreen}{RGB}{216,248,216} % Z spiders
+\providecolor{zxYellow}{RGB}{255,255,0}     % hadamard 
+
+\tikzset{
+    EMPTY/.style={minimum size=3.4mm,
+        outer sep=-1.7mm},
+    DOT/.style={inner sep=0mm, minimum size=3.4mm, shape=circle,
+        draw=black, outer sep=-0.5mm, line width=1pt},
+    BLACK_DOT/.style={minimum size=2mm, inner sep=0.3mm,
+        outer sep=-0.15mm, fill=black, shape=circle},
+    WORD_BALL/.style={draw=black, shape=rectangle, minimum size=6.5mm,
+        rounded corners=3.2mm, inner sep=1.2mm, outer sep=-1.0mm,
+        scale=1, font={\large\boldmath}, line width=1pt},
+    GREEN_DOT/.style={DOT, fill=zxGreen},
+    GREEN_WORD_BALL/.style={WORD_BALL, fill=zxGreen},
+    RED_DOT/.style={DOT, fill=zxRed},
+    RED_WORD_BALL/.style={GREEN_WORD_BALL, fill=zxRed},
+    YELLOW_BOX/.style={fill=zxYellow, draw=black, line width=1pt, shape=rectangle, inner sep=0.6mm,
+        minimum height=3.4mm, minimum width=3.4mm,
+        font={\large\boldmath}},
+    EDGE/.style={draw=black, line width=1pt},
+    BLUE_DASHED_EDGE/.style={EDGE, draw=blue, dashed}
+}
+\pgfdeclarelayer{edgelayer}
+\pgfdeclarelayer{nodelayer}
+\pgfsetlayers{edgelayer,nodelayer,main}
+
+\begin{tikzpicture}
+    \begin{pgfonlayer}{nodelayer}
+        \node [EMPTY] (1) at (-2.96667, -2.1) {$G$};
+        \node [EMPTY] (2) at (4.03333, -2.1) {$\text{Tree decomposition of } G$};
+        \node [label=above:{$a$}, BLACK_DOT] (3) at (-3.96667, 1.4) {};
+        \node [label=left:{$h$}, BLACK_DOT] (4) at (-4.46667, 0.4) {};
+        \node [label=below:{$g$}, BLACK_DOT] (5) at (-3.46667, -0.6) {};
+        \node [label=below:{$e$}, BLACK_DOT] (6) at (-1.46667, -0.6) {};
+        \node [label=above:{$f$}, BLACK_DOT] (7) at (-0.46667, 0.4) {};
+        \node [label=above:{$b$}, BLACK_DOT] (8) at (-1.96667, 1.4) {};
+        \node [label=right:{$d$}, BLACK_DOT] (9) at (-1.96667, 0.4) {};
+        \node [label=above:{$c$}, BLACK_DOT] (10) at (-2.96667, 0.4) {};
+        \node [label=below:{$\{c,h, g\}$}, BLACK_DOT] (11) at (2.53333, -0.6) {};
+        \node [label=above:{$\{a,c,h\}$}, BLACK_DOT] (12) at (2.53333, 0.9) {};
+        \node [label=above:{$\{a,c,b\}$}, BLACK_DOT] (13) at (4.03333, 1.4) {};
+        \node [label=right:{$\{b, c, d\}$}, BLACK_DOT] (14) at (5.53333, 0.4) {};
+        \node [label=right:{$\{c,e,f\}$}, BLACK_DOT] (15) at (5.03333, -1.1) {};
+    \end{pgfonlayer}
+    \begin{pgfonlayer}{edgelayer}
+        \draw[EDGE] (3) to (10);
+        \draw[EDGE] (4) to (10);
+        \draw[EDGE] (3) to (4);
+        \draw[EDGE] (5) to (10);
+        \draw[EDGE] (4) to (5);
+        \draw[EDGE] (3) to (8);
+        \draw[EDGE] (10) to (8);
+        \draw[EDGE] (8) to (9);
+        \draw[EDGE] (6) to (7);
+        \draw[EDGE] (10) to (9);
+        \draw[EDGE] (10) to (6);
+        \draw[EDGE] (11) to (12);
+        \draw[EDGE] (13) to (12);
+        \draw[EDGE] (13) to (14);
+        \draw[EDGE] (15) to (12);
+    \end{pgfonlayer}
+\end{tikzpicture}
+
+\endgroup
