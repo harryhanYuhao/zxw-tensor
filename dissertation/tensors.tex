@@ -6,19 +6,19 @@ We present the following straightforward definition of tensors, which is a rephr
 
 \begin{definition}\label{def:tensor}
 Given $n\in \N$, let $[n]$ denote the set $\{0, 1, \cdots, n-1\}$. 
-A tensor of rank $k \in \N$ is a function $T : [n_0] \times [n_1] \times \cdots [n_{k-1}] \rightarrow \C$.
+A tensor of rank $k \in \N$ is a function $T : [n_0] \times [n_1] \times \cdots \times [n_{k-1}] \rightarrow \C$.
 \end{definition}
 
-By covention, we shall write the value $T(i_0, i_1, \cdots, i_{k-1})$ as $T_{i_0 i_1 \cdots i_{k-1}}$, where each $i$ is called an index.
+By convention, we shall write the value $T(i_0, i_1, \cdots, i_{k-1})$ as $T_{i_0 i_1 \cdots i_{k-1}}$, where each $i$ is called an index.
 Of course, the output of $T$ can be $\R$ or any other ring. 
 We ordain it to be $\C$ in this dissertation.
 $n_j$ is called the dimension of the $j$-th index, which will always be clear from the context.
 
 Following the convention of Einstein summation, a tensor $T$ is denoted by a capital letter with its indices as free variables shown in the subscript.
-The class of all tensors is denoted by the caligraphy letter $\T_{ijk \cdots}$.
+The class of all tensors is denoted by the calligraphic letter $\T_{ijk \cdots}$.
 
-Tensor is, plainly and unonstensibly, an arrangement of complex numbers with some orderings by the indices.
-For example, a rank-one tensor is a vector entries, rank-two tensor is a matrix, and a rank-three tensor is an arrangement of matrices.
+Tensor is, plainly and unostentatiously, an arrangement of complex numbers with some orderings by the indices.
+For example, a rank-one tensor is a vector, a rank-two tensor is a matrix, and a rank-three tensor is an arrangement of matrices.
 
 The following equation denotes a vector and a matrix, while figure \ref{fig:rank3-stack} depicts the rank-three tensor as a stack of $n$ such matrix slices.
 \begin{equation*}
@@ -50,14 +50,14 @@ There are at least seven natural operations for tensors.
 	\begin{itemize} 
 		\item \textbf{Addition} $\T + \T \rightarrow \T$. Let $T_{ijk \cdots}$ and $S_{ijk \cdots}$ be two tensors of the same rank. Then their sum is defined by $(T + S)_{ijk \cdots} = T_{ijk \cdots} + S_{ijk \cdots}$.
 		\item \textbf{Scalar multiplication} Let $T_{ijk \cdots}$ be a tensor and $c \in \C$. Define $(cT)_{ijk \cdots} =c (T_{ijk \cdots}) $
-		\item \textbf{Permutation.} Let $T_{ijk\cdots}$ be a tensor of rank $m$. For any permutation $\sigma \in S_m$, the permuted tensor is defined by $(\sigma \cdot T)_{i_{\sigma(1)} i_{\sigma(2)} \cdots i_{\sigma(k)}} = T_{i_1 i_2 \cdots i_k}$.
+		\item \textbf{Permutation.} Let $T_{ijk\cdots}$ be a tensor of rank $m$. For any permutation $\sigma \in S_m$, the permuted tensor is defined by $(\sigma \cdot T)_{i_{\sigma(1)} i_{\sigma(2)} \cdots i_{\sigma(m)}} = T_{i_1 i_2 \cdots i_m}$.
 		\item \textbf{Flatten} $\T \rightarrow \T$. Let $T_{ijk \cdots}$ be a tensor. 
 		Any of the two indices of $T$ can be flattened into one to create a new tensor.
-		Say we would like to flatten the indices $i$ and $j$, of dimension $n_1, n_2$. Let $\alpha$ be an index of dimension $n_1n_2$, and we define the new tensor $S_{ak \cdots}$ as $S_{(n_2 i + j)k \cdots} = T_{ijk\cdots}$.
+		Say we would like to flatten the indices $i$ and $j$, of dimensions $n_1$ and $n_2$. Let $\alpha$ be an index of dimension $n_1n_2$, and we define the new tensor $S_{\alpha k \cdots}$ as $S_{(n_2 i + j)k \cdots} = T_{ijk\cdots}$.
 		\item \textbf{Unflatten}, which is the operation exactly opposite of flatten.
 		\item \textbf{Outer product} $\T \otimes \T \rightarrow \T$ Let $T_{ijk \cdots}$ and $S_{lmn \cdots}$ be any two tensors.
 		Their tensor product is defined by $(T \otimes S)_{ijklmn\cdots} = T_{ijk\cdots} S_{lmn\cdots}$. Outer product is sometimes called \textbf{tensor product} or \textbf{Kronecker product}.
-		\item \textbf{Contraction.} Let $T_{ijk\cdots}$ and $S_{ijk \cdots}$ be tensor of rank $m$ and $n$. Their contraction over the index $i$ is a tensor of rank $m+n - 2$ defined by $(T \cdot S)_{jk\cdots lm\cdots} = \sum_{i=0}^{n-1} T_{ijk\cdots} S_{ilm\cdots}$.
+		\item \textbf{Contraction.} Let $T_{ijk\cdots}$ and $S_{ijk \cdots}$ be tensors of rank $m$ and $n$. Their contraction over the index $i$ is a tensor of rank $m+n - 2$ defined by $(T \cdot S)_{jk\cdots lm\cdots} = \sum_{i=0}^{n-1} T_{ijk\cdots} S_{ilm\cdots}$.
 		If there are many different tensors with the corresponding contraction indices specified, their full contraction give a new tensor defined as 
 		\begin{equation}
 			\sum_{i_1=0}^{n_1-1} \sum_{i_2=0}^{n_2-1} \cdots \sum_{i_k=0}^{n_k-1} T^{(1)}_{i_1 j_1 k_1 \cdots} T^{(2)}_{i_2 j_2 k_2 \cdots} \cdots T^{(k)}_{i_k j_k k_k \cdots}
@@ -68,7 +68,7 @@ There are at least seven natural operations for tensors.
 
 Addition and scalar multiplication of tensors are clear enough. 
 Permutation of indices is generalisation of matrix transpose. 
-For an example, consider ranked-two tensor $T$, and define $S_{ij} = T_{ji}$
+For an example, consider rank-two tensor $T$, and define $S_{ij} = T_{ji}$
 
 \begin{equation*}
 	T_{ij} =
@@ -85,7 +85,7 @@ For an example, consider ranked-two tensor $T$, and define $S_{ij} = T_{ji}$
 	\end{pmatrix}
 \end{equation*}
 
-Outer product and flattenning are demonstrated by figure \ref{fig:outer-flatten}.
+Outer product and flattening are demonstrated by figure \ref{fig:outer-flatten}.
 
 \begin{figure}[ht]
 \centering
@@ -94,7 +94,7 @@ Outer product and flattenning are demonstrated by figure \ref{fig:outer-flatten}
 \label{fig:outer-flatten}
 \end{figure}
 
-Usually, outer product and flattenning are used together to convert tensor products of two arbitrary tensors into a single matrix, for example
+Usually, outer product and flattening are used together to convert tensor products of two arbitrary tensors into a single matrix, for example
 \begin{equation}
 	A \otimes \vec{v} = 
 	\begin{pmatrix}
@@ -124,10 +124,10 @@ In general, if we have two matrices $M$ and $N$, their outer product will be
 \end{equation}
 
 Contraction is the more complicated operation. 
-For the matrices, $M_{ij}$ and $N(jk)$, their contraction over the index $j$ is a matrix $P_{ik}$ defined by $P_{ik} = \sum_{j=0}^{n-1} M_{ij} N_{jk}$, which is exactly the matrix multiplication.
+For the matrices, $M_{ij}$ and $N_{jk}$, their contraction over the index $j$ is a matrix $P_{ik}$ defined by $P_{ik} = \sum_{j=0}^{n-1} M_{ij} N_{jk}$, which is exactly the matrix multiplication.
 
 Given a set of tensors and the corresponding contraction indices. 
-The contraction order does not matter, because we can freely change the order of and add parenthesis to nested summuations.
+The contraction order does not matter, because we can freely change the order of and add parenthesis to nested summations.
 
 \begin{equation}
 	\begin{split}
@@ -151,7 +151,7 @@ In multilinear algebra, the definition of tensor product is thus.
 
 \begin{definition}[Tensor Product of Vector Spaces]
 	Let $V, W$ be vector spaces over a field $\F$. Their tensor product, denoted as $V \otimes W$, is the unique vector space over $\F$ that satisfies the following universal property as demonstrated in figure \ref{fig:tensor-product-universal}:
-	there exists a bilinear map $\eta: V\times W \rightarrow V \otimes W $, and for all bilinear map $f : V \times W \rightarrow U$ to any vector space $U$, there exists a unique linear map $\hat{f} : V \otimes W \rightarrow U$ such that $f = \hat{f} \circ \eta$. 
+	there exists a bilinear map $\eta: V\times W \rightarrow V \otimes W $, and for every bilinear map $f : V \times W \rightarrow U$ to any vector space $U$, there exists a unique linear map $\hat{f} : V \otimes W \rightarrow U$ such that $f = \hat{f} \circ \eta$. 
 \end{definition}
 
 \begin{figure}[ht]
@@ -159,7 +159,7 @@ In multilinear algebra, the definition of tensor product is thus.
 	\caption{Commutative triangle for tensor product.}\label{fig:tensor-product-universal}
 \end{figure}
 
-Equivalently, the tensor product of two finite-dimensional vector spaces $V$ and $W$, with basis $v_1, \cdots, v_n$ and $w_1, \cdots, w_m$ is the $n\cdot m$ dimensional vector space $V \otimes W$ with basis $v_i \otimes w_j$ that satifies the following bilinearity conditions:
+Equivalently, the tensor product of two finite-dimensional vector spaces $V$ and $W$, with basis $v_1, \cdots, v_n$ and $w_1, \cdots, w_m$ is the $n\cdot m$ dimensional vector space $V \otimes W$ with basis $v_i \otimes w_j$ that satisfies the following bilinearity conditions:
 \begin{equation*}
 	\begin{aligned}
 		(v_i + v_j) \otimes w_k &= v_i \otimes w_k + v_j \otimes w_k, \\
@@ -174,35 +174,35 @@ It is clear that
 \begin{enumerate}
 	\item A rank-one tensor, $T_i$, is a vector in some vector space $V$,
 		where the dimension of the index $i$ is the dimension of $V$.
-	\item In general, a rank-$k$ tensor $T_{i_1 i_2 \cdots}$ have additions and scalar multiplications, so the set of all rank-$k$ tensor with fixed dimension for each of its index, denoted by $\T_{i_1, i_2 \cdots}$, is a vector space.
-	This vector space has a set of basis $\{e_{j_1, j_2, \cdots, j_k}, \cdots\}$ , where $e_{j_1, j_2, \cdots,}(i_1, i_2, \cdots) = 1$ if and only if $i_1 = j_1, i_2 = j_2, \cdots$, and $0$ otherwise.
-	It is clear that this basis is in one-to-one correspondence with the tensor product of vector spaces $V_0, V_1, \cdots, V_k$, where dimension of $V_i$ is the dimension of the index $i$.
+	\item In general, a rank-$k$ tensor $T_{i_1 i_2 \cdots}$ has additions and scalar multiplications, so the set of all rank-$k$ tensors with fixed dimension for each of their indices, denoted by $\T_{i_1, i_2 \cdots}$, is a vector space.
+	This vector space has a basis $\{e_{j_1, j_2, \cdots, j_k}, \cdots\}$ , where $e_{j_1, j_2, \cdots,}(i_1, i_2, \cdots) = 1$ if and only if $i_1 = j_1, i_2 = j_2, \cdots$, and $0$ otherwise.
+	It is clear that this basis is in one-to-one correspondence with the tensor product of vector spaces $V_0, V_1, \cdots, V_k$, where the dimension of $V_i$ is the dimension of the index $i$.
 	\item Flatten is the canonical isomorphism between the vector space $V_1 \otimes V_2 \otimes \cdots \otimes V_k \rightarrow (V_1 \otimes V_2) \otimes \cdots \otimes V_k$. (And unflatten its inverse.)
 	\item Outer product $(\T_1, \T_2) \rightarrow \T_1 \otimes \T_2$ is a bilinear form, therefore this map is the canonical bilinear map guaranteed by the universal property of tensor product.
 \end{enumerate}
 
-In linear algebra, there is an intrinsic notion of input and output in linear algebra. 
+In linear algebra, there is an intrinsic notion of input and output. 
 For example, in vector space $V$ a vector is an element of $V$. Its dual is a function $V \rightarrow \C$, and a matrix is a function $V \rightarrow V$.
 In physics, the input and output of tensor are differentiated by the upper and lower indices. 
-For example, $\T^k_l$ denotes the class of tensor $ \underbrace{V \otimes V \otimes \cdots \otimes V}_{k} \otimes \underbrace{V^* \otimes V^* \otimes \cdots \otimes V^*}_{l} \cong \underbrace{V \otimes  \cdot \otimes V}_{l} \rightarrow \underbrace{V \otimes \cdots \otimes V}_{k}$,
+For example, $\T^k_l$ denotes the class of tensors $ \underbrace{V \otimes V \otimes \cdots \otimes V}_{k} \otimes \underbrace{V^* \otimes V^* \otimes \cdots \otimes V^*}_{l} \cong \underbrace{V \otimes \cdots \otimes V}_{l} \rightarrow \underbrace{V \otimes \cdots \otimes V}_{k}$,
 where $V$ is a vector space and $V^*$ is its dual.
-While differentiating input and ouputs seems an intuitive idea, it actually is unweldy in practice.
+While differentiating input and outputs seems an intuitive idea, it actually is unwieldy in practice.
 As our investigation of tensor product in this thesis is of an algorithmic nature, we will not differentiate input from output.
 
 \section{Tensor Networks}
 
-Suppose we have two tensors $T_{ijk}$ and $S_{kl}$, where index $i $ and $j$ have dimension $n_1$ and $n_2$ while both of index $k$ and $l$ have dimension $n_1$.
-If we would like to perform the following operation: `contracting the first index of $T$ with the second index of $S$, and contracting the last index of the resulting tensor with the first index another copy of $T$.' 
-The precise statement of specifying operations of tensor is too verbose and painful to articulate.
-Tensor network, a graphical representation of tensors and their operations, is used to make these statement concise and clear.
+Suppose we have two tensors $T_{ijk}$ and $S_{kl}$, where indices $i$ and $j$ have dimensions $n_1$ and $n_2$ while both of index $k$ and $l$ have dimension $n_1$.
+If we would like to perform the following operation: `contracting the first index of $T$ with the second index of $S$, and contracting the last index of the resulting tensor with the first index of another copy of $T$.' 
+The precise statement of specifying operations on tensors is too verbose and painful to articulate.
+Tensor network, a graphical representation of tensors and their operations, is used to make these statements concise and clear.
 
 \begin{definition}[Tensor Network]
-	A tensor network is a generic graph structures consists of vertices and and edges that denotes the tensor resulted from the various operations on a set of tensors, following the following three rules.
+	A tensor network is a generic graph structure consisting of vertices and edges that denotes the tensor resulting from the various operations on a set of tensors, following the following three rules.
 
 
 \textbf{Rule 1}. In tensor network, a rank-$k$ tensor is represented as a node with $k$ edges.
-Usually, the shape, color, and labels of the nodes are use to differentiate different tensors.
-For example vector $v$, matrix $M$, and rank-three tensor $T$ are represented as in figure \ref{fig:simple_tensors}.
+Usually, the shape, color, and labels of the nodes are used to differentiate different tensors.
+For example, a vector $v$, a matrix $M$, and a rank-three tensor $T$ are represented as in figure \ref{fig:simple_tensors}.
 
 \begin{figure}[ht]
 	\centering
@@ -231,13 +231,13 @@ We may also define tensor networks as a special kind of subgraph such that
 \end{enumerate}
 
 The value of a tensor can be evaluated by plugging in the values of the indices. 
-In tensor network, this is analogous to assigns a value to each of the edges and the graph shall be evalulated to some number. 
+In tensor network, this is analogous to assigning a value to each of the edges and the graph shall be evaluated to some number. 
 
-For example if we have tensor $H = \begin{pmatrix}
+For example, if we have a tensor $H = \begin{pmatrix}
 	1 & 2 \\
 	3 & 4
 \end{pmatrix} $. In explicit tensor notation, $H_{00} = 1, H_{01} = 2,  H_{10} = 3$ and $H_{11} = 4$.
-In tensor network notation, $H$ is represented as a node with two edges. Labelling the edges with $0$ and $1$ respectively evaluates the tenor as shown in figure \ref{fig:tensor-net-eval}.
+In tensor network notation, $H$ is represented as a node with two edges. Labelling the edges with $0$ and $1$ respectively evaluates the tensor as shown in figure \ref{fig:tensor-net-eval}.
 
 \begin{figure}[ht]
 	\centering
@@ -248,7 +248,7 @@ In tensor network notation, $H$ is represented as a node with two edges. Labelli
 \subsection{Order of Edges}
 
 
-While tensor networks do not differentiate input and output, it does different order of the bonds of a tensor. 
+While tensor networks do not differentiate input and output, they do differentiate the order of the bonds of a tensor. 
 For example, figure \ref{fig:tensor-transpose} shows the transpose of $H$.
 \begin{figure}[ht]
 	\centering
@@ -259,7 +259,7 @@ For example, figure \ref{fig:tensor-transpose} shows the transpose of $H$.
 
 
 The edges are typically ordered from top to bottom, from left to right. 
-Orders can also be specified by labelling the edges with indices of the tensro. 
+Orders can also be specified by labelling the edges with indices of the tensor. 
 For example, in figure \ref{fig:contraction-matrix-mult} we demonstrated matrix multiplication, a non-commutative operation, in tensor network notation.
 
 \begin{figure}[ht]
@@ -272,9 +272,9 @@ For example, in figure \ref{fig:contraction-matrix-mult} we demonstrated matrix 
 \subsection{Only Topology Matters}
 
 There is a subtlety in the graphical notation.
-Each subgraph of the tensor network can be itself be regarded as new tensor result from the full contraction of its nodes.
+Each subgraph of the tensor network can itself be regarded as a new tensor resulting from the full contraction of its nodes.
 For example in figure \ref{fig:contraction-matrix-mult}, the two nodes $M$ and $N$ can be regarded as a new node $MN$ with two edges, and in figure \ref{fig:tensor-product}, the two nodes $v$ and $w$ can be regarded as a new node $v \otimes w$ with two edges.
-Given a tensor network, there are many different ways to decompose a tensor network into subgraphs and many different order for contractions, will all of them give the same result?
+Given a tensor network, there are many different ways to decompose a tensor network into subgraphs and many different orders for contraction, will all of them give the same result?
 
 Luckily, lemma \ref{lem:contraction-order} guarantees that the answer is yes, as long as the nodes and their connections are determined.
 The tensor network notation precisely captures the nodes and connection between them, so the tensor network notation is unambiguous and well-defined.
@@ -300,13 +300,13 @@ In tensor network notation, permuting the edges of a symmetric tensor does not c
 	\label{fig:symmetric-tensor}
 \end{figure}
 
-Tensor networks that consists of only symmetric tensors are be regarded as colored hypergraphs, as the order of the edges of a symmetric tensor does not matter.
+Tensor networks that consist of only symmetric tensors can be regarded as colored hypergraphs, as the order of the edges of a symmetric tensor does not matter.
 Therefore, if there are no dangling legs, the networks of symmetric tensors can indeed be regarded as a coloured hypergraph, and two networks that are isomorphic as hypergraphs are equivalent as tensor networks.
 
-If there are dangling legs, the order and connection to those legs still matters, as contraction between symmetric tensors may give non-symmetric tensors.
-In this case, we can regard each dangling leg as a normal edge connection to a special nodes colored in its unique color.
+If there are dangling legs, the order and connection to those legs still matter, as contraction between symmetric tensors may give non-symmetric tensors.
+In this case, we can regard each dangling leg as a normal edge connected to a special node colored in its unique color.
 
-We shall summarised this obeservation as \define{only connectivity matters}.
+We shall summarise this observation as \define{only connectivity matters}.
 
 \begin{lemma}[Only Connectivity Matters]
 	Two tensor networks without dangling legs that are composed of only symmetric tensors are equivalent if they are isomorphic as coloured hypergraphs.
@@ -317,7 +317,7 @@ We shall summarised this obeservation as \define{only connectivity matters}.
 
 \section{Complexity of Contraction}
 
-Let us investigate the algorithmic complexity of tensor conctraction, which is a a problem of paramount importance as it is used in so many applications, such as quantum circuit simulation, machine learning, and almost all kinds of mathematics modelling.
+Let us investigate the algorithmic complexity of tensor contraction, which is a problem of paramount importance as it is used in so many applications, such as quantum circuit simulation, machine learning, and almost all kinds of mathematical modelling.
 
 For simplicity, we assume all index in this section have dimension $d$.
 
@@ -329,15 +329,15 @@ $$
 Computing a single entry thus takes $d$ multiplications and $d-1$ additions.
 There are a total of $d^2$ entries to compute, so the total number of operations is $d^2(d + d - 1) = O(d^3)$.
 
-Similarly, contraction of on bond between a rank $m$ and a rank $n$ tensor will result in a rank $m + n - 2$ tensor. 
-Each entry of ther resulting tensor is computed by summing over $d$ products of entries from the two tensors, so the total number of operations is $O(d^{m+n-1})$.
+Similarly, contraction of one bond between a rank $m$ and a rank $n$ tensor will result in a rank $m + n - 2$ tensor. 
+Each entry of the resulting tensor is computed by summing over $d$ products of entries from the two tensors, so the total number of operations is $O(d^{m+n-1})$.
 
 We may also choose to contract multiple bonds simultaneously. 
 In general, contracting $k$ bonds between a rank $m$ and a rank $n$ tensor will result in a rank $m + n - 2k$ tensor.
 Each entry of the resulting tensor is computed by summing over $d^k$ products of entries from the two tensors, so the total number of operations is $O(d^{m+n-k})$.
 
 It is thus clear that contracting $k$ bonds simultaneously over a tensor network with $n$ external bonds will take $O(d^{n+k})$ operations.
-This is an important observation that worth to be written down.
+This is an important observation that is worth writing down.
 
 \begin{lemma}[Complexities of Tensor Contraction by Counting Edges]\label{lem:contraction-complexity}
 	Let $T$ be a tensor network with $n$ external bonds and $k$ internal bonds. 
@@ -345,7 +345,7 @@ This is an important observation that worth to be written down.
 \end{lemma}
 
 It may surprise the reader that different orders of contraction may have different computation costs.
-For example, contracting the following tensor fully, which will gives a scalar, can be done in two different orders as shown in figure \ref{fig:contract-order-slow} and \ref{fig:contract-order-fast}.
+For example, contracting the following tensor fully, which will give a scalar, can be done in two different orders as shown in figure \ref{fig:contract-order-slow} and \ref{fig:contract-order-fast}.
 The first contraction order takes $O(d^5)$, while the second contraction order takes $O(d^4)$.
 
 \begin{figure}[ht]
@@ -363,8 +363,8 @@ The first contraction order takes $O(d^5)$, while the second contraction order t
 
 \subsection{Source of Difference in Complexity}
 
-As equation \eqref{eq:contraction-order} shows, differet orders of tensor contraction corresponds to different order of the nested summation, which is a result of three basic rules of arithmetic: commutativity, associativity, and distributivity.
-It may puzzle the readers that why simple arithmetic identities can lead to such a difference in computation costs.
+As equation \eqref{eq:contraction-order} shows, different orders of tensor contraction correspond to different orders of the nested summation, which is a result of three basic rules of arithmetic: commutativity, associativity, and distributivity.
+It may puzzle the readers why simple arithmetic identities can lead to such a difference in computation costs.
 Let me break it down in this section.
 
 Consider the following identity
@@ -383,11 +383,11 @@ $$
 (M\vec{v_1}^T ) \vec{v_2} = M(\vec{v_1}^T \vec{v_2})
 $$
 
-The left-hand side take two matrix-vector multiplications, which is $O(n^2)$ operations, while the right-hand side takes one outer product, costing $O(n^2)$ and one matrix-scalar multiplication, consting $O(n^3)$ operations.
+The left-hand side takes two matrix-vector multiplications, which is $O(n^2)$ operations, while the right-hand side takes one outer product, costing $O(n^2)$ and one matrix-scalar multiplication, costing $O(n^3)$ operations.
 
 % TODO: Is this statement true?
-In general, both finding the optimal order and determing if a given order is optimal are NP-hard problems.
+In general, both finding the optimal order and determining if a given order is optimal are NP-hard problems.
 There are, nevertheless, many heuristic algorithms to find a good contraction order.
-In this thesis, we will discuss in detail one of such algorithm which relies on a graph theoretical property called treewdith.
+In this thesis, we will discuss in detail one of such algorithm which relies on a graph theoretical property called treewidth.
 
 

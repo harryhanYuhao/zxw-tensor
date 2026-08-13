@@ -1,23 +1,23 @@
 \chapter{Introduction}
 \section{Background}
 
-Tensors, to put plainly, are arrays of numbers that can be regarded as higer dimensional matrices, and tensor contractions are operations between tensors that are analogous to matrix multiplication. 
-This definitions of tensor is related to but different from the abstract tensor products in defined vias the universal property of a bilinear form. 
+Tensors, to put it plainly, are arrays of numbers that can be regarded as higher dimensional matrices, and tensor contractions are operations between tensors that are analogous to matrix multiplication. 
+This definition of tensor is related to but different from the abstract tensor products defined via the universal property of a bilinear form. 
 Their exact distinctions will be discussed in chapter \ref{ch:tensors}.
 
-It was Roger penrose who first used diagrammatic notation, called tensor networks, to represent complicated tensor structures \cite{penrose1971applications}. 
-His intuitive and lucid notataion immediately drew attention of of the research communities and greatly promated the popularity of tensors.
+It was Roger Penrose who first used diagrammatic notation, called tensor networks, to represent complicated tensor structures \cite{penrose1971applications}. 
+His intuitive and lucid notation immediately drew the attention of the research communities and greatly promoted the popularity of tensors.
 Since then, tensor networks have found fruitful applications in many areas of science.
-For example it has help both the theoretical and numerical research in many fields of physics including quantum many-body systems and quantum computations \cite{orus2014}. 
+For example, it has helped both the theoretical and numerical research in many fields of physics, including quantum many-body systems and quantum computations \cite{orus2014}. 
 In ecology, tensors are used to model dynamics of ecosystems. 
 Maybe most famously, tensors are the core and most indispensable data structure of machine learning. 
 
-Given the widespread applications of tensors, it is without a doubt that efficent algorithms for tensor contractions is extremely important.
+Given the widespread applications of tensors, it is without a doubt that efficient algorithms for tensor contractions are extremely important.
 Unfortunately, finding the optimal contraction order of a tensor network is a difficult problem in the class of NP-complete \cite{contraction_hard}.
 Nevertheless, various tensor contraction algorithms were discovered that are efficient in average cases, and novel algorithms are still actively being developed.
 
 In this thesis, we will discuss in detail several tensor contraction algorithms using tree decomposition and treewidth.
-While most tensor contraction algorithm involve complicated combinatorial optimization and complicated graph-theoretic properties, here I proposed a new persepctive by simplying the graph structure of a tensor network inspired by ZXW calculus.
+While most tensor contraction algorithms involve complicated combinatorial optimization and complicated graph-theoretic properties, here I propose a new perspective by simplifying the graph structure of a tensor network inspired by ZXW calculus.
 
 
 \section{Outline}
@@ -26,15 +26,15 @@ While most tensor contraction algorithm involve complicated combinatorial optimi
 
 Most of the theorems in this thesis are established results and cited properly. 
 % TODO: cite this paper.
-The tensor contraction algorithms using treewidth and local complementations is noval, although it was inspired by the paper. 
+The tensor contraction algorithms using treewidth and local complementations are novel, although it was inspired by the paper. 
 The ideas generalised complete tensor notation is original, although it definitely has been discussed in the literature.
 All of the explanations, proofs, and discussions are my own work.
 
 Another important part of this thesis is the program I wrote to implement the algorithms. 
-This program was written in Rust and also includes a generic graph theory libray, a tensor contraction library, and an online interactive graph board.
+This program was written in Rust and also includes a generic graph theory library, a tensor contraction library, and an online interactive graph board.
 
-The figures in this thesis drew inspirations from the illustrations in \cite{KissingerWetering2024Book} and \cite{waintal2026competequantumcomputerslecture}. Most of them are, however, drawn by myself using tools I created.
+The figures in this thesis drew inspiration from the illustrations in \cite{KissingerWetering2024Book} and \cite{waintal2026competequantumcomputerslecture}. Most of them are, however, drawn by myself using tools I created.
 
-I used deepseek AI model to help with my work.
-It was used for proofreading, modifying some figures, and helping to write some of the codes. 
+I used DeepSeek AI model to help with my work.
+It was used for proofreading, modifying some figures, and helping to write some of the code. 
 No other parts of this thesis were generated by AI models.
