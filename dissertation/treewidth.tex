@@ -151,7 +151,131 @@ Using these lemmas, we can find the treewidth of more complicated graphs.
 	\label{fig:tree_decomposition_of_circle_graph}
 \end{figure}
 
+\section{Traingulated Graphs and Treewidth}
 
+Treewidth is closely related to triangulated graphs, as we shall explain in this section.
+
+\begin{definition}[Triangulated Graph]
+	A graph $G$ is \define{triangulated} if every cycle of length greater than or equal to $4$ has a chord.
+	A chord is an edge that connects two non-adjacent vertices in the cycle.
+	Triangulated graphs are also called \define{chordal graphs}.
+\end{definition}
+
+The triangulation properties is a subtle requirement for connections between vertices. 
+In one sense no two vertices are far away from each other if and only if there is a loop connecting them. 
+
+Figure show examples of two triangulated graphs. All trees and complete graphs are triangulated. 
+Cycle of length greater than three are not. 
+Unions of triangles are not garanteed to be triangulated.
+See figure \ref{fig:triangulated_example} for examples of triangulated and non-triangulated graphs.
+
+\begin{figure}[ht]
+	\centering
+	\input{./figures/triangulated_example.tikz}
+	\caption{Examples of two triangulated graphs (tree and clique) and two non-triangulated graphs (cycle and union of triangles).
+	The chordless cycles of non-triangulated graphs are dashed in blue.}
+	\label{fig:triangulated_example}
+\end{figure}
+
+\begin{lemma}[Removing a Vertex from Triangualted Graph]\label{lem:eleminate_vertex_triangulated}
+	Let $G$ be a triangulated graph and $v$ any vertex in $G$. Then the graph $G \setminus \{v\}$ is triangulated.
+	Note $G \setminus \{v\}$ is the graph induced from the vertex set $V(G) \setminus \{v\}$.
+\end{lemma}
+
+\begin{proof}
+	If $G\setminus \{v\}$ is not triangulated, then there exists a cycle of length greater than or equal to $4$ in $G\setminus \{v\}$ that does not have a chord.
+	The same cycle exists in $G$ and does not have a chord, meaning $G$ is not triangulated either.
+	This concludes the proof by contraposition.
+\end{proof}
+
+The following lemma follows by induction. 
+
+\begin{lemma}[Induced Subgraph of Triangulated Graph is Triangulated]
+	Let $G$ be a triangulated graph and $H$ an induced subgraph of $G$. Then $H$ is triangulated.
+\end{lemma}
+
+\begin{definition}[Simplicial Vertex]
+	A vertex $v$ in a graph $G$ is \define{simplicial} if the subgraph induced by the neighbors of $v$ is a complete graph.
+\end{definition}
+
+The proof of this lemma is presented in section \ref{sec:proofs}.
+
+\begin{lemma}[Existence of Simplicial Vertex in Triangulated Graphs]\label{lem:simplicial_vertex}
+	Every triangulated graph has at least one simplicial vertex.
+\end{lemma}
+
+\begin{definition}[Perfect Elimination Ordering]
+	A \define{perfect elimination ordering} of a graph $G$ is an ordering of the vertices $[v_1, v_2, \ldots, v_n]$ such that each vertex $v_i$ is simplical in the subgraph induced by $[v_i, v_{i+1}, \ldots, v_n]$.
+\end{definition}
+
+The reason is its called a perfect elimination is that $v_1$ is a simplical vertex in $G$, $v_2$ is a simplicial vertex in $G \setminus \{v_1\}$ (that is graph $G$ with vertex $v_1$ removed), and so on.
+An example of perfect elimination order of a triangualted graph is shown in figure \ref{fig:perfect_elimination_ordering}.
+
+\begin{figure}[ht]
+	\centering
+	\input{./figures/perfect_elimination_order.tikz}
+	\caption{Perfect elimination ordering of a triangulated graph. The simplical vertices at each step of elimination are colored in red. }
+	\label{fig:perfect_elimination_ordering}
+\end{figure}
+
+\begin{theorem}[Triangulated Graph and Perfect Elimination Ordering]\label{thm:triangulated_perfect_elimination_ordering}
+	A graph $G$ is triangulated if and only if it has a perfect elimination ordering.
+\end{theorem}
+
+\begin{proof}
+	Sufficient condition. Assuming $G$ has a perfect elimination ordering $[v_1, v_2, \ldots, v_n]$. Let $P$ be a cycle of length greater than 3.
+	Among the vertice in $P$, one of them is ordered first in the perfect elimination ordering, say $v_i$.
+	$v_i$ connects to at least two othere vertices in $P$. Since $v_i$ is simplicial in the subgraph induced by $[v_i, v_{i+1}, \ldots, v_n]$, there must be a chord in $P$ that connects two non-adjacent vertices in $P$. Therefore, $G$ is triangulated.
+
+	The necessary condiation can be proved by induction on the number of vertices in $G$ using lemma \ref{lem:simplicial_vertex}.
+	
+	The base case is when $G$ has only one vertex, which is trivially simplicial.
+
+	Let $G$ be a triangulated graph $n$ vertices. By lemma \ref{lem:simplicial_vertex}, there exists a simplicial vertex $v$ in $G$.
+	Elimination of $v$ gives $G \ v$ with $n-1$ vertices. 
+	$G\setminus \{v\}$ is triangulated by lemma \ref{lem:eleminate_vertex_triangulated}. So the proof is done by induction.
+\end{proof}
+
+\subsection{Treewidth and Triangulated Graphs}
+
+Recall that an induced subgraph of a graph $G$ is a graph formed from a subset of the vertices of $G$ and all of the edges connecting pairs of vertices in that subset.
+We have the following important theorem that connects treewidth and triangulated graphs.
+
+\begin{theorem}[Treewidth and Triangulated Graph]
+	For all graph $G$, there exists a triangulated graph $T$ such that $G$ is the induced subgraph of $T$ and $\text{tw}(G) = \text{tw}(T)$.
+\end{theorem}
+
+\begin{proof}
+	Let $G$ be a graph. It is sufficient to show that for all tree decomposition of $G$, which we label as $T$, there exists a triangulated graph $F$ with the same tree decomposition and $G$ is the induced subgraph of $F$.
+	We shall give a constructive proof.
+
+	We can construct the triangulated graph $F$ from $G$ in the following steps.
+    \begin{enumerate}
+    	\item Let $X_l$ be a leaf in $T$. \footnote{A leaf is a vertex in a tree with degree 1.} Let $X_p$ be the parent of $X_l$ in $T$.
+		   	We assume that $X_l \setminus X_p$ is a set of one element (justisfied later).
+		\item Let $v$ be the unique vertex in $X_l \setminus X_p$. No other bags in $T$ contain $v$. If there is another bag that contains $v$, the path from $X_l$ to that bag must pass through $X_p$, and $X_p$ must contain $v$ by property 3 of tree decomposition. This is a contradiction to the assumption that $v \notin X_p$.
+		\item In graph $F$, let $v$ has neighbours to all the vertices in $X_l$, and let the subgraph induced by $X_l$ be a complete graph.
+		\item Remove $X_l$ from $T$ and repeat the process until $T$ is empty.
+    \end{enumerate}
+
+	This process will produce a perfect elimination ordering of $F$ and therefore $F$ is triangulated.
+	The original tree decomposition $T$ is still a valid tree decomposition of $F$, because the structure and the bags of $T$ are not changed, and each edges added to $F$ are already contained in some bag of $T$.
+
+	The assumption that $X_l \setminus X_p$ is a set of one element can be safely made because
+	\begin{enumerate}
+		\item If $X_l \setminus X_p$ is empty, (That is $X_l$ does not contain any more vertices $X_p$ does not contain), then we can remove $X_l$ from $T$ and the tree decomposition is still valid.
+		\item If $X_l \setminus X_p$ has more than one element, we can split $X_l$ into multiple bags, each containing one more element of $X_l \setminus X_p$. Check figure \ref{fig:demo_leaf_tree_decomposition} for a demonstration of this process.
+	\end{enumerate}
+
+	An demonstraction of this process is shown in figure 
+\end{proof}
+
+\begin{figure}[ht]
+	\centering
+	\input{./figures/demo_leaf_tree_deomposition.tikz}
+	\caption{Demonstration of make a leaf in tree decomposition only contain one more vertex than its parent.}
+	\label{fig:demo_leaf_tree_decomposition}
+\end{figure}
 \section{Treewidth and Tensor Contraction.}
 
 It is possible to derive an upper bound for tensor contraction cost using treewidth
@@ -180,11 +304,38 @@ The theorem is constructive, and there exists an algorithm that to find such a c
 	\label{fig:line_graph_1}
 \end{figure}
 
+\begin{lemma}[Complexity and Vertex Order]\label{lem:contraction-vertex-order}
+	Let $G$ be a graph and $G^*$ its line graph.
+A edge in $G$, $e$, has a corresponding vertex in $G^*$, which we denote as $v_e$.
+The number of edge neighbours of $e$ in $G$ precisely equals to the degree of vertex $v_e$ in $G^*$.
+\end{lemma}
+Therefore, using lemma \ref{lem:contraction-complexity} we see the cost of contracting a bond $e$ in $G$ is $O(d^{e+1})$.
+
+If an edge $e$ is contracted in $G$, all the neighbouring edges of $e$ become neighbours of each other if they are not already.
+\begin{lemma}[Contracting Makes Neighbours in Line Graph]\label{lem:contracting-makes-neighbours}
+	Let $G$ be a graph and $G^*$ its line graph.
+	Let $e$ be an edge in $G$ and $v_e$ its corresponding vertex in $G^*$.
+	If we contract the edge $e$ in $G$, then all the neighbours of $v_e$ in $G^*$ become neighbours of each other if they are not already.
+\end{lemma}
+The behaviour of contraction and its corresponding line graph is demonstrated in figure \ref{fig:contracting-makes-neighbours}.
+
+\begin{figure}[ht]
+	\centering
+	\resizebox{0.8\textwidth}{!}{
+		\input{./figures/demonstraction_contraction.tikz}
+	}
+	\caption{Contracting an edge $a$ (in dotted blue) in $G$ 
+			makes all the neighbours of $v_e$ (labeled in red) in $G^*$ neighbours of each other.
+			The cost of this contraction is $O(d^{3})$, as degree of $a$ in $G^*$ is two.
+		}
+	\label{fig:contracting-makes-neighbours}
+\end{figure}
+
 
 \section{Miscellaneous Proofs}\label{sec:proofs}
 
 \begin{proof}[Proof of Lemma \ref{lem:minor_treewidth}]
-	We only need to prove that if a graph $G$ can be obtained from $H$ by performing one of the three operations, then the treewidth of $G$ is less than or equal to the treewidth of $H$. The lemma follows as any minor can be obtained by a finite sequence of these three operations.
+	We only need to prove that if a graph $G$ can be obtained from $H$ by performing one of the three graph-minor's operations, then the treewidth of $G$ is less than or equal to the treewidth of $H$. The lemma follows as any minor can be obtained by a finite sequence of these three operations.
 
 	Let $T$ be a tree decomposition of $H$.
 	We have three cases to consider.
@@ -197,5 +348,6 @@ The theorem is constructive, and there exists an algorithm that to find such a c
 
 	In all cases, we can construct a tree decomposition of $G$ from a tree decomposition of $H$ with width less than or equal to the width of $T$. Therefore, the treewidth of $G$ is less than or equal to the treewidth of $H$.
 \end{proof}
+
 
 
