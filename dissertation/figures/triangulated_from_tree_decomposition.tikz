@@ -1,0 +1,142 @@
+% Graph Board TikZ export
+% Exported: 2026-08-15T14:49:12.498Z
+% Title: Untitled Graph
+% Nodes: 48, Edges: 48
+
+\begingroup
+% --- Colors (define-if-not-already-defined) ---
+\providecolor{zxRed}{RGB}{232,165,165}   % X spiders
+\providecolor{zxGreen}{RGB}{216,248,216} % Z spiders
+\providecolor{zxYellow}{RGB}{255,255,0}     % hadamard 
+\providecolor{zxBlue}{RGB}{68,126,255}     % hadamard 
+
+
+\tikzset{
+    EMPTY/.style={minimum size=3.4mm,
+        outer sep=-1.7mm},
+    DOT/.style={inner sep=0mm, minimum size=3.4mm, shape=circle,
+        draw=black, outer sep=-0.5mm, line width=1pt},
+    BLACK_DOT/.style={minimum size=2mm, inner sep=0.3mm,
+        outer sep=-0.15mm, fill=black, shape=circle},
+    WORD_BALL/.style={draw=black, shape=rectangle, minimum size=6.5mm,
+        rounded corners=3.2mm, inner sep=1.2mm, outer sep=-1.0mm,
+        scale=1, font={\large\boldmath}, line width=1pt},
+    GREEN_DOT/.style={DOT, fill=zxGreen},
+    GREEN_WORD_BALL/.style={WORD_BALL, fill=zxGreen},
+    RED_DOT/.style={DOT, fill=zxRed},
+    RED_WORD_BALL/.style={GREEN_WORD_BALL, fill=zxRed},
+    YELLOW_BOX/.style={fill=zxYellow, draw=black, line width=1pt, shape=rectangle, inner sep=0.6mm,
+        minimum height=3.4mm, minimum width=3.4mm,
+        font={\large\boldmath}},
+    EDGE/.style={draw=black, line width=1pt},
+    BLUE_DASHED_EDGE/.style={-, dashed, dash pattern=on 2pt off 0.5pt, ultra thick, zxBlue},
+    GRAY_DASHED_EDGE/.style={-, dashed, dash pattern=on 3pt off 1.5pt, thick, lightgray}
+}
+\pgfdeclarelayer{edgelayer}
+\pgfdeclarelayer{nodelayer}
+\pgfsetlayers{edgelayer,nodelayer,main}
+
+\begin{tikzpicture}
+    \begin{pgfonlayer}{nodelayer}
+        \node [label=above:{$b$}, BLACK_DOT] (1) at (-4.04167, 6.02083) {};
+        \node [label=above:{$c$}, BLACK_DOT] (2) at (-5.04167, 5.02083) {};
+        \node [label=below:{$d$}, BLACK_DOT] (3) at (-6.04167, 4.02083) {};
+        \node [label=below:{$e$}, BLACK_DOT] (4) at (-4.04167, 4.02083) {};
+        \node [label=above:{$a$}, BLACK_DOT] (5) at (-6.04167, 6.02083) {};
+        \node [label=above:{$f$}, BLACK_DOT] (6) at (-3.04167, 7.02083) {};
+        \node [EMPTY] (7) at (-1.54167, 5.02083) {$\xrightarrow{\text{Tree decomposition}}$};
+        \node [label=above:{$\{a,f,e\}$}, BLACK_DOT] (8) at (1.45833, 5.02083) {};
+        \node [label=above:{$\{a,b,d,e\}$}, BLACK_DOT] (9) at (3.45833, 5.02083) {};
+        \node [label=above:{$\{b,c,d,e\}$}, BLACK_DOT] (10) at (5.45833, 5.02083) {};
+        \node [label=above:{$b$}, BLACK_DOT] (11) at (-6.54167, -1.47917) {};
+        \node [label=above:{$c$}, BLACK_DOT] (12) at (-8.04167, -2.97917) {};
+        \node [label=below:{$d$}, BLACK_DOT] (13) at (-8.54167, -3.47917) {};
+        \node [label=below:{$e$}, BLACK_DOT] (14) at (-6.54167, -3.47917) {};
+        \node [label=above:{$a$}, BLACK_DOT] (15) at (-8.54167, -1.47917) {};
+        \node [label=above:{$f$}, BLACK_DOT] (16) at (-5.54167, -0.47917) {};
+        \node [label=above:{$b$}, BLACK_DOT] (17) at (1.95833, -1.47917) {};
+        \node [label=above:{$c$}, BLACK_DOT] (18) at (0.45833, -2.97917) {};
+        \node [label=below:{$d$}, BLACK_DOT] (19) at (-0.54167, -2.97917) {};
+        \node [label=below:{$e$}, BLACK_DOT] (20) at (2.45833, -3.47917) {};
+        \node [label=above:{$a$}, BLACK_DOT] (21) at (-0.04167, -1.47917) {};
+        \node [label=above:{$f$}, BLACK_DOT] (22) at (2.95833, -0.47917) {};
+        \node [label=above:{$b$}, BLACK_DOT] (23) at (9.45833, -0.97917) {};
+        \node [label=below:{$c$}, BLACK_DOT] (24) at (8.45833, -2.47917) {};
+        \node [label=below:{$d$}, BLACK_DOT] (25) at (6.45833, -3.47917) {};
+        \node [label=below:{$e$}, BLACK_DOT] (26) at (9.95833, -2.97917) {};
+        \node [label=above:{$a$}, BLACK_DOT] (27) at (7.45833, -0.97917) {};
+        \node [label=above:{$f$}, BLACK_DOT] (28) at (10.45833, 0.02083) {};
+        \node [label=left:{$\{b,c,d,e\}$}, RED_DOT] (29) at (8.45833, 1.02083) {};
+        \node [EMPTY] (30) at (-3.04167, -1.97917) {$\rightarrow$};
+        \node [EMPTY] (31) at (4.95833, -1.47917) {$\rightarrow$};
+        \node [label=above:{$\{a,f,e\}$}, RED_DOT] (32) at (-9.04167, 1.02083) {};
+        \node [label=above:{$\{a,b,d,e\}$}, BLACK_DOT] (33) at (-7.04167, 1.02083) {};
+        \node [label=above:{$\{b,c,d,e\}$}, BLACK_DOT] (34) at (-5.04167, 1.02083) {};
+        \node [label=above:{$\{a,b,d,e\}$}, RED_DOT] (35) at (0.45833, 1.02083) {};
+        \node [label=above:{$\{b,c,d,e\}$}, BLACK_DOT] (36) at (2.45833, 1.02083) {};
+        \node [EMPTY] (37) at (-10.04167, 2.02083) {};
+        \node [EMPTY] (38) at (-10.04167, -4.97917) {};
+        \node [EMPTY] (39) at (-4.04167, -4.97917) {};
+        \node [EMPTY] (40) at (-4.04167, 2.02083) {};
+        \node [EMPTY] (41) at (-1.54167, 2.02083) {};
+        \node [EMPTY] (42) at (-1.54167, -4.97917) {};
+        \node [EMPTY] (43) at (3.95833, -4.97917) {};
+        \node [EMPTY] (44) at (3.95833, 2.02083) {};
+        \node [EMPTY] (45) at (5.95833, 2.02083) {};
+        \node [EMPTY] (46) at (5.95833, -4.97917) {};
+        \node [EMPTY] (47) at (11.45833, -4.97917) {};
+        \node [EMPTY] (48) at (11.45833, 2.02083) {};
+    \end{pgfonlayer}
+    \begin{pgfonlayer}{edgelayer}
+        \draw[EDGE] (1) to (4);
+        \draw[EDGE] (2) to (4);
+        \draw[EDGE] (3) to (4);
+        \draw[EDGE] (3) to (5);
+        \draw[EDGE] (2) to (3);
+        \draw[EDGE] (1) to (2);
+        \draw[EDGE] (5) to (1);
+        \draw[EDGE] (5) to (6);
+        \draw[EDGE] (6) to (4);
+        \draw[EDGE] (8) to (9);
+        \draw[EDGE] (9) to (10);
+        \draw[EDGE] (15) to (16);
+        \draw[EDGE] (16) to (14);
+        \draw[EDGE] (15) to (14);
+        \draw[EDGE] (17) to (20);
+        \draw[EDGE] (19) to (20);
+        \draw[EDGE] (19) to (21);
+        \draw[EDGE] (21) to (17);
+        \draw[EDGE] (21) to (22);
+        \draw[EDGE] (22) to (20);
+        \draw[EDGE] (21) to (20);
+        \draw[EDGE] (19) to (17);
+        \draw[EDGE] (23) to (26);
+        \draw[EDGE] (24) to (26);
+        \draw[EDGE] (25) to (26);
+        \draw[EDGE] (25) to (27);
+        \draw[EDGE] (24) to (25);
+        \draw[EDGE] (23) to (24);
+        \draw[EDGE] (27) to (23);
+        \draw[EDGE] (27) to (28);
+        \draw[EDGE] (28) to (26);
+        \draw[EDGE] (27) to (26);
+        \draw[EDGE] (25) to (23);
+        \draw[EDGE] (32) to (33);
+        \draw[EDGE] (33) to (34);
+        \draw[EDGE] (35) to (36);
+        \draw[GRAY_DASHED_EDGE] (37) to (40);
+        \draw[GRAY_DASHED_EDGE] (40) to (39);
+        \draw[GRAY_DASHED_EDGE] (39) to (38);
+        \draw[GRAY_DASHED_EDGE] (38) to (37);
+        \draw[GRAY_DASHED_EDGE] (41) to (44);
+        \draw[GRAY_DASHED_EDGE] (44) to (43);
+        \draw[GRAY_DASHED_EDGE] (43) to (42);
+        \draw[GRAY_DASHED_EDGE] (42) to (41);
+        \draw[GRAY_DASHED_EDGE] (45) to (48);
+        \draw[GRAY_DASHED_EDGE] (48) to (47);
+        \draw[GRAY_DASHED_EDGE] (47) to (46);
+        \draw[GRAY_DASHED_EDGE] (46) to (45);
+    \end{pgfonlayer}
+\end{tikzpicture}
+
+\endgroup
