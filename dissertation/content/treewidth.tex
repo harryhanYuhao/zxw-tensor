@@ -249,19 +249,28 @@ Using the notion of induced subgraph, we have the following important theorem th
 	Let $G$ be a graph. It is sufficient to show that for all tree decomposition of $G$, which we label as $T$, there exists a triangulated graph $F$ with the same tree decomposition and $G$ is the induced subgraph of $F$.
 	We shall give a constructive proof.
 
-	We can construct the triangulated graph $F$ from $G$ in the following steps.
+	We can construct the triangulated graph $F$ from $G$ in the following way.
+  Starting by initiailising $F$ with only the vertices of $G$ and no connections between them.
+  Perform the following steps, where in each steps we add more edges to $F$ and remove bags in $T$.
+  The algorithm terminates when $T$ becomes an empty graph.
+  
     \begin{enumerate}
-    	\item Let $X_l$ be a leaf in $T$. \footnote{A leaf is a vertex in a tree with degree 1.} Let $X_p$ be the parent of $X_l$ in $T$.
-		   	We assume that $X_l \setminus X_p$ is a set of one element (justified later).
-		\item Let $v$ be the unique vertex in $X_l \setminus X_p$. No other bags in $T$ contain $v$. If there is another bag that contains $v$, the path from $X_l$ to that bag must pass through $X_p$, and $X_p$ must contain $v$ by property 3 of tree decomposition. This is a contradiction to the assumption that $v \notin X_p$.
-		\item In graph $F$, let $v$ has neighbours to all the vertices in $X_l$, and let the subgraph induced by $X_l$ be a complete graph.
-		\item Remove $X_l$ from $T$ and repeat the process until $T$ contain only one bag. Make the vertices in this bag a clique. As the graph $G$ is finite, this process must terminate.
+    	\item Let $X_l$ be a leaf in $T$. 
+        % TODO: add references
+        \footnote{A leaf is a vertex in a tree with degree 1. The paret of the leaf is the only other vertex connecting to it. All tree must contain at least two leaves.} 
+        Let $X_p$ be the parent of $X_l$ in $T$.
+		   	We assume that $X_l \setminus X_p$ is a set of one element. If it is not, modify the tree decomposition $T$ in the process described below to make it so. 
+		\item Let $v$ be the unique vertex in $X_l \setminus X_p$. I claim that No other bags in $T$ contain $v$. If there is another bag that contains $v$, the path from $X_l$ to that bag must pass through $X_p$, and $X_p$ must contain $v$ by property 3 of tree decomposition. This is a contradiction to the assumption that $v \notin X_p$.
+		\item Add enough edges to the graph $F$ such that the subgraph induced by $X_l$ becomes a complete graph.
+		\item Remove $X_l$ from $T$ and repeat the process until $T$ empty. 
     \end{enumerate}
 
-	This process will produce a perfect elimination ordering of $F$ and therefore $F$ is triangulated.
-	The original tree decomposition $T$ is still a valid tree decomposition of $F$, because the structure and the bags of $T$ are not changed, and each edges added to $F$ are already contained in some bag of $T$.
+  This process must terminate because in each iteration one vertex is eliminated from $T$ and $T$ is finite.
+  In the $i$-th iteration, we work on the special vertex $v_i$ that is the only vertex contains in $X_l \setminus X_p$. 
+  It is clear that $[v_1, v_2, \cdots]$ is a perfect elimination ordering of $F$; therefore $F$ is triangulated.
+	The original tree decomposition $T$ is still a valid tree decomposition of $F$, because the structure and the bags of $T$ are not changed, and each edges added to $F$ are contained in some bag of $T$.
 
-	The assumption that $X_l \setminus X_p$ is a set of one element can be safely made because
+	If $X_l \setminus X_p$ is a set of more than one elements, we perform the following modification to the tree decomposition $T$ to make it have one leaf bag that contains exactly one more vertex than its parent.
 	\begin{enumerate}
 		\item If $X_l \setminus X_p$ is empty, (That is $X_l$ does not contain any more vertices $X_p$ does not contain), then we can remove $X_l$ from $T$ and the tree decomposition is still valid.
 		\item If $X_l \setminus X_p$ has more than one element, we can split $X_l$ into multiple bags, each containing one more element of $X_l \setminus X_p$. Check figure \ref{fig:demo_leaf_tree_decomposition} for a demonstration of this process.
@@ -283,7 +292,7 @@ Take note that this process generates a perfect elimination ordering for the tri
     \resizebox{1\textwidth}{!}{
         \input{./figures/triangulated_from_tree_decomposition.tikz}
     }
-    \caption{Demonstration of constructing a triangulated graph from a tree decomposition. The original graph is shown in the top left, and the tree decomposition is shown in the top right. 
+    \caption{Demonstration of constructing a triangulated graph with the same tree decomposition. The original graph is shown in the top left, and the tree decomposition is shown in the top right. 
     Each step of generating the triangulated graph is shown in the bottom with boxes. The corresponding bags in the tree decomposition are highlighted in red.}
     \label{fig:triangulated_from_tree_decomposition}
 \end{figure}
@@ -366,7 +375,7 @@ This process is demonstrated in figure \ref{fig:line_graph_simplicial_eliminatio
 
 Therefore given any tree decomposition of $G^*$, we can find a simplicial elimination ordering $[v_{\alpha}, v_{\beta}, \cdots ]$ guaranteed by theorem \ref{thm:treewidth_triangulated_graph}.
 The corresponding ordering of edges in $G$ $[\alpha, \beta, \cdots]$ is our desired contraction order. 
-Each contraction will takes at most $O(d^{\text{tw}(G^*) + 1})$ time, and the total cost of contracting $G$ is $O(d^{\text{tw}(G^*) + 1})$.
+Each contraction will takes at most $O(d^{\text{tw}(G^*) + 1})$ time, and the total cost of contracting $G$ is bounded above by $O(n d^{\text{tw}(G^*) + 1})$, where $n$ is the total number of edges.
 
 \section{Miscellaneous Proofs}\label{sec:proofs}
 
