@@ -1,6 +1,6 @@
 % Graph Board TikZ export
-% Exported: 2026-08-14T11:08:35.283Z
-% Title: Untitled Graph
+% Exported: 2026-08-18T01:58:23.015Z
+% Title: Tab 1
 % Nodes: 41, Edges: 32
 
 \begingroup
@@ -30,6 +30,7 @@
         font={\large\boldmath}},
     EDGE/.style={draw=black, line width=1pt},
     BLUE_DASHED_EDGE/.style={-, dashed, dash pattern=on 2pt off 0.5pt, ultra thick, zxBlue},
+    RED_DASHED_EDGE/.style={-, dashed, dash pattern=on 2pt off 0.5pt, ultra thick, zxRed},
     GRAY_DASHED_EDGE/.style={-, dashed, dash pattern=on 3pt off 1.5pt, thick, lightgray}
 }
 \pgfdeclarelayer{edgelayer}
@@ -86,7 +87,7 @@
         \draw[EDGE] (4) to (5);
         \draw[EDGE] (6) to (5);
         \draw[EDGE] (4) to (2);
-        \draw[BLUE_DASHED_EDGE] (2) to (1);
+        \draw[RED_DASHED_EDGE] (2) to (1);
         \draw[EDGE] (1) to (6);
         \draw[EDGE] (7) to (8);
         \draw[EDGE] (7) to (13);

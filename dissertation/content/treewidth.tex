@@ -1,4 +1,4 @@
-\chapter{An introduction to Treewidth} \label{ch:treewidth}
+\chapter{Treewidth and Tensor Contraction} \label{ch:treewidth}
 
 The concept of tree decomposition and treewidth was first introduced by Robertson and Seymour to prove the famous graph minor theorem, which we state here for reference. 
 
@@ -223,9 +223,10 @@ An example of perfect elimination order of a triangualted graph is shown in figu
 \end{theorem}
 
 \begin{proof}
-	Sufficient condition. Assuming $G$ has a perfect elimination ordering $[v_1, v_2, \ldots, v_n]$. Let $P$ be a cycle of length greater than 3.
+	Proof of sufficient condition. Assuming $G$ has a perfect elimination ordering $[v_1, v_2, \ldots, v_n]$. Let $P$ be a cycle of length greater than 3.
 	Among the vertice in $P$, one of them is ordered first in the perfect elimination ordering, say $v_i$.
-	$v_i$ connects to at least two othere vertices in $P$. Since $v_i$ is simplicial in the subgraph induced by $[v_i, v_{i+1}, \ldots, v_n]$, there must be a chord in $P$ that connects two non-adjacent vertices in $P$. Therefore, $G$ is triangulated.
+	$v_i$ connects to at least two othere vertices in $P$, which we label as $a, b$. 
+	Since $v_i$ is simplicial in the subgraph induced by $[v_i, a, b]$, there is an edge connecting $a, b$, which is our desired chord.
 
 	The necessary condiation can be proved by induction on the number of vertices in $G$ using lemma \ref{lem:simplicial_vertex}.
 	
@@ -278,7 +279,7 @@ Using the notion of induced subgraph, we have the following important theorem th
 \begin{figure}[ht]
 	\centering
 	\input{./figures/demo_leaf_tree_deomposition.tikz}
-	\caption{Making a leaf in tree decomposition only contain one more vertex than its parent.}
+	\caption{The process of making a leaf in tree decomposition only contain one more vertex than its parent.}
 	\label{fig:demo_leaf_tree_decomposition}
 \end{figure}\end{enumerate}
 \end{proof}
@@ -319,6 +320,8 @@ There is a different way to describe this process, using the term simplicially e
 	The ordering $[v_1, v_2, \ldots, v_n]$ is called a \define{simplicial elimination ordering} of $G$.
 \end{definition}
 
+
+
 \section{Treewidth and Tensor Contraction.}
 
 It is possible to derive an upper bound for tensor contraction cost using treewidth
@@ -343,7 +346,7 @@ The theorem is constructive, and there exists an algorithm that to find such a c
 \begin{figure}[ht]
 	\centering
 	\input{./figures/line_graph_1.tikz}
-	\caption{Graph $G$ and its line graph $G^*$. The edges of $G$ and vertices of $G^*$ are labeled with the same alphabet.}
+	\caption{Graph $G$ and its line graph $G^*$. The edges of $G$ and vertices of $G^*$ are labeled with the same letter.}
 	\label{fig:line_graph_1}
 \end{figure}
 
@@ -360,9 +363,9 @@ This process is demonstrated in figure \ref{fig:line_graph_simplicial_eliminatio
 \begin{figure}[ht]
 	\centering
 	\resizebox{0.7\textwidth}{!}{
-		\input{./figures/demonstraction_contraction.tikz}
+		\input{./figures/demonstration_contraction.tikz}
 	}
-	\caption{Contracting an edge $a$ (in dotted blue) in $G$ 
+	\caption{Contracting an edge $a$ (in dotted red) in $G$ 
 			makes all the neighbours of $v_e$ (labeled in red) in $G^*$ neighbours of each other.
 			The cost of this contraction is $O(d^{3})$, as degree of $a$ in $G^*$ is two.
 		}
@@ -375,89 +378,15 @@ This process is demonstrated in figure \ref{fig:line_graph_simplicial_eliminatio
 
 Therefore given any tree decomposition of $G^*$, we can find a simplicial elimination ordering $[v_{\alpha}, v_{\beta}, \cdots ]$ guaranteed by theorem \ref{thm:treewidth_triangulated_graph}.
 The corresponding ordering of edges in $G$ $[\alpha, \beta, \cdots]$ is our desired contraction order. 
-Each contraction will takes at most $O(d^{\text{tw}(G^*) + 1})$ time, and the total cost of contracting $G$ is bounded above by $O(n d^{\text{tw}(G^*) + 1})$, where $n$ is the total number of edges.
+Each contraction will takes at most $O(d^{\text{tw}(G^*) + 1})$ time, and the total cost of contracting $G$ is bounded above by $O(n \cdot d^{\text{tw}(G^*) + 1})$, where $n$ is the total number of edges.
 
-\section{Miscellaneous Proofs}\label{sec:proofs}
-
-\begin{proof}[Proof of Lemma \ref{lem:minor_treewidth}]
-	We only need to prove that if a graph $G$ can be obtained from $H$ by performing one of the three graph-minor's operations, then the treewidth of $G$ is less than or equal to the treewidth of $H$. The lemma follows as any minor can be obtained by a finite sequence of these three operations.
-
-	Let $T$ be a tree decomposition of $H$.
-	We have three cases to consider.
-	\begin{enumerate}
-		\item If $G$ is obtained from $H$ by deleting an edge, then $T$ is also a tree decomposition of $G$. 
-		\item If $G$ is obtained from $H$ by deleting a vertex $v$, let $T'$ be the tree decomposition of $G$ isomorphic to $T$ with $v$ removed from all bags. (We allow empty bags). It is clear that $T'$ is a tree decomposition of $G$ and the width of $T'$ is less than or equal to the width of $T$.
-		\item If $G$ is obtained from $H$ by contracting an edge $(u, v)$. Let $w$ denote the new vertex after contraction. 
-		Let $T'$ be the tree decomposition of $G$ isomorphic to $T$ with $u$ and $v$ replaced by a new vertex $w$ in all bags that contain $u$ or $v$. 
-	\end{enumerate}
-
-	In all cases, we can construct a tree decomposition of $G$ from a tree decomposition of $H$ with width less than or equal to the width of $T$. Therefore, the treewidth of $G$ is less than or equal to the treewidth of $H$.
-\end{proof}
-
-\begin{lemma}[Connection between Triangulated Graph and Cut Vertices]\label{lem:triangulated_cut_vertices}
-	Let $G$ be a triangulated graph. Let $P$ be a cycle in $G$ and vertices $u, v \in G$ be a pair of non-adjacent vertices in $P$. 
-	$u, v$ are cut vertices of $P$ (removing $u, v$ makes $P$ disconnected.) 
-	Let $C_1, C_2$ be the two components of $P$ after removing $u, v$.
-	If $C_1, C_2$ are not adjacent in $G$, then $u$ must be adjacent to $v$ in $G$.
-\end{lemma}
-
-\begin{proof}
-	Provided $C_1, C_2$ are not adjacent in $G$, there must be a cycle of lenght four.
-	If not, let $\mathcal{C}$ be the smallest cycle of $G$ that contain $u, v$.
-	Since $G$ is triangulated, $\mathcal{C}$ must have a chord.
-	This chord makes the cicle smaller, until the length of the cycle is four.
-	See figure \ref{fig:triangulated_cycle} for an example of this process.
-
-	\begin{figure}[ht]
-		\centering
-		\input{./figures/chord_smaller_cycle.tikz}
-		\caption{Provided $C_1$ and $C2_2$ are not adjacent, any chord in the cycle of lenght greater than 4, such as the one in dashed blue, will produce a smaller cycle that still contains $u$ and $v$.}
-		\label{fig:triangulated_cycle}
-	\end{figure}
-	
-	Let $\mathcal{C}$ be the length four cycle. There are two cases 
-	\begin{enumerate}
-		\item $u, v$ are adjacent in $\mathcal{C}$. Then we are done.
-		\item $u, v$ are not adjacent in $\mathcal{C}$. Then the cycle must be of the form
-		$[a, u, b, v]$, where $a \in C_1$ and $b \in C_2$. Since $a$ can not connect to $b$, $u$ must be adjacent to $v$.
-	\end{enumerate}
-\end{proof}
-
-\begin{proof}[Proof of Lemma \ref{lem:simplicial_vertex}]
-	We shall prove the following stronger statement. 
-
-	\emph{
-	For any triangulated graph $G$. Given any vertex $v \in G$, let $H$ be the set of vertices in $G$ that are farthest away from $v$. 
-	Then there exists a simplicial vertex in $H$.
+\begin{figure}[ht]
+	\centering
+	\resizebox{0.9\textwidth}{!}{
+		\input{./figures/contraction_order_from_tree_decomposition.tikz}
 	}
-	
-	Recall that the distance between two vertices $u$ and $v$ in a graph is the length of the shortest path connecting them.
-
-	The proof is by induction. 
-	The base case is when $G$ has only one vertex $v$. This means $H = \{v\}$ and $v$ is simplicial.
-
-	For a generic triangulated graph $G$ with a chosen vertex $v$, let $H_1$ be one of the connected components of $H$. Let $S$ be the set of vertices that are adjacent to $H_1$ and are not in $H_1$.
-	See figure \ref{fig:simplicial_vertex} for a demonstration of this set up.
-
-	\begin{figure}[ht]
-		\centering
-		\input{./figures/triangulated_simplicial_existence.tikz}
-		\caption{Demonstration of the proof of lemma \ref{lem:simplicial_vertex}. $H_1$ is a connected component of farthest vertices from $v$. $S$ is the set of vertices that are adjacent to $H_1$ and are not in $H_1$.
-		}
-		\label{fig:simplicial_vertex}
-	\end{figure}
-	I claim that $S$ is a clique.
-
-
-	If $S$ contain only one vertex, there is nothing to prove.
-	Assume $S$ contains at least two vertices. Let $u, w\in S$ be any distinct vertices.
-	Both of $u, w$ are connected to $v$ via some vertices not in $H$, as they are closer to $v$. Both of them are also connected to some vertices in the connected component $H_1$.
-	Note that no vertices in $H_1$ shall connected to any other vertices in closer to $v$ except those in $S$, as it will make the distance from $v$ to $H_1$ smaller.
-	Therefore we are at the position to apply lemma \ref{lem:triangulated_cut_vertices} to the cycle formed by $u, w$ and any two vertices in $H_1$.
-	In such way we have proved that any $u$ and $w \in S$ are adjacent, and therefore $S$ is a clique.
-
-	Now apply the induction hypothesis to the subgraph induced by $H_1 \bigcup S$.
-	If $H_1 \bigcup S$ is not a clique, then we can find a vertex $w \in H_1$ and $u \in S$ such that $w$ is distant 2 from $u$, and apply the induction hypothesis to the subgraph induced by $H_1 \bigcup S$ with $u$ as the chosen vertex states there is a simplicial vertex in $H_1$. 
-	This vertex is also simplicial in $G$ as it is not adjacent to any vertices outside of $H_1 \bigcup S$.
-	If $H_1 \bigcup S$ is a clique, then any vertex in $H_1$ is simplicial in $G$.
-\end{proof}
+	\caption{Given the tree decomposition of the line graph of a tensor network, it is possible to find a contraction order with cost of $O(d^{\text{tw} + 1})$, where tw is the treewidth of the line graph.
+		This figure is a continuation of Fig \ref{fig:line_graph_simplicial_elimination}, and demonstrate how to find the total contraction order given the tree decomposition.
+	The bond to be contracted, its corresponding vertex in the line graph, and the element in the bag of the tree decomposition are highlighted in red.}
+	\label{fig:contraction_order_from_tree_decomposition}
+\end{figure}
