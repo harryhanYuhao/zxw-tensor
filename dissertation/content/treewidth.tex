@@ -379,9 +379,20 @@ This process is demonstrated in figure \ref{fig:line_graph_simplicial_eliminatio
 	Contracting an edge $e$ in a graph $G$ is equivalent to simplicially eliminating the corresponding vertex $v_e$ in the line graph $G^*$.
 \end{lemma}
 
-Therefore given any tree decomposition of $G^*$, we can find a simplicial elimination ordering $[v_{\alpha}, v_{\beta}, \cdots ]$ guaranteed by theorem \ref{thm:treewidth_triangulated_graph}.
+Therefore, given any tree decomposition of $G^*$, we can find a simplicial elimination ordering $[v_{\alpha}, v_{\beta}, \cdots ]$ guaranteed by theorem \ref{thm:treewidth_triangulated_graph}.
 The corresponding ordering of edges in $G$ $[\alpha, \beta, \cdots]$ is our desired contraction order. 
 Each contraction will takes at most $O(d^{\text{tw}(G^*) + 1})$ time, and the total cost of contracting $G$ is bounded above by $O(n \cdot d^{\text{tw}(G^*) + 1})$, where $n$ is the total number of edges.
+The process of finding the contraction order is demonstrated in figure \ref{fig:contraction_order_from_tree_decomposition}.
+
+We shall summarise our important discovery into the a theorem.
+
+\begin{lemma}[Treewidth Gives a Contraction Order with Same Complexity]\label{lem:treewidth_contraction_order}
+	Let $G$ be a tensor network with no lose bonds and regarded as a graph. 
+	Let all the bonds of $G$ be dimension $d$.
+	Given a tree decomposition of $G^*$ (which is the line graph of $G$), it is possible to find a contraction order with cost of $O(d^{\text{tw}(G*) + 1})$.
+\end{lemma}
+
+
 
 \begin{figure}[ht]
 	\centering
@@ -396,4 +407,73 @@ Each contraction will takes at most $O(d^{\text{tw}(G^*) + 1})$ time, and the to
 
 \subsection{From Perfect Elimination Order to Tree Decomposition}
 
-The important insight theorem \ref{thm:treewidth_triangulated_graph} gives us is that
+Theorem \ref{thm:treewidth_triangulated_graph} gives us important insights on how to generate a perfect elimination ordering $[v_1, v_2, \cdots, v_n]$ from a tree decomposition and how to use that to create a triangulated graph. 
+Importantly, the treewidth of the triangulated graph by construction is the maximum number of neighbours any $v_i$ has in the subgraph induced by $[v_i, v_{i+1}, \cdots, v_n]$.
+
+We can indeed go from the other direction as well.
+The converse direction produces what known as the \define{clique tree} (also called a join tree) of a triangulated graph in the literature, which is a tree decomposition in which every bag is a clique. 
+See the survey of Blair and Peyton \cite{blair1993chordal}. 
+
+\begin{theorem}[Tree decomposition from Perfect Elimination Ordering]\label{thm:tree_decomposition_from_perfect_elimination_ordering}
+	Let $G$ be a triangulated graph and $[v_1, v_2, \cdots, v_n]$ be a perfect elimination ordering of $G$. 
+	Define simplex number 
+	\footnote{Simplex number is my own appellation. It equals to $\omega(G) -1$, where $\omega(G)$ is the clique number of $G$.}
+	of vertex $v_i$ as the number of neighbours $v_i$ has in the subgraph induced by $[v_i, v_{i+1}, \cdots, v_n]$.
+	It is possible to construct a tree decomposition of $G$ with tree-width equal to the maximum simplex number. (By maximum simplex number, we mean the maximum of all simplex numbers of all vertices in $G$.)
+\end{theorem}
+
+\begin{proof}
+	We will present a constructive proof using induction on the number of vertices in $G$.
+	The idea of the proof is exactly the reverse of the proof of theorem \ref{thm:treewidth_triangulated_graph}.
+
+	Our induction statement is a bit stronger. That is, for a perfect elimination order $[v_1, \cdots, v_n]$, there exists a tree decomposition of $G$ with treewidth equal to the maximum simplex number, and there is a bag containing exactly the vertex $v_1$ and all of its neighbours. This bag is also a leaf in the tree decomposition.
+
+	The base case: when $G$ has only one vertex the statement is trivially true.
+
+	Let $T$ be our desired tree decomposition promised by the induction hypothesis on the subgraph induced by $[v_1, \cdots, v_n]$, and we want show that induction statement is also true when we add a new vertex $v_0$ to the front of the perfect elimination order, so that the new perfect elimination order is $[v_0, v_1, \cdots, v_n]$. and we create new tree decomposition $T'$ of the new graph $G'$ induced by $[v_0, v_1, \cdots, v_n]$.
+
+	Now, let $N = \{v_a, v_b, \cdots\}$ be the set of neighbours of $v_0$ in the subgraph induced by $[v_0, v_1, \cdots, v_n]$. 
+	Without loss of any generality let $a < b < \cdots$. 
+	Now, $v_a$ is simplical too and it is ordered the first among all the neighbours of $v_0$, so by induction hypothesis there is a bag (not necessarily a leaf) in $T$, which we label as $B$, such that $B$ contains all $v_a$ and all of its neighbours, which include all of the elements in $N$. 
+	Make a new bag $\{v_0\} \bigcup N$ and attach it to $B$.
+	This gives us the desired tree decomposition.
+\end{proof}
+
+
+The constructive proof of Theorem \ref{thm:tree_decomposition_from_perfect_elimination_ordering} is summarised in Algorithm \ref{alg:tree_decomposition_from_peo}.
+
+\begin{algorithm}[ht]
+	\caption{Tree decomposition from a perfect elimination ordering}\label{alg:tree_decomposition_from_peo}
+	\begin{algorithmic}[1]
+		\Require A triangulated graph $G$ and a perfect elimination ordering $[v_1, v_2, \dots, v_n]$ of $G$.
+		\Ensure The final output is a tree decomposition $(T, \{X_t\})$ of $G$ whose width equals the maximum simplex number of $G$.
+		\State Initialise $T$ as a single node $t_1$ with bag $X_{t_1} \gets \{v_n\}$.
+		\For{$i \gets n-1, n-2, \dots, 1$}
+			\State $N \gets \{ v \in \{v_{i+1}, \dots, v_n\} \mid v \text{ is adjacent to } v_i \}$. \Comment{a clique, since $v_i$ is simplicial}
+			\State Let $v_a$ be the vertex in $N$ with the smallest index.
+			\State Let $B$ be a bag of $T$ that contains $\{v_a\} \cup N$. \Comment{exists, since $\{v_a\} \cup N$ is a clique}
+			\State Add a new node $t$ with bag $X_t \gets \{v_i\} \cup N$, and attach $t$ to $B$.
+		\EndFor
+		\State \Return $(T, \{X_t\})$.
+	\end{algorithmic}
+\end{algorithm}
+
+Figure \ref{fig:tree_decomposition_from_perfect_elimination_ordering} is a demonstraction of algorithm \ref{alg:tree_decomposition_from_peo} to construct a tree decomposition from a perfect elimination ordering.
+
+\begin{figure}[ht]
+	\centering
+	\resizebox{0.9\textwidth}{!}{
+		\input{./figures/clique_tree_construction.tikz}
+	}
+	\caption{Demonstration of constructing a tree decomposition from a perfect elimination ordering using algorithm \ref{alg:tree_decomposition_from_peo}. The perfect elimination ordering is $[a,b,c,d,e]$ on the graph $G$ shown on the lower left and boxed in dashed lines.} 
+	\label{fig:tree_decomposition_from_perfect_elimination_ordering}
+\end{figure}
+
+
+\begin{theorem}[Treewidth is the Right Measure for Tensor Contraction]
+	Let $G$ be a tensor network with no lose bonds and regarded as a graph and $G^*$ its line graph.
+	Let $G^*$ have $n$ vertices.
+	The best possible complexity of contracting $G$, bond by bond, is $O(n \cdot d^{\text{tw}(G^*) + 1})$, where $\text{tw}(G^*)$ is the treewidth of $G^*$.
+	This complexity can be achieved by finding a tree decomposition of $G^*$.
+\end{theorem}
+
