@@ -80,6 +80,14 @@ There are infinitely many rewrite rules, but the following are the most crucial 
 	\label{fig:zx_rewrites}
 \end{figure}
 
+As this thesis is focused on tensor contraction, we need to keep tracks of the constant phase term for rewriting rules. 
+Luckily, this is simple.
+
+\begin{lemma}[Constant in Rewriting Rules]
+	For the rule strong complementation ($\color{red} \mathbf{sc}$), $\pi$-copy ($\color{red} \mathbf{p}$), and copy rule ($\color{red} \mathbf{cp}$), the left hand side and right hand side of the rewriting rules are equal up to a global constant.
+	If there are $n$ $x$-spiders on the left hand side of the rewriting rules, and $m$ $x$-spiders on the right hand side, then there is a constant factor on the right hand side of $(\frac{1}{\sqrt{2}})^{n-m}$.
+\end{lemma}
+
 There is also a meta rule.
 \begin{enumerate}
 	\item Since a $z$-spider represents the same linear transformation as an $x$-spider but in a different basis, there exists a dual rewrite rule for each rule, where $z$ and $x$ spiders are swapped. 
@@ -91,6 +99,7 @@ As ZX calculus is indeed one particular kind of tensor network, all of the prope
 	\item All of the tensor operations in
 \end{enumerate}
 \end{definition}\label{def:zx_rewrites}
+
 
 The surprising property of ZX rewrite rules is that they are \emph{complete} in the following sense. 
 
@@ -355,6 +364,3 @@ The concept of local complementation was introduced in \cite{Duncan_2020}, and i
 	\caption{General Local complementation identity. The ZX diagram of the local complementation of $G$ on $v$ is equivalent to the original ZX diagram up to a global constant and some local unitaries applied to $v$ and its neighbours.}
 	\label{fig:local_complementation_identity}
 \end{figure}
-
-
-

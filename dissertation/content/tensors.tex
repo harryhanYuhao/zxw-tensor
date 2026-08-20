@@ -1,5 +1,19 @@
 \chapter{Tensors} \label{ch:tensors}
 
+Tensors, to put it plainly, are arrays of numbers that can be regarded as higher dimensional matrices, and tensor contractions are operations between tensors that are analogous to matrix multiplication. 
+This definition of tensor stems from the abstract tensor products defined via the universal property of a bilinear form. 
+Their exact distinctions will be discussed in section \ref{sec:abstract-tensor-product}.
+
+It was Roger Penrose who first used diagrammatic notation, called tensor networks, to represent complicated tensor structures \cite{penrose1971applications}. 
+His intuitive and lucid notation immediately drew the attention of the research communities and greatly promoted the popularity of tensors.
+Since then, tensor networks have found fruitful applications in many areas of science.
+For example, it has helped both the theoretical and numerical research in many fields of physics, including quantum many-body systems and quantum computations \cite{orus2014}. 
+In ecology, tensors are used to model dynamics of ecosystems. 
+Maybe most famously, tensors are the core and most indispensable data structure of machine learning. 
+
+This chapter is a pragmatic introduction to tensors and tensor networks. 
+We follow the treatement of tensor network by Penrose \cite{penrose1971applications} and Orus \cite{orus2014}. 
+
 \section{Tensors and Basic Operations}
 
 We present the following straightforward definition of tensors, which is a rephrasal of Penrose's original definition \cite{penrose1971applications}.
@@ -145,7 +159,7 @@ This is an important observation and we will make it a lemma.
 	Given a set of tensors and the corresponding contraction indices, the contraction order does not matter.
 \end{lemma} \label{lem:contraction-order}
 
-\subsection{Abstract Tensor Product}
+\subsection{Abstract Tensor Product}\label{sec:abstract-tensor-product}
 
 In multilinear algebra, the definition of tensor product is thus. 
 
