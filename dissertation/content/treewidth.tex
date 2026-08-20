@@ -24,7 +24,7 @@ As core algorithmic idea in this dissertation relies on treewidth, it is worth o
 \end{definition}
 
 \begin{definition}[Treewidth]
-	The \define{tree width} of a graph $G$ is the minimum width over all of its tree decompositions.
+	The \define{treewidth} of a graph $G$ is the minimum width over all of its tree decompositions.
 \end{definition}
 
 Tree decomposition requires the existence of a bag that contains all the adjacent vertices. 
@@ -258,7 +258,7 @@ Using the notion of induced subgraph, we have the following important theorem th
     \begin{enumerate}
     	\item Let $X_l$ be a leaf in $T$. 
         % TODO: add references
-        \footnote{A leaf is a vertex in a tree with degree 1. The paret of the leaf is the only other vertex connecting to it. All tree must contain at least two leaves.} 
+        \footnote{A leaf is a vertex in a tree with degree 1. The parent of the leaf is the only other vertex connecting to it. All tree must contain at least two leaves.} 
         Let $X_p$ be the parent of $X_l$ in $T$.
 		   	We assume that $X_l \setminus X_p$ is a set of one element. If it is not, modify the tree decomposition $T$ in the process described below to make it so. 
 		\item Let $v$ be the unique vertex in $X_l \setminus X_p$. I claim that No other bags in $T$ contain $v$. If there is another bag that contains $v$, the path from $X_l$ to that bag must pass through $X_p$, and $X_p$ must contain $v$ by property 3 of tree decomposition. This is a contradiction to the assumption that $v \notin X_p$.
@@ -283,6 +283,37 @@ Using the notion of induced subgraph, we have the following important theorem th
 	\label{fig:demo_leaf_tree_decomposition}
 \end{figure}\end{enumerate}
 \end{proof}
+
+The triangulated graph $F$ constructed from $G$ in theorem \ref{thm:treewidth_triangulated_graph} is also called optimal triangulation or optimal chordal completion of $G$ in the literature \cite{rose1970triangulated}.
+
+This constructive procedure is summarised in Algorithm \ref{alg:tree_decomposition_to_triangulated_graph}.
+
+\begin{algorithm}[ht]
+	\caption{Triangulation from a tree decomposition}\label{alg:tree_decomposition_to_triangulated_graph}
+	\begin{algorithmic}[1]
+		\Require A graph $G = (V, E)$ and a tree decomposition $(T, \{X_t\})$ of $G$.
+		\Ensure Return a triangulated graph $F$ with $V(F) = V$ and $G \subseteq F$, and a perfect elimination ordering $\sigma$ of $F$, such that $(T, \{X_t\})$ is a tree decomposition of $F$.
+		\State $F \gets (V, \varnothing)$; \quad initialise $\sigma$ as the empty list.
+		\While{$T$ has at least two bags}
+			\State Let $X_l$ be a leaf bag of $T$ and $X_p$ its parent.
+			\If{$X_l \subseteq X_p$}
+				\State Delete $X_l$ from $T$. \Comment{redundant leaf}
+			\Else
+				\State Write $X_l \setminus X_p = \{w_1, \dots, w_k\}$.
+				\State Replace $X_l$ by the path $X_p - (X_p \cup \{w_1\}) - \cdots - (X_p \cup \{w_1, \dots, w_k\})$. \Comment{leaf now has one extra vertex}
+				\For{$i \gets k, k-1, \dots, 1$}
+					\State $B \gets X_p \cup \{w_1, \dots, w_i\}$.
+					\State Make $B$ a clique in $F$ (add all edges among its vertices).
+					\State Append $w_i$ to $\sigma$; delete $B$ from $T$.
+				\EndFor
+			\EndIf
+		\EndWhile
+		\State Let $X_r$ be the single remaining bag of $T$.
+		\State Make $X_r$ a clique in $F$; append the vertices of $X_r$ to $\sigma$.
+		\State \Return $(F, \sigma)$.
+	\end{algorithmic}
+\end{algorithm}
+
 
 A demonstration of this process is shown in figure \ref{fig:triangulated_from_tree_decomposition}.
 Take note that this process generates a perfect elimination ordering for the triangulated graph.
@@ -323,15 +354,18 @@ This ordering is important for our later discussion, and therefore deserves a fo
 \end{definition}
 
 
+\section{Treewidth is the Complexity of Tensor Contraction}
 
-\section{Treewidth and Tensor Contraction.}
+This section gives the major result of this chapter, theorem \ref{th:ultimate_complexity_tensor_contraction}.
+
+\subsection{Tree decomposition Gives a Contraction Order}
 
 It is possible to derive an upper bound for tensor contraction cost using treewidth
 
 \begin{theorem}[Treewidth Bound on Tensor Contraction Cost]\label{thm:treewidth_tensor_contraction} 
 	Let $G$ be a tensor network with no lose bonds and regarded as a graph. 
 	Let all the bonds of $G$ be dimension $d$.
-	It is possible to contract $G$ with a cost of $O(d^{\text{tw}(G*) + 1})$, where $\text{tw}(G*)$ is the treewidth of the line graph of $G$.
+	It is possible to contract $G$ with a cost of $O(d^{\text{tw}(G^*) + 1})$, where $\text{tw}(G^*)$ is the treewidth of the line graph of $G$.
 \end{theorem}
 
 Markov and Shi first discovered this connection \cite{Markov_2008}.
@@ -356,9 +390,10 @@ The theorem is constructive, and there exists an algorithm that to find such a c
 Let $G$ be a graph and $G^*$ its line graph.
 A edge in $G$, $e$, has a corresponding vertex in $G^*$, which we denote as $v_e$.
 The number of edge neighbours of $e$ in $G$ precisely equals to the degree of vertex $v_e$ in $G^*$.
-\begin{lemma}[Complexity and Vertex Order]\label{lem:contraction-vertex-order}
-\end{lemma}
 Therefore, using lemma \ref{lem:contraction-complexity} we see the cost of contracting a bond $e$ in $G$ is $O(d^{e+1})$.
+\begin{lemma}[Complexity and Vertex Order]\label{lem:contraction-complexity-vertex-order}
+	Contracting an edge $e$ in a graph $G$ has a cost of $O(d^{\text{deg}(v_e) + 1})$, where $v_e$ is the corresponding vertex of $e$ in the line graph $G^*$.
+\end{lemma}
 
 If an edge $e$ is contracted in $G$, all the neighbouring edges of $e$ become neighbours of each other if they are not already.
 The corresponding changes in its line graph $G^*$ is exactly simplicial elimination (Def \ref{def:simplicial_elimination}) of the vertex $v_e$ in $G^*$.
@@ -369,8 +404,8 @@ This process is demonstrated in figure \ref{fig:line_graph_simplicial_eliminatio
 		\input{./figures/demonstration_contraction.tikz}
 	}
 	\caption{Contracting an edge $a$ (in dotted red) in $G$ 
-			makes all the neighbours of $v_e$ (labeled in red) in $G^*$ neighbours of each other.
-			The cost of this contraction is $O(d^{3})$, as degree of $a$ in $G^*$ is two.
+			makes all the neighbours of $v_e$ (labeled in red) in $G^*$ neighbours of each other. This is exactly the simplicial elimination of $v_e$ in $G^*$.
+			The cost of this contraction is $O(d^{3})$, as degree of $a$ in $G^*$ is 2.
 		}
 	\label{fig:line_graph_simplicial_elimination}
 \end{figure}
@@ -389,10 +424,8 @@ We shall summarise our important discovery into the a theorem.
 \begin{lemma}[Treewidth Gives a Contraction Order with Same Complexity]\label{lem:treewidth_contraction_order}
 	Let $G$ be a tensor network with no lose bonds and regarded as a graph. 
 	Let all the bonds of $G$ be dimension $d$.
-	Given a tree decomposition of $G^*$ (which is the line graph of $G$), it is possible to find a contraction order with cost of $O(d^{\text{tw}(G*) + 1})$.
+	Given a tree decomposition of $G^*$ (which is the line graph of $G$), it is possible to find a contraction order with cost of $O(d^{\text{tw}(G^*) + 1})$.
 \end{lemma}
-
-
 
 \begin{figure}[ht]
 	\centering
@@ -405,7 +438,7 @@ We shall summarise our important discovery into the a theorem.
 	\label{fig:contraction_order_from_tree_decomposition}
 \end{figure}
 
-\subsection{From Perfect Elimination Order to Tree Decomposition}
+\subsection{Tensor Contraction Gives a Tree Decomposition}
 
 Theorem \ref{thm:treewidth_triangulated_graph} gives us important insights on how to generate a perfect elimination ordering $[v_1, v_2, \cdots, v_n]$ from a tree decomposition and how to use that to create a triangulated graph. 
 Importantly, the treewidth of the triangulated graph by construction is the maximum number of neighbours any $v_i$ has in the subgraph induced by $[v_i, v_{i+1}, \cdots, v_n]$.
@@ -440,7 +473,8 @@ See the survey of Blair and Peyton \cite{blair1993chordal}.
 \end{proof}
 
 
-The constructive proof of Theorem \ref{thm:tree_decomposition_from_perfect_elimination_ordering} is summarised in Algorithm \ref{alg:tree_decomposition_from_peo}.
+The constructive steps of Theorem \ref{thm:tree_decomposition_from_perfect_elimination_ordering} is summarised in Algorithm \ref{alg:tree_decomposition_from_peo}.
+Figure \ref{fig:tree_decomposition_from_perfect_elimination_ordering} is a demonstration of algorithm \ref{alg:tree_decomposition_from_peo} to construct a tree decomposition from a perfect elimination ordering.
 
 \begin{algorithm}[ht]
 	\caption{Tree decomposition from a perfect elimination ordering}\label{alg:tree_decomposition_from_peo}
@@ -458,8 +492,6 @@ The constructive proof of Theorem \ref{thm:tree_decomposition_from_perfect_elimi
 	\end{algorithmic}
 \end{algorithm}
 
-Figure \ref{fig:tree_decomposition_from_perfect_elimination_ordering} is a demonstraction of algorithm \ref{alg:tree_decomposition_from_peo} to construct a tree decomposition from a perfect elimination ordering.
-
 \begin{figure}[ht]
 	\centering
 	\resizebox{0.9\textwidth}{!}{
@@ -469,11 +501,44 @@ Figure \ref{fig:tree_decomposition_from_perfect_elimination_ordering} is a demon
 	\label{fig:tree_decomposition_from_perfect_elimination_ordering}
 \end{figure}
 
+Using theorem \ref{thm:tree_decomposition_from_perfect_elimination_ordering} and theorem \ref{thm:treewidth_triangulated_graph}, we arrive at the following important theorem.
 
-\begin{theorem}[Treewidth is the Right Measure for Tensor Contraction]
-	Let $G$ be a tensor network with no lose bonds and regarded as a graph and $G^*$ its line graph.
-	Let $G^*$ have $n$ vertices.
+Theorem \ref{thm:tree_decomposition_from_perfect_elimination_ordering} ties well with lemma \ref{lem:contracting-makes-neighbours}, and they gives us the following lemma.
+
+\begin{lemma}[Contraction Order Gives a Tree Decomposition]\label{lem:contraction_order_tree_decomposition}
+	Let $G$ be a tensor network with no lose bonds and regarded as a graph. 
+	Given a contraction order of $G$, it is possible to find a tree decomposition of $G^*$ (which is the line graph of $G$), such that the complexity of the contraction order is equal to $O(n \cdot d^{s})$, where $n$ is the number of edges in $G$ and $s$ is the size of the maximal bag in the tree decomposition.
+\end{lemma}
+
+\begin{proof}
+	We know by lemma \ref{lem:contracting-makes-neighbours} that contracting en edge is equivalent to simplicial elimination of the corresponding vertex in the line graph.
+	Therefore, given a contraction order of $G$, $[e_1, e_2, e_3, \cdots]$, the corresponding vertex order $[v_{e_1}, v_{e_2}, v_{e_3}, \cdots]$ is a perfect elimination order of some triangulation of $G^*$.
+	Now, Theorem \ref{thm:tree_decomposition_from_perfect_elimination_ordering} states that from this perfect elimination ordering we can find a tree decomposition of $G^*$ with the size of maximal bag minus one equal to the maximum degree of any vertex in the simplicial elimination ordering.
+	This lemma follows by \ref{lem:contraction-complexity-vertex-order}.
+\end{proof}
+
+We now arrive at the following important theorem.
+
+\begin{theorem}[Treewidth is the Complexity of Tensor Contraction]\label{th:ultimate_complexity_tensor_contraction}
+	Let $G$ be a tensor network with no lose bonds and $G^*$ its line graph.
+	Let all bonds be of dimension $d$ and let $G^*$ have $n$ vertices.
 	The best possible complexity of contracting $G$, bond by bond, is $O(n \cdot d^{\text{tw}(G^*) + 1})$, where $\text{tw}(G^*)$ is the treewidth of $G^*$.
-	This complexity can be achieved by finding a tree decomposition of $G^*$.
 \end{theorem}
 
+
+\begin{proof}
+	The proof consists of two parts. First, there exists a contraction order with complexity $O(n \cdot d^{\text{tw}(G^*) + 1})$.
+	Second, no contraction order can have complexity better than $O(n \cdot d^{\text{tw}(G^*) + 1})$.
+
+	The existence of a contraction order with complexity $O(n \cdot d^{\text{tw}(G^*) + 1})$ is guaranteed by lemma \ref{lem:treewidth_contraction_order}.
+
+	The other direction is guaranteed by lemma \ref{lem:contraction_order_tree_decomposition}, which states that given any contraction order, we can find a tree decomposition of $G^*$ with the size of maximal bag equal to the exponent of the complexity of the contraction order.
+\end{proof}
+
+Theorem \ref{th:ultimate_complexity_tensor_contraction} is an equivalent statement of proposition 4.2 in Markov and Shi's paper \cite{Markov_2008}.
+Our proof, however, is completely original.
+
+It is important to note that \ref{th:ultimate_complexity_tensor_contraction} only governs the complexity of a general contraction algorithm where in each step one bond of the tensor network is contracted.
+It is possible that a more efficient algorithm can exist that exploits the special structure of the tensor network and contract multiple bonds at once.
+For example, certain tensor networks may always be evaluated to zero. 
+Our next chapter will also discuss a more efficient algorithm that exploits the special structure of the tensor network using ZX calculus.
