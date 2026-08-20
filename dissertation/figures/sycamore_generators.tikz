@@ -1,0 +1,98 @@
+% Graph Board TikZ export
+% Exported: 2026-08-20T06:02:29.379Z
+% Title: Tab 4
+% Nodes: 29, Edges: 22
+
+\begingroup
+% --- Colors (define-if-not-already-defined) ---
+\providecolor{zxRed}{RGB}{232,165,165}   % X spiders
+\providecolor{zxGreen}{RGB}{216,248,216} % Z spiders
+\providecolor{zxYellow}{RGB}{255,255,0}     % hadamard 
+\providecolor{zxBlue}{RGB}{68,126,255}     % hadamard 
+
+
+\tikzset{
+    EMPTY/.style={minimum size=3.4mm,
+        outer sep=-1.7mm},
+    DOT/.style={inner sep=0mm, minimum size=3.4mm, shape=circle,
+        draw=black, outer sep=-0.5mm, line width=1pt},
+    BLACK_DOT/.style={minimum size=2mm, inner sep=0.3mm,
+        outer sep=-0.15mm, fill=black, shape=circle},
+    WORD_BALL/.style={draw=black, shape=rectangle, minimum size=6.5mm,
+        rounded corners=3.2mm, inner sep=1.2mm, outer sep=-1.0mm,
+        scale=1, font={\large\boldmath}, line width=1pt},
+    GREEN_DOT/.style={DOT, fill=zxGreen},
+    GREEN_WORD_BALL/.style={WORD_BALL, fill=zxGreen},
+    RED_DOT/.style={DOT, fill=zxRed},
+    RED_WORD_BALL/.style={GREEN_WORD_BALL, fill=zxRed},
+    YELLOW_BOX/.style={fill=zxYellow, draw=black, line width=1pt, shape=rectangle, inner sep=0.6mm,
+        minimum height=3.4mm, minimum width=3.4mm,
+        font={\large\boldmath}},
+    EDGE/.style={draw=black, line width=1pt},
+    BLUE_DASHED_EDGE/.style={-, dashed, dash pattern=on 2pt off 0.5pt, ultra thick, zxBlue},
+    RED_DASHED_EDGE/.style={-, dashed, dash pattern=on 2pt off 0.5pt, ultra thick, zxRed},
+    GRAY_DASHED_EDGE/.style={-, dashed, dash pattern=on 3pt off 1.5pt, thick, lightgray}
+}
+\pgfdeclarelayer{edgelayer}
+\pgfdeclarelayer{nodelayer}
+\pgfsetlayers{edgelayer,nodelayer,main}
+
+\begin{tikzpicture}
+    \begin{pgfonlayer}{nodelayer}
+        \node [EMPTY] (1) at (-3.18966, 3.62069) {$X^{1/2}: $};
+        \node [EMPTY] (2) at (-1.68966, 3.62069) {};
+        \node [EMPTY] (3) at (3.31034, 3.62069) {};
+        \node [RED_WORD_BALL] (4) at (0.81034, 3.62069) {$\frac{\pi}{2}$};
+        \node [EMPTY] (5) at (-3.18966, 2.12069) {$Y^{1/2}: $};
+        \node [EMPTY] (6) at (-1.68966, 2.12069) {};
+        \node [EMPTY] (7) at (3.31034, 2.12069) {};
+        \node [RED_WORD_BALL] (8) at (0.81034, 2.12069) {$\frac{\pi}{2}$};
+        \node [GREEN_WORD_BALL] (9) at (-0.68966, 2.12069) {$\frac{\pi}{2}$};
+        \node [GREEN_WORD_BALL] (10) at (2.31034, 2.12069) {$\frac{3\pi}{2}$};
+        \node [EMPTY] (11) at (-3.18966, 0.62069) {$W^{1/2}: $};
+        \node [EMPTY] (12) at (-1.68966, 0.62069) {};
+        \node [EMPTY] (13) at (3.31034, 0.62069) {};
+        \node [RED_WORD_BALL] (14) at (0.81034, 0.62069) {$\frac{\pi}{2}$};
+        \node [GREEN_WORD_BALL] (15) at (-0.68966, 0.62069) {$\frac{\pi}{4}$};
+        \node [GREEN_WORD_BALL] (16) at (2.31034, 0.62069) {$\frac{7\pi}{4}$};
+        \node [EMPTY] (17) at (-2.68966, -1.37931) {};
+        \node [EMPTY] (18) at (3.31034, -1.37931) {};
+        \node [GREEN_WORD_BALL] (19) at (-1.68966, -1.37931) {$\frac{\pi}{2}$};
+        \node [EMPTY] (20) at (-2.68966, -3.37931) {};
+        \node [EMPTY] (21) at (3.31034, -3.37931) {};
+        \node [GREEN_WORD_BALL] (22) at (-1.68966, -3.37931) {$\frac{\pi}{2}$};
+        \node [EMPTY] (23) at (-3.68966, -2.37931) {$\text{iSwap}: $};
+        \node [GREEN_DOT] (24) at (0.31034, -1.37931) {};
+        \node [GREEN_DOT] (25) at (1.31034, -3.37931) {};
+        \node [YELLOW_BOX] (26) at (-0.68966, -1.37931) {};
+        \node [YELLOW_BOX] (27) at (2.31034, -3.37931) {};
+        \node [RED_DOT] (28) at (0.31034, -3.37931) {};
+        \node [RED_DOT] (29) at (1.31034, -1.37931) {};
+    \end{pgfonlayer}
+    \begin{pgfonlayer}{edgelayer}
+        \draw[EDGE] (4) to (3);
+        \draw[EDGE] (4) to (2);
+        \draw[EDGE] (6) to (9);
+        \draw[EDGE] (9) to (8);
+        \draw[EDGE] (8) to (10);
+        \draw[EDGE] (10) to (7);
+        \draw[EDGE] (12) to (15);
+        \draw[EDGE] (15) to (14);
+        \draw[EDGE] (14) to (16);
+        \draw[EDGE] (16) to (13);
+        \draw[EDGE] (19) to (17);
+        \draw[EDGE] (26) to (19);
+        \draw[EDGE] (26) to (24);
+        \draw[EDGE] (24) to (29);
+        \draw[EDGE] (29) to (18);
+        \draw[EDGE] (21) to (27);
+        \draw[EDGE] (27) to (25);
+        \draw[EDGE] (25) to (28);
+        \draw[EDGE] (28) to (22);
+        \draw[EDGE] (22) to (20);
+        \draw[EDGE] (24) to (28);
+        \draw[EDGE] (25) to (29);
+    \end{pgfonlayer}
+\end{tikzpicture}
+
+\endgroup

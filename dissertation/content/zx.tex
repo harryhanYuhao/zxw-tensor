@@ -36,8 +36,8 @@ The Hadamard gate is shown as a yellow square.
 	\label{fig:zx_generators}
 \end{figure}
 
-Since ZX calculus was invented to represent quantum circuits, most of its literature differentiates between input and output legs. 
-Following the conventional bra-ket notation where $\ket{a}$ denotes a state (column vector) and $\bra{a}$ denotes its dual state (row vector, also called an effect), $z$, $x$ and $H$ nodes can be represented as follows:
+Since ZX calculus was invented to represent quantum circuits, most authors treat them as linear maps with an input and an output instead of a generic tensor.
+Following the conventional bra-ket notation where $\ket{a}$ denotes a state (a vector, usually written in column) and $\bra{a}$ denotes its dual (co-vector, also called an effect, written in row), $z$, $x$ and $H$ nodes can be represented in the following ways
 \begin{align*}
 	z_{\phi} &= \ket{0}^{\otimes n}\bra{0}^{\otimes m} + e^{i \phi} \ket{1}^{\otimes n}\bra{1}^{\otimes m} \\
 	H &=\frac{1}{\sqrt{2}}(\ket{0}\bra{0} + \ket{0}\bra{1} + \ket{1}\bra{0} - \ket{1}\bra{1}) \\
@@ -48,7 +48,7 @@ Note that $H\ket{+} = \ket{0}$, $H\ket{-} = \ket{1}$, and $HH = I$.
 
 The second part of ZX calculus is its rewrite rules,
 which are the statements that certain combinations of generators are equivalent to each other.
-Two ZX diagrams are equivalent if they represent the same tensor or they represent the same tensor up to a global constant. (This is because in quantum computation a global constant does not change the result of a quantum circuit.)
+Two ZX diagrams are equivalent if they represent the same tensor or they represent the same tensor up to a global constant. (This is because in quantum computation a global constant does not change the result quantum measurement.)
 Throughout this dissertation, a strict equality will be denoted by a $=$ sign, while an equality up to a global constant will be denoted by a $\propto$ sign. \footnote{In the literature of ZX calculus, often the equal $=$ sign denotes both strict equality and equality up to a global constant.}
 There are infinitely many rewrite rules, but the following are the most crucial ones.
 \begin{definition}[Rewrite rules of ZX diagrams]
@@ -80,10 +80,15 @@ There are infinitely many rewrite rules, but the following are the most crucial 
 	\label{fig:zx_rewrites}
 \end{figure}
 
-There are, moreover, two meta rules
+There is also a meta rule.
+\begin{enumerate}
+	\item Since a $z$-spider represents the same linear transformation as an $x$-spider but in a different basis, there exists a dual rewrite rule for each rule, where $z$ and $x$ spiders are swapped. 
+\end{enumerate}
+
+As ZX calculus is indeed one particular kind of tensor network, all of the properties of tensor networks apply to ZX diagrams, in particular
 \begin{enumerate}
 	\item As all of the ZX generators are symmetric tensors, \emph{only connectivity matters} (lemma \ref{lem:only-connectivity-matters}) applies.
-	\item Since a $z$-spider represents the same linear transformation as an $x$-spider but in a different basis, there exists a dual rewrite rule for each rule, where $z$ and $x$ spiders are swapped. 
+	\item All of the tensor operations in
 \end{enumerate}
 \end{definition}\label{def:zx_rewrites}
 
@@ -93,9 +98,74 @@ The surprising property of ZX rewrite rules is that they are \emph{complete} in 
 	For any two ZX diagrams $D_1$ and $D_2$, if they represent the same tensor, then there exists a sequence of rewrites from definition \ref{def:zx_rewrites} that transforms $D_1$ into $D_2$.
 \end{theorem}
 
-\section{Local Complementation and Pivoting}
+As the completeness of ZX rewrite rules is not relevent to our later discussion of tensor contraction algorithm, the readers are encouraged to refer to the original paper for the proof \cite{completenessZXCalculus}.
+
+\section{The Power of ZX calculus}
 
 Let us demonstrate the power of ZX calculus in this section by proving several more complicated identities.
+
+Our first important result is the universality of ZX diagrams.
+
+\section{Universality and Quantum Circuits}
+
+The following quantum gates can be represented as ZX diagrams
+
+\begin{figure}[ht]
+	\centering
+	\input{figures/zx_quantum_gates.tikz}
+	\caption{Common quantum gates represented as ZX diagrams.}
+	\label{fig:zx_quantum_gates}
+\end{figure}
+
+In general, $z$-spiders and $x$-spiders are the rotation gates around the $z$ and $x$ axes of the Bloch sphere, respectively.
+Therefore, by Euler decomposition, any single qubit unitary can be represented as a ZX diagram.
+Since all unitary gates can be decomposed into single qubit unitaries and CNOT gates\footnote{See Chapter 4.2 of \cite{Nielsen_Chuang_2010}.}, we have arrived at the following important theorem.
+
+\begin{lemma}[ZX diagrams are universal for quantum circuits]
+	ZX diagrams can represent any unitary transformation up to a global phase, and therefore can represent any quantum circuit.
+\end{lemma}
+
+Now, since ZX diagrams can represent the state $\ket{0 \cdots 0}$ as shown in figure \ref{fig:zero_state}, and for any state in $\C^{2^n}$, there exists a unitary transformation that transforms $\ket{0 \cdots 0}$ to that state, we have the following corollary.
+
+\begin{corollary}
+	ZX diagrams can represent any state in $\C^{2^n}$.
+\end{corollary}
+
+Using the Choi–Jamiołkowski isomorphism, which states that any linear transformation can be represented as a state in a larger Hilbert space, we have demonstrated the universality of ZX diagrams.
+
+\begin{theorem}[Universality of ZX diagrams]
+	Let $V = \C^{2^n}$ for some $n \in \N$. 
+	ZX diagram can represent any linear transformation $T: V \to V$ and any state $\ket{\psi} \in V$.
+\end{theorem}
+
+\begin{figure}[ht]
+	\centering
+	\input{figures/zero_state.tikz}
+	\caption{The state $\ket{0 \cdots 0}$ represented as a ZX diagram.} 
+	\label{fig:zero_state}
+\end{figure}
+
+\section{Random Circuit of Google Sycamore}
+
+Let us demonstrate the universality of ZX calculus by expressing the random circuit used by Google's Sycamore quantum processor \cite{GoogleSycamore} as a ZX diagram.
+
+Google's Sycamore quantum processor simulates a random quantum circuit that is generated in the following way: 
+\begin{enumerate}
+	\item Start with the state $\ket{0 \cdots 0}$.
+	\item Apply a layer of single qubits gates on each qubit selected from the set $\{X^{1/2}, Y^{1/2}, W^{1/2}\}$, where $W = \frac{1}{\sqrt{2}}(X + Y)$. 
+	\item Choosing two qubits in random and apply a iSwap gate on them. 
+\end{enumerate}
+
+The generators of the Sycamore random circuit can be expressed in ZX diagrams in the as shown in figure \ref{fig:sycamore_generators}, as can be verified by direct computations.
+
+\begin{figure}[ht]
+	\centering
+	\input{figures/sycamore_generators.tikz}
+	\caption{Generators of the Sycamore random circuit expressed as ZX diagrams.}
+	\label{fig:sycamore_generators}
+\end{figure}
+
+\section{Graph Like ZX diagrams}
 
 Let us first introduce a new notation, dashed-blue edges, that denotes a Hadamard gate between two spiders.
 
@@ -110,8 +180,7 @@ Let us first introduce a new notation, dashed-blue edges, that denotes a Hadamar
 	\label{fig:dashed_blue_edge}
 \end{figure}
 
-Now, let us see ZX calculus in action.
-
+Let us starting proving using ZX rewrite rules.
 
 \begin{lemma}[Double Edges between $z$- and $x$-spiders Cancel]\label{lem:double_edge_cancellation}
 	As shown in figure \ref{fig:double_edge_cancellation}, two edges between a $z$-spider and an $x$-spider can be removed without changing the tensor represented by the ZX diagram.
@@ -152,6 +221,19 @@ Now, let us see ZX calculus in action.
 	\label{fig:hadamard_self_loop_cancellation}
 \end{figure}
 
+\begin{lemma}[Turning edge to Hadamard Edge]\label{lem:turning_edge_to_hadamard_edge}
+	Any edge can be turned into a Hadamard edge joint by an 0-phase $z$-spider, as shown in figure \ref{fig:turning_edge_to_hadamard_edge}.
+\end{lemma}
+
+\begin{figure}[ht]
+	\centering
+	\resizebox{0.8\linewidth}{!}{
+		\input{./figures/edge_to_hadamard_edge.tikz}
+	}
+	\caption{Turning an edge into a Hadamard edge joint by an 0-phase $z$-spider.}
+	\label{fig:turning_edge_to_hadamard_edge}
+\end{figure}
+
 We are now ready to define a specific type of ZX diagram that will be important for our later discussion on tensor contraction algorithm.
 
 \begin{definition}[Graph-like ZX diagrams]
@@ -160,8 +242,7 @@ We are now ready to define a specific type of ZX diagram that will be important 
 		\item All spiders are $z$-spiders.
 		\item All edges between spiders are Hadamard edges (dashed-blue edges).
 		\item There are no parallel edges or self-loops.
-		\item Every input and output is connected to a spider, and every spider is connected to at most one input or output.
-	\end{enumerate}
+		\item Every input and output is connected to a spider, and every spider is connected to at most one input or output. \end{enumerate}
 \end{definition}
 
 It is evident that, using lemma \ref{lem:double_edge_cancellation} and lemma \ref{lem:hadamard_self_loop_cancellation}, any ZX diagram can be transformed into a graph-like ZX diagram.
@@ -176,6 +257,7 @@ It is evident that, using lemma \ref{lem:double_edge_cancellation} and lemma \re
 		\item Fuse as many $z$- and $x$-spiders as possible so that there are no interconnections between $z$- and $x$-spiders. 
 		\item Use color change to transform all $x$-spiders into $z$-spiders by adding Hadamard gates on all their legs. 
 		\item Use lemma \ref{lem:double_edge_cancellation} and lemma \ref{lem:hadamard_self_loop_cancellation} to remove all parallel edges and self-loops.	
+		\item If there are non-hadamard edges, use lemma \ref{lem:turning_edge_to_hadamard_edge} to add 0-phase $z$-spiders to turn them into Hadamard edges.
 	\end{enumerate}
 	
 	See figure \ref{fig:graph_like_transformation} for an example of the transformation.
@@ -195,6 +277,10 @@ It is evident that, using lemma \ref{lem:double_edge_cancellation} and lemma \re
 \begin{lemma}[Quantum Circuits in Graph-like form]
 	Any quantum circuit can be transformed into a graph-like ZX diagram.
 \end{lemma}
+
+\section{Local Complementation}
+
+This section explains the local complementation identity, which is a crucial for our later discussion on tensor contraction algorithm.
 
 \begin{lemma}[$K_3$ graph identity]
 	As shown in figure \ref{fig:k3_local_complementation}, a complete graph $K_{3}$ with 
@@ -270,44 +356,5 @@ The concept of local complementation was introduced in \cite{Duncan_2020}, and i
 	\label{fig:local_complementation_identity}
 \end{figure}
 
-
-\section{Universality and Quantum Circuits}
-
-The following important gates in quantum circuits can be represented as ZX diagrams
-
-\begin{figure}[ht]
-	\centering
-	\input{figures/zx_quantum_gates.tikz}
-	\caption{Common quantum gates represented as ZX diagrams.}
-	\label{fig:zx_quantum_gates}
-\end{figure}
-
-In general, $z$-spiders and $x$-spiders are the rotation gates around the $z$ and $x$ axes of the Bloch sphere, respectively.
-Therefore, by Euler decomposition, any single qubit unitary can be represented as a ZX diagram.
-Since all unitary gates can be decomposed into single qubit unitaries and CNOT gates\footnote{See Chapter 4.2 of \cite{Nielsen_Chuang_2010}.}, we have arrived at the following important theorem.
-
-\begin{lemma}[ZX diagrams are universal for quantum circuits]
-	ZX diagrams can represent any unitary transformation up to a global phase, and therefore can represent any quantum circuit.
-\end{lemma}
-
-Now, since ZX diagrams can represent the state $\ket{0 \cdots 0}$ as shown in figure \ref{fig:zero_state}, and for any state in $\C^{2^n}$, there exists a unitary transformation that transforms $\ket{0 \cdots 0}$ to that state, we have the following corollary.
-
-\begin{corollary}
-	ZX diagrams can represent any state in $\C^{2^n}$.
-\end{corollary}
-
-Using the Choi–Jamiołkowski isomorphism, which states that any linear transformation can be represented as a state in a larger Hilbert space, we have demonstrated the universality of ZX diagrams.
-
-\begin{theorem}[Universality of ZX diagrams]
-	Let $V = \C^{2^n}$ for some $n \in \N$. 
-	ZX diagram can represent any linear transformation $T: V \to V$ and any state $\ket{\psi} \in V$.
-\end{theorem}
-
-\begin{figure}[ht]
-	\centering
-	\input{figures/zero_state.tikz}
-	\caption{The state $\ket{0 \cdots 0}$ represented as a ZX diagram.} 
-	\label{fig:zero_state}
-\end{figure}
 
 

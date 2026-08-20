@@ -538,7 +538,20 @@ We now arrive at the following important theorem.
 Theorem \ref{th:ultimate_complexity_tensor_contraction} is an equivalent statement of proposition 4.2 in Markov and Shi's paper \cite{Markov_2008}.
 Our proof, however, is completely original.
 
+Theorem \ref{th:ultimate_complexity_tensor_contraction} basically states the finding the best contraction order of a tensor network is equivalent to finding the treewidth of its line graph. 
+This is, of course, not surprising, as we know both problems are NP-complete \cite{treewidthNPComplete} \cite{NPcomplete_tensor_network_contraction}.
+
+
 It is important to note that \ref{th:ultimate_complexity_tensor_contraction} only governs the complexity of a general contraction algorithm where in each step one bond of the tensor network is contracted.
 It is possible that a more efficient algorithm can exist that exploits the special structure of the tensor network and contract multiple bonds at once.
-For example, certain tensor networks may always be evaluated to zero. 
+
+An extreme example is that if, somehow we know, a certain tensor is zero, then the whole tensor network must be zero no matter how complicated it is.
+
+\begin{figure}[ht]
+	\centering
+	\input{./figures/zero_tensor.tikz}
+	\caption{If the central tensor labeled wiht $0$ is always evaluated to 0, then the whole tensor network must be zero regardless of how complicated it is.}
+	\label{fig:zero_tensor_network} 
+\end{figure}
+
 Our next chapter will also discuss a more efficient algorithm that exploits the special structure of the tensor network using ZX calculus.
