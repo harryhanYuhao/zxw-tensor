@@ -2,13 +2,12 @@
 
 \section{Background}
 
-Given the widespread applications of tensors, it is without a doubt that efficient algorithms for tensor contractions are extremely important.
-Unfortunately, finding the optimal contraction order of a tensor network is a difficult problem in the class of NP-complete \cite{contraction_hard}.
-Nevertheless, various tensor contraction algorithms were discovered that are efficient in average cases, and novel algorithms are still actively being developed.
+Tensors higher dimensional generalisations of vectors and matrices.
+Tensor neworks and tensor contraction, which will be explained in detail in chapter \ref{ch:tensors}, are ubiquitous in computer science, physics, and applied mathematics.
+This thesis focuses on the practical problem of finding an efficient tensor contraction algorithm.
 
-In this thesis, we will discuss in detail several tensor contraction algorithms using tree decomposition and treewidth.
-While most tensor contraction algorithms involve complicated combinatorial optimization and complicated graph-theoretic properties, here I propose a new perspective by simplifying the graph structure of a tensor network inspired by ZXW calculus.
-
+Most existing tensor contraction algorithms are focused on find an optimal contraction order of tensors' bonds.
+As we will show in the chapter \ref{ch:treewidth}, finding the optimal order is NP-complete and is equivalent to finding the treewidth of the tensor network's line graph.
 
 \section{Outline}
 
